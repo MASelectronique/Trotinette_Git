@@ -26,6 +26,7 @@ void setup() {
   digitalWrite(LED_BUILTIN, LOW);
   Wire.begin(SDA_PIN, SCL_PIN);
   SPI.begin(SCK_PIN, MISO_PIN, MOSI_PIN, CS_PIN);
+  digitalWrite(CS_PIN,HIGH);
   Wire.begin();
   Wire.beginTransmission(MPU);
   Wire.write(0x6B);  
