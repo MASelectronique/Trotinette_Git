@@ -1,0 +1,1 @@
+Schéma électrique du prototype de l'affichage.
