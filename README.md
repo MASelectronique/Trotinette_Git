@@ -10,3 +10,5 @@ Correction :
 11 nov 0/5 (mettre les schémas sur le Git)
 
 24 nov 3/5 manque fichier readme.md dans dossier principal et accelerometer
+
+3 déc 5/5
