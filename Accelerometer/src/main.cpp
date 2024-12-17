@@ -1,3 +1,19 @@
+/* Correction: 17/20
+Wire.write(0x3B); utiliser des constantes pour les registres
+int16_t AcX,AcY,AcZ;	mettre un g_ devant. Est-ce obligatoire d'avoir ces variables globales? Sinon, mettre locales.
+ 
+ Expliquer d'où viennent ces valeurs.
+ //Valeurs d'offset pour X,Y,Z  
+  AcXoff = -950;
+  AcYoff = -300;
+  AcZoff = 0;
+
+if (g_pitch >= 30 || g_pitch <= -30)  Utiliser des constantes
+
+Faire des fonctions dans la boucle principales.
+*/
+
+
 /**
   @file   main.cpp, projet: Prototype affichage Trottinette électrique
   @author Lucas Lalumière Longpré
