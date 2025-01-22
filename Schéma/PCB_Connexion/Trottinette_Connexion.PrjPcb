@@ -57,7 +57,7 @@ ReleaseFolderPath=[OutputPath]
 ReleaseZipPath=[OutputPath][ProjectName].zip
 
 [Document1]
-DocumentPath=TEMPLATE_Title.SchDoc
+DocumentPath=Trottinette_Connexion_Title.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -74,7 +74,7 @@ GenerateClassCluster=0
 DocumentUniqueId=SXLJWRSD
 
 [Document2]
-DocumentPath=TEMPLATE_overview.SchDoc
+DocumentPath=Trottinette_Connexion_overview.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -91,7 +91,7 @@ GenerateClassCluster=0
 DocumentUniqueId=SFRPUCDB
 
 [Document3]
-DocumentPath=TEMPLATE_Connectors.SchDoc
+DocumentPath=Trottinette_Connexion_PCB.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -125,40 +125,40 @@ GenerateClassCluster=0
 DocumentUniqueId=GNYTCPOA
 
 [Parameter1]
-Name=Projet_Titre
-Value=Trotinette_Connexion
+Name=Projet_Concepteur1
+Value=Marc-Antoine Sauvé
 
 [Parameter2]
-Name=Projet_stencil_Top_epaisseur
-Value=0.1 MM
+Name=Projet_Concepteur2
+Value=Lucas Lalumière-Longpré
 
 [Parameter3]
-Name=Projet_stencil_Bot_epaisseur
-Value=0.1 MM
+Name=Projet_Date
+Value=22 janvier 2025
 
 [Parameter4]
-Name=Projet_SCH_Rev
-Value=00
+Name=Projet_nom_du_cours
+Value=247-67P-SH PROJET DE FIN D'ÉTUDES
 
 [Parameter5]
 Name=Projet_PCB_Rev
 Value=1
 
 [Parameter6]
-Name=Projet_nom_du_cours
-Value=247-67P-SH PROJET DE FIN D'ÉTUDES
+Name=Projet_SCH_Rev
+Value=00
 
 [Parameter7]
-Name=Projet_Date
-Value=22 janvier 2025
+Name=Projet_stencil_Bot_epaisseur
+Value=0.1 MM
 
 [Parameter8]
-Name=Projet_Concepteur2
-Value=Lucas Lalumière-Longpré
+Name=Projet_stencil_Top_epaisseur
+Value=0.1 MM
 
 [Parameter9]
-Name=Projet_Concepteur1
-Value=Marc-Antoine Sauvé
+Name=Projet_Titre
+Value=Trotinette_Connexion
 
 [Configuration1]
 Name=Sources
