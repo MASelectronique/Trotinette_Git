@@ -1,3 +1,3 @@
-Record=TopLevelDocument|FileName=TEMPLATE_Connectors.SchDoc|SheetNumber=3
-Record=NoMainPathDocument|SourceDocument=TEMPLATE_Connectors.SchDoc|FileName=TEMPLATE_overview.SchDoc|SheetNumber=2
-Record=NoMainPathDocument|SourceDocument=TEMPLATE_Connectors.SchDoc|FileName=TEMPLATE_Title.SchDoc|SheetNumber=1
+Record=TopLevelDocument|FileName=Trottinette_Connexion_overview.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=Trottinette_Connexion_overview.SchDoc|FileName=Trottinette_Connexion_PCB.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=Trottinette_Connexion_overview.SchDoc|FileName=Trottinette_Connexion_Title.SchDoc|SheetNumber=1
