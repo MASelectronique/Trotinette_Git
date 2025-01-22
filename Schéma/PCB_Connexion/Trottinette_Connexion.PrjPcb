@@ -108,7 +108,7 @@ GenerateClassCluster=0
 DocumentUniqueId=FAPMBNMV
 
 [Document4]
-DocumentPath=TEMPLATE_PCB_2L.PcbDoc
+DocumentPath=Trottinette_Connexion_2L.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
