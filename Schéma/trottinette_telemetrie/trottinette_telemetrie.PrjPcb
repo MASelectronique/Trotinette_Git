@@ -90,40 +90,6 @@ GenerateClassCluster=0
 DocumentUniqueId=SFRPUCDB
 
 [Document3]
-DocumentPath=TEMPLATE_Connectors.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=FAPMBNMV
-
-[Document4]
-DocumentPath=TEMPLATE_PowerSupply.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=IJWHLXDW
-
-[Document5]
 DocumentPath=TEMPLATE_Circuit.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -140,7 +106,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=RTYEHROU
 
-[Document6]
+[Document4]
 DocumentPath=TEMPLATE_PCB_2L.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -157,83 +123,41 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GNYTCPOA
 
-[Document7]
-DocumentPath=TEMPLATE_PCB_4L.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=LIENCYWW
-
-[Document8]
-DocumentPath=TEMPLATE_PCB_6L.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=TCMUFACR
-
 [Parameter1]
-Name=Projet_Concepteur1
-Value=
+Name=Projet_Titre
+Value=Trottinette - Module de télémétrie
 
 [Parameter2]
-Name=Projet_Concepteur2
-Value=
-
-[Parameter3]
-Name=Projet_Concepteur3
-Value=
-
-[Parameter4]
-Name=Projet_Concepteur4
-Value=
-
-[Parameter5]
-Name=Projet_Date
-Value=
-
-[Parameter6]
-Name=Projet_nom_du_cours
-Value=Cours (Numéro du cours)
-
-[Parameter7]
-Name=Projet_PCB_Rev
-Value=1
-
-[Parameter8]
-Name=Projet_SCH_Rev
-Value=00
-
-[Parameter9]
-Name=Projet_stencil_Bot_epaisseur
-Value=0.1 MM
-
-[Parameter10]
 Name=Projet_stencil_Top_epaisseur
 Value=0.1 MM
 
-[Parameter11]
-Name=Projet_Titre
+[Parameter3]
+Name=Projet_stencil_Bot_epaisseur
+Value=0.1 MM
+
+[Parameter4]
+Name=Projet_SCH_Rev
+Value=00
+
+[Parameter5]
+Name=Projet_PCB_Rev
+Value=1
+
+[Parameter6]
+Name=Projet_nom_du_cours
+Value=247-67P-SH PROJET DE FIN D'ÉTUDES
+
+[Parameter7]
+Name=Projet_Date
+Value=22-01-2025
+
+[Parameter8]
+Name=Projet_Concepteur2
 Value=
+
+[Parameter9]
+Name=Projet_Concepteur1
+Value=Lucas Lalumière Longpré
 
 [Configuration1]
 Name=Sources
