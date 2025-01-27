@@ -1,0 +1,19 @@
+Change Component Footprint: Designator=J1 Old Footprint=685119136923 New Footprint=685119136923
+Add Component: Footprint Not Found RES 0603_1608
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin S1-1
+Add Pin To Net: Unknown Pin: Pin S1-2
+Add Pin To Net: Unknown Pin: Pin S1-3
+Add Pin To Net: Unknown Pin: Pin S1-4
+Add Pin To Net: Unknown Pin: Pin S1-5
+Add Pin To Net: Unknown Pin: Pin S1-6
+Add Pin To Net: Unknown Pin: Pin S1-7
+Add Pin To Net: Unknown Pin: Pin S1-8
+Add Pin To Net: Unknown Pin: Pin S1-9
+Add Pin To Net: Unknown Pin: Pin S1-10
+Add Pin To Net: Unknown Pin: Pin S1-11
+Add Pin To Net: Unknown Pin: Pin S1-12
+Add Pin To Net: Unknown Pin: Pin S1-13
+Add Class Member: Failed to add class member : Component R1 0 Ohms
+Added Room: Name=Trottinette_Connexion_PCB

@@ -1,0 +1,188 @@
+Removed Member From Class: ClassName=Trottinette_Connexion_PCB Member=J?
+Added Component: Designator=J1(685119136923)
+Add component (AddParameter): Name = "Body Material"; Value = "Brass"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Connector Type"; Value = "HDMI"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Material"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Resistance"; Value = "30mO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating"; Value = "500mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Shielded"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gender"; Value = "Receptacle"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "3.45mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Insulation Resistance"; Value = "100MO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-25°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Horizontal, Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NexarPartId"; Value = "19499823"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Contacts"; Value = "19"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "19"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Positions"; Value = "19"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Voltage"; Value = "40V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Orientation"; Value = "Horizontal"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "REACH SVHC"; Value = "Unknown"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "40V"; VariantName = "[No Variations]"
+Added Component: Designator=MTH1(MTH_M3)
+Add component (AddParameter): Name = "Assembly Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly Type"; Value = "NONE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "MTH_M3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "https://littlemachineshop.com/images/gallery/PDF/TapDrillSizes.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "M3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Polarized"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Max"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "CEGEP_SHERBROOKE_TGE_LIBRARY.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=MTH2(MTH_M3_NON_PLATED)
+Add component (AddParameter): Name = "Assembly Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly Type"; Value = "NONE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "MTH_M3_NON_PLATED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "https://littlemachineshop.com/images/gallery/PDF/TapDrillSizes.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "M3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Polarized"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Max"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "CEGEP_SHERBROOKE_TGE_LIBRARY.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=MTH3(MTH_M3_NON_PLATED)
+Add component (AddParameter): Name = "Assembly Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly Type"; Value = "NONE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "MTH_M3_NON_PLATED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "https://littlemachineshop.com/images/gallery/PDF/TapDrillSizes.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "M3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Polarized"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Max"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "CEGEP_SHERBROOKE_TGE_LIBRARY.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=MTH4(MTH_M3_NON_PLATED)
+Add component (AddParameter): Name = "Assembly Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly Type"; Value = "NONE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "MTH_M3_NON_PLATED"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "https://littlemachineshop.com/images/gallery/PDF/TapDrillSizes.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "M3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Polarized"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Max"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "CEGEP_SHERBROOKE_TGE_LIBRARY.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=P1(HDR1X14)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P2(HDR1X4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found RES 0603_1608
+Added Component: Designator=R2(RESC1608X55X30LL15T15)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Panasonic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "ERJ3EKF30R0V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "30 Ohms"; VariantName = "[No Variations]"
+Added Component: Designator=S1(PCBComponent_1)
+Add component (AddParameter): Name = "Assembly Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly Type"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CreatedBy/Date"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Cryo"; Value = "UNKNOWN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "GRAMS Lib Spec"; Value = "3.2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Magnetic Material"; Value = "UNKNOWN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #2"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #2"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Polarized"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Max"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder Paste Type"; Value = "UNKNOWN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stencil Thickness (Recommended)"; Value = "UNKNOWN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VerifiedBy"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3V3 Pin=J1-9
+Added Pin To Net: NetName=3V3 Pin=P1-1
+Added Pin To Net: NetName=3V3 Pin=P1-8
+Added Net: Name=3V3
+Added Pin To Net: NetName=DC_PIN Pin=J1-5
+Added Pin To Net: NetName=DC_PIN Pin=P1-5
+Added Net: Name=DC_PIN
+Added Pin To Net: NetName=GND Pin=J1-16
+Added Pin To Net: NetName=GND Pin=J1-Shell
+Added Pin To Net: NetName=GND Pin=J1-Shell
+Added Pin To Net: NetName=GND Pin=J1-Shell
+Added Pin To Net: NetName=GND Pin=J1-Shell
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Net: Name=GND
+Added Pin To Net: NetName=IO1 Pin=J1-6
+Added Net: Name=IO1
+Added Pin To Net: NetName=IO2 Pin=J1-12
+Added Net: Name=IO2
+Added Pin To Net: NetName=IO3 Pin=J1-14
+Added Net: Name=IO3
+Added Pin To Net: NetName=IO4 Pin=J1-18
+Added Net: Name=IO4
+Added Pin To Net: NetName=IO5 Pin=J1-19
+Added Net: Name=IO5
+Added Pin To Net: NetName=NetJ1_8 Pin=J1-8
+Added Pin To Net: NetName=NetJ1_8 Pin=R2-1
+Added Net: Name=NetJ1_8
+Added Pin To Net: NetName=NetMTH1_1 Pin=MTH1-1
+Added Net: Name=NetMTH1_1
+Added Pin To Net: NetName=RST_PIN Pin=J1-3
+Added Pin To Net: NetName=RST_PIN Pin=P1-4
+Added Net: Name=RST_PIN
+Added Pin To Net: NetName=SPI_CS Pin=J1-2
+Added Pin To Net: NetName=SPI_CS Pin=P1-3
+Added Net: Name=SPI_CS
+Added Pin To Net: NetName=SPI_MISO Pin=J1-15
+Added Pin To Net: NetName=SPI_MISO Pin=P1-9
+Added Pin To Net: NetName=SPI_MISO Pin=P1-13
+Added Net: Name=SPI_MISO
+Added Pin To Net: NetName=SPI_MOSI Pin=P1-6
+Added Pin To Net: NetName=SPI_MOSI Pin=P1-12
+Added Pin To Net: NetName=SPI_MOSI Pin=R2-2
+Added Net: Name=SPI_MOSI
+Added Pin To Net: NetName=SPI_SCK Pin=J1-11
+Added Pin To Net: NetName=SPI_SCK Pin=P1-7
+Added Pin To Net: NetName=SPI_SCK Pin=P1-10
+Added Net: Name=SPI_SCK
+Added Pin To Net: NetName=T_CS Pin=J1-17
+Added Pin To Net: NetName=T_CS Pin=P1-11
+Added Net: Name=T_CS
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component J1 685119136923
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component MTH1 MTH_M3
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component MTH2 MTH_M3_NON_PLATED
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component MTH3 MTH_M3_NON_PLATED
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component MTH4 MTH_M3_NON_PLATED
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component P1 Header 14
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component P2 Header 4
+Add Class Member: Failed to add class member : Component R1 0 Ohms
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component R2 ERJ3EKF30R0V
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component S1 ILI9341
+Added Room: Name=Trottinette_Connexion_PCB
