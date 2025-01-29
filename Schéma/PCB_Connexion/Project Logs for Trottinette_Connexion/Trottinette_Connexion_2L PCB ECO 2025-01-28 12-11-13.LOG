@@ -1,0 +1,46 @@
+Add Component: Footprint Not Found CAP 0603_1608
+Add Component: Footprint Not Found CAP ALSMD 6.6MM H6.1MM
+Add Component: Footprint Not Found CAP 0603_1608
+Add Component: Footprint Not Found CAP ALSMD 6.6MM H6.1MM
+Add Component: Footprint Not Found RES 0603_1608
+Add Component: Footprint Not Found RES 0603_1608
+Add Component: Footprint Not Found RES 0603_1608
+Add Pin To Net: Unknown Pin: Pin C2-1
+Add Pin To Net: Unknown Pin: Pin C2-2
+Add Pin To Net: Unknown Pin: Pin C3-1
+Add Pin To Net: Unknown Pin: Pin C3-2
+Add Pin To Net: Unknown Pin: Pin C4-1
+Add Pin To Net: Unknown Pin: Pin C4-2
+Add Pin To Net: Unknown Pin: Pin C5-1
+Add Pin To Net: Unknown Pin: Pin C5-2
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin R3-1
+Add Pin To Net: Unknown Pin: Pin R3-2
+Add Pin To Net: Unknown Pin: Pin R4-1
+Add Pin To Net: Unknown Pin: Pin R4-2
+Add Pin To Net: Unknown Pin: Pin S1-1
+Add Pin To Net: Unknown Pin: Pin S1-2
+Add Pin To Net: Unknown Pin: Pin S1-3
+Add Pin To Net: Unknown Pin: Pin S1-4
+Add Pin To Net: Unknown Pin: Pin S1-5
+Add Pin To Net: Unknown Pin: Pin S1-6
+Add Pin To Net: Unknown Pin: Pin S1-7
+Add Pin To Net: Unknown Pin: Pin S1-8
+Add Pin To Net: Unknown Pin: Pin S1-9
+Add Pin To Net: Unknown Pin: Pin S1-10
+Add Pin To Net: Unknown Pin: Pin S1-11
+Add Pin To Net: Unknown Pin: Pin S1-12
+Add Pin To Net: Unknown Pin: Pin S1-13
+Add Pin To Net: Unknown Pin: Pin S1-15
+Add Pin To Net: Unknown Pin: Pin S1-16
+Add Pin To Net: Unknown Pin: Pin S1-17
+Add Pin To Net: Unknown Pin: Pin S1-18
+Add Class Member: Failed to add class member : Component C2 10 µF
+Add Class Member: Failed to add class member : Component C3 100 µF
+Add Class Member: Failed to add class member : Component C4 10 µF
+Add Class Member: Failed to add class member : Component C5 100 µF
+Add Class Member: Failed to add class member : Component R1 0 Ohms
+Add Class Member: Failed to add class member : Component R3 180 Ohms
+Add Class Member: Failed to add class member : Component R4 300 Ohms
+Added Room: Name=Trottinette_Connexion_PCB

@@ -1,0 +1,117 @@
+Removed Pin From Net: NetName=3V3 Pin=J1-9
+Change Component DesignItemId : Designator=MTH1 Old DesignItemId=CMP-006-000008-1 New DesignItemId=CMP-006-000008-2
+Change Component DesignItemId : Designator=MTH2 Old DesignItemId=CMP-006-000010-1 New DesignItemId=CMP-006-000010-2
+Change Component DesignItemId : Designator=MTH3 Old DesignItemId=CMP-006-000010-1 New DesignItemId=CMP-006-000010-2
+Change Component DesignItemId : Designator=MTH4 Old DesignItemId=CMP-006-000010-1 New DesignItemId=CMP-006-000010-2
+Change Component Footprint: Designator=MTH1 Old Footprint=MTH_M3 New Footprint=MTH_M3
+Change Component Footprint: Designator=MTH2 Old Footprint=MTH_M3_NON_PLATED New Footprint=MTH_M3_NON_PLATED
+Change Component Footprint: Designator=MTH3 Old Footprint=MTH_M3_NON_PLATED New Footprint=MTH_M3_NON_PLATED
+Change Component Footprint: Designator=MTH4 Old Footprint=MTH_M3_NON_PLATED New Footprint=MTH_M3_NON_PLATED
+Change Component Designator: OldDesignator=R? NewDesignator=R2
+Change Managed Component Library Link : Designator=MTH1 Old VaultGUID=8051A890-20B5-4808-9216-C54EAAAEFA7E New VaultGUID=8051A890-20B5-4808-9216-C54EAAAEFA7E Old ItemGUID=3AEF4EEE-9A2B-45D5-BA47-E0CE6D7A8F08 New ItemGUID=3AEF4EEE-9A2B-45D5-BA47-E0CE6D7A8F08 Old RevisionGUID=C4D65B28-16E2-4081-B07B-BA98375A9F8E New RevisionGUID=c1a972b3-10ca-4d4e-99b3-ebb449180616
+Change Managed Component Library Link : Designator=MTH2 Old VaultGUID=8051A890-20B5-4808-9216-C54EAAAEFA7E New VaultGUID=8051A890-20B5-4808-9216-C54EAAAEFA7E Old ItemGUID=FA5ACB1B-E86D-4D82-B58B-23F7175B41E2 New ItemGUID=FA5ACB1B-E86D-4D82-B58B-23F7175B41E2 Old RevisionGUID=5ED66AB9-B5CC-441E-975A-552E7EA32FA4 New RevisionGUID=5199cb5f-935f-43f0-902b-90ac1db3674c
+Change Managed Component Library Link : Designator=MTH3 Old VaultGUID=8051A890-20B5-4808-9216-C54EAAAEFA7E New VaultGUID=8051A890-20B5-4808-9216-C54EAAAEFA7E Old ItemGUID=FA5ACB1B-E86D-4D82-B58B-23F7175B41E2 New ItemGUID=FA5ACB1B-E86D-4D82-B58B-23F7175B41E2 Old RevisionGUID=5ED66AB9-B5CC-441E-975A-552E7EA32FA4 New RevisionGUID=5199cb5f-935f-43f0-902b-90ac1db3674c
+Change Managed Component Library Link : Designator=MTH4 Old VaultGUID=8051A890-20B5-4808-9216-C54EAAAEFA7E New VaultGUID=8051A890-20B5-4808-9216-C54EAAAEFA7E Old ItemGUID=FA5ACB1B-E86D-4D82-B58B-23F7175B41E2 New ItemGUID=FA5ACB1B-E86D-4D82-B58B-23F7175B41E2 Old RevisionGUID=5ED66AB9-B5CC-441E-975A-552E7EA32FA4 New RevisionGUID=5199cb5f-935f-43f0-902b-90ac1db3674c
+Added Component: Designator=C1(FP-0603-L_1_6_0_15-W_0_81-IPC_B)
+Add component (AddParameter): Name = "Capacitance"; Value = "0.1 µF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Imperial)"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case Code (Metric)"; Value = "1608"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Construction"; Value = "Flat"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Depth"; Value = "0.81mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Dielectric"; Value = "X7R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Pitch"; Value = "0.014inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Length"; Value = "1.6mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "125°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "4000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Termination"; Value = "SMD/SMT"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Thickness"; Value = "0.035inch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = "10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating (DC)"; Value = "10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Width"; Value = "0.032inch"; VariantName = "[No Variations]"
+Add Component: Footprint Not Found CAP 0603_1608
+Add Component: Footprint Not Found CAP ALSMD 6.6MM H6.1MM
+Add Component: Footprint Not Found CAP 0603_1608
+Add Component: Footprint Not Found CAP ALSMD 6.6MM H6.1MM
+Add Component: Footprint Not Found RES 0603_1608
+Add Component: Footprint Not Found RES 0603_1608
+Add Component: Footprint Not Found RES 0603_1608
+Added Component: Designator=U1(MP04A_N)
+Add component (AddParameter): Name = "Code_IPC"; Value = "SOT223-4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Code_JEDEC"; Value = "TO-261-AA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.national.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "LM1117 Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.national.com/ds/LM/LM1117.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "LM1117 Web Page"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "http://www.national.com/pf/LM/LM1117.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4Description"; Value = "MP04A Package Page"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4URL"; Value = "http://www.national.com/packaging/folders/mp04a.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompType"; Value = "LDO IC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "DatasheetVersion"; Value = "Apr-2006"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "High-Reliability"; Value = "Y"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "National Semiconductor"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Molded SOT-223, 6.50 x 3.56 x 1.6mm Body, 4 Lead, 2.3mm Pitch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "MP04A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageTopMarking"; Value = "XYTT*N03A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageVersion"; Value = "revB, Apr-2003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "LM1117MPX-ADJ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = "4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PowerWise"; Value = "N"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RevisionNote"; Value = "SCH symbol layout adjusted"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "N"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=C1-2
+Add Pin To Net: Unknown Pin: Pin C2-1
+Add Pin To Net: Unknown Pin: Pin C3-1
+Add Pin To Net: Unknown Pin: Pin C3-2
+Add Pin To Net: Unknown Pin: Pin C4-1
+Add Pin To Net: Unknown Pin: Pin R1-1
+Add Pin To Net: Unknown Pin: Pin R1-2
+Add Pin To Net: Unknown Pin: Pin R3-2
+Add Pin To Net: Unknown Pin: Pin R4-2
+Add Pin To Net: Unknown Pin: Pin S1-1
+Add Pin To Net: Unknown Pin: Pin S1-2
+Add Pin To Net: Unknown Pin: Pin S1-3
+Add Pin To Net: Unknown Pin: Pin S1-4
+Add Pin To Net: Unknown Pin: Pin S1-5
+Add Pin To Net: Unknown Pin: Pin S1-6
+Add Pin To Net: Unknown Pin: Pin S1-7
+Add Pin To Net: Unknown Pin: Pin S1-8
+Add Pin To Net: Unknown Pin: Pin S1-9
+Add Pin To Net: Unknown Pin: Pin S1-10
+Add Pin To Net: Unknown Pin: Pin S1-11
+Add Pin To Net: Unknown Pin: Pin S1-12
+Add Pin To Net: Unknown Pin: Pin S1-13
+Add Pin To Net: Unknown Pin: Pin S1-15
+Add Pin To Net: Unknown Pin: Pin S1-16
+Add Pin To Net: Unknown Pin: Pin S1-17
+Add Pin To Net: Unknown Pin: Pin S1-18
+Added Pin To Net: NetName=3V3 Pin=U1-2
+Added Pin To Net: NetName=3V3 Pin=U1-4
+Added Pin To Net: NetName=5V0 Pin=C1-1
+Added Pin To Net: NetName=5V0 Pin=U1-3
+Added Net: Name=5V0
+Added Pin To Net: NetName=NetC4_2 Pin=U1-1
+Added Net: Name=NetC4_2
+Added Pin To Net: NetName=NetC5_2 Pin=J1-9
+Added Net: Name=NetC5_2
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component C1 0603ZC104MAT2A
+Add Class Member: Failed to add class member : Component C2 10 µF
+Add Class Member: Failed to add class member : Component C3 100 µF
+Add Class Member: Failed to add class member : Component C4 10 µF
+Add Class Member: Failed to add class member : Component C5 100 µF
+Add Class Member: Failed to add class member : Component R1 0 Ohms
+Add Class Member: Failed to add class member : Component R3 180 Ohms
+Add Class Member: Failed to add class member : Component R4 300 Ohms
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component U1 LM1117MPX-ADJ
+Added Room: Name=Trottinette_Connexion_PCB
+Added Room: Name=Trottinette_Connexion_Title
