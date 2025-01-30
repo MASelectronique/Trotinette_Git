@@ -1,0 +1,16 @@
+Change Physical Footprint: Designator=C1 Old Footprint=FP-0603-L_1_6_0_15-W_0_81-IPC_B New Footprint=FP-0603-L_1_6_0_15-W_0_81-IPC_B
+Change Physical Footprint: Designator=C2 Old Footprint=CAP 0603_1608 New Footprint=CAP 0603_1608
+Change Physical Footprint: Designator=C3 Old Footprint=CAP ALSMD 6.6MM H6.1MM New Footprint=CAP ALSMD 6.6MM H6.1MM
+Change Physical Footprint: Designator=C4 Old Footprint=CAP 0603_1608 New Footprint=CAP 0603_1608
+Change Physical Footprint: Designator=C5 Old Footprint=CAP ALSMD 6.6MM H6.1MM New Footprint=CAP ALSMD 6.6MM H6.1MM
+Change Physical Footprint: Designator=J1 Old Footprint=685119136923 New Footprint=685119136923
+Change Physical Footprint: Designator=MTH1 Old Footprint=MTH_M3 New Footprint=MTH_M3
+Change Physical Footprint: Designator=MTH2 Old Footprint=MTH_M3_NON_PLATED New Footprint=MTH_M3_NON_PLATED
+Change Physical Footprint: Designator=MTH3 Old Footprint=MTH_M3_NON_PLATED New Footprint=MTH_M3_NON_PLATED
+Change Physical Footprint: Designator=MTH4 Old Footprint=MTH_M3_NON_PLATED New Footprint=MTH_M3_NON_PLATED
+Change Physical Footprint: Designator=R1 Old Footprint=RES 0603_1608 New Footprint=RES 0603_1608
+Change Physical Footprint: Designator=R2 Old Footprint=RESC1608X55X30LL15T15 New Footprint=RESC1608X55X30LL15T15
+Change Physical Footprint: Designator=R3 Old Footprint=RES 0603_1608 New Footprint=RES 0603_1608
+Change Physical Footprint: Designator=R4 Old Footprint=RES 0603_1608 New Footprint=RES 0603_1608
+Change Physical Footprint: Cannot match pads with new footprint in component :S1 Footprint:PCBComponent_1
+Change Physical Footprint: Designator=U1 Old Footprint=MP04A_N New Footprint=MP04A_N

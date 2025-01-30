@@ -1,0 +1,46 @@
+Added Component: Designator=S1(PCBComponent_1)
+Add component (AddParameter): Name = "Assembly Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly Type"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CreatedBy/Date"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Cryo"; Value = "UNKNOWN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "GRAMS Lib Spec"; Value = "3.2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Magnetic Material"; Value = "UNKNOWN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #2"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #2"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Polarized"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Max"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder Paste Type"; Value = "UNKNOWN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stencil Thickness (Recommended)"; Value = "UNKNOWN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VerifiedBy"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3V3 Pin=S1-1
+Added Pin To Net: NetName=GND Pin=S1-2
+Added Pin To Net: NetName=SPI_CS Pin=S1-3
+Added Pin To Net: NetName=RST_PIN Pin=S1-4
+Added Pin To Net: NetName=DC_PIN Pin=S1-5
+Added Pin To Net: NetName=SPI_MOSI Pin=S1-6
+Added Pin To Net: NetName=SPI_SCK Pin=S1-7
+Added Pin To Net: NetName=LED Pin=S1-8
+Added Pin To Net: NetName=SPI_MISO Pin=S1-9
+Added Pin To Net: NetName=SPI_SCK Pin=S1-10
+Added Pin To Net: NetName=T_CS Pin=S1-11
+Added Pin To Net: NetName=SPI_MOSI Pin=S1-12
+Added Pin To Net: NetName=SPI_MISO Pin=S1-13
+Added Pin To Net: NetName=SD_CS Pin=S1-15
+Added Pin To Net: NetName=SPI_MISO Pin=S1-16
+Added Pin To Net: NetName=SPI_MOSI Pin=S1-17
+Added Pin To Net: NetName=SPI_SCK Pin=S1-18
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component S1 ILI9341
+Added Room: Name=Trottinette_Connexion_PCB
+Added Room: Name=Trottinette_Connexion_Title
