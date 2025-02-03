@@ -124,23 +124,6 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document5]
-DocumentPath=TEMPLATE_Connectors.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=RZCCZDSK
-
-[Document6]
 DocumentPath=TEMPLATE_PCB_2L.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -157,41 +140,75 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GNYTCPOA
 
+[Document6]
+DocumentPath=TEMPLATE_Connectors.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=3
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=NHBFDCGX
+
+[Document7]
+DocumentPath=TEMPLATE_Connectors.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [Parameter1]
-Name=Projet_Concepteur1
-Value=Lucas Lalumière Longpré
+Name=Projet_Titre
+Value=Trottinette - Module de télémétrie
 
 [Parameter2]
-Name=Projet_Concepteur2
-Value=
+Name=Projet_stencil_Top_epaisseur
+Value=0.1 MM
 
 [Parameter3]
-Name=Projet_Date
-Value=22-01-2025
+Name=Projet_stencil_Bot_epaisseur
+Value=0.1 MM
 
 [Parameter4]
-Name=Projet_nom_du_cours
-Value=247-67P-SH PROJET DE FIN D'ÉTUDES
+Name=Projet_SCH_Rev
+Value=00
 
 [Parameter5]
 Name=Projet_PCB_Rev
 Value=1
 
 [Parameter6]
-Name=Projet_SCH_Rev
-Value=00
+Name=Projet_nom_du_cours
+Value=247-67P-SH PROJET DE FIN D'ÉTUDES
 
 [Parameter7]
-Name=Projet_stencil_Bot_epaisseur
-Value=0.1 MM
+Name=Projet_Date
+Value=22-01-2025
 
 [Parameter8]
-Name=Projet_stencil_Top_epaisseur
-Value=0.1 MM
+Name=Projet_Concepteur2
+Value=Marc-Antoine Sauvé
 
 [Parameter9]
-Name=Projet_Titre
-Value=Trottinette - Module de télémétrie
+Name=Projet_Concepteur1
+Value=Lucas Lalumière Longpré
 
 [Configuration1]
 Name=Sources
