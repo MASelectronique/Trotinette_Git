@@ -141,6 +141,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DQIBRSHB
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Trottinette_Connexion\Design Rule Check - Trottinette_Connexion_2L.html
+DItemRevisionGUID=
+
 [Parameter1]
 Name=Projet_Concepteur1
 Value=Marc-Antoine Sauvé

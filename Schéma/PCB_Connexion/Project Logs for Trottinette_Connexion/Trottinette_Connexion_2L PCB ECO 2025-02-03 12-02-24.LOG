@@ -1,0 +1,22 @@
+Added Component: Designator=Q1(FP-SOT23-MFG)
+Add component (AddParameter): Name = "Case/Package"; Value = "TO-236-3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Continuous Drain Current (ID)"; Value = "1.5A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Drain to Source Voltage (Vdss)"; Value = "60V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Input Capacitance"; Value = "206pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "150°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Power Dissipation"; Value = "720mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rds On Max"; Value = "350mR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS Compliant"; Value = "Yes"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3V3 Pin=Q1-3
+Added Pin To Net: NetName=LED_ALIM Pin=Q1-2
+Added Pin To Net: NetName=LED_ALIM Pin=S1-8
+Added Net: Name=LED_ALIM
+Added Pin To Net: NetName=LED_CONTROL Pin=J1-12
+Added Pin To Net: NetName=LED_CONTROL Pin=Q1-1
+Added Net: Name=LED_CONTROL
+Added Member To Class: ClassName=Trottinette_Connexion_PCB Member=Component Q1 DMP6350S-7
+Added Room: Name=Trottinette_Connexion_PCB
+Added Room: Name=Trottinette_Connexion_Title

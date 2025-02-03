@@ -1,0 +1,466 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD22\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2025-02-03</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:52:55</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc" class="file"><acronym title="E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc">E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">38</td></tr>
+</table>
+</td>
+</table><a name="IDWIV4MTROCMUOCME2TPHWQITA5BGUGF3E3H2EOIGDZIPYMRDXRIL"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5PDSSJJVD23MJUDWPLM0AERCZBZ2I1FEG5WSC5MZ2MJEOKDJC4JC">Clearance Constraint (Gap=6mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2YPZ0FXLJPNMJWQB1V5Y0CPWQJRTW0VKD2OOBHE10I4I45C3NQLE">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNO2RZNCV4DFGKX5E2SVIU0IGPHVEZCJBYWJSYROPC0JHFFIDML2M">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDALSE0BJOHDLYD2GMOYT3HMDFTEZMBQI0MSZUHACAOLRJIIQISWQI">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDF2QFWTBAHRNWLVNBLVSU2WKFFCXNMOSH2XQRBMLFJZ3JKVUMAASF">Width Constraint (Min=5mil) (Max=1000mil) (Preferred=6mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDS2W1L3XU0XICJUSTTHR3VHEU5HGXJDVYFRALCQKSVPO5NSPGB22G">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDM1ZLNNVE3HMRB044SAPG3IVKLGRB1UZCGYKU5LKHN2JUZB5MKGQD">Minimum Annular Ring (Minimum=5.118mil) (All)</a></td>
+<td class="column2">12</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4MJABHHDVUZ4CO5GKFJONHJQXIRMVYBR2CA5PFRSVGHHEYHIT1J">Hole Size Constraint (Min=11.811mil) (Max=248.031mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSVPNACUMLWO2DGOLWZ3BYEL2CHEUE4UYKVLMTDPRYG1HFOO3Y4WO">Hole To Hole Clearance (Gap=19.685mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMS54DFTCOFYMCE1KCLA4BNGMRH53ZLMHYM2T1CFLTCAR1H2MP5IC">Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAIA54QLMRKTTI2P4DSSF1JU5QCD03X0HKFLJAPPALVONC4ZCPJY">Silk To Solder Mask (Clearance=0.945mil) (IsPad),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDC2XXHKSKPNHXOOYT0KATQLM11ACR4K1CEZV3ZPXTOFKRNQU4JXB">Silk to Silk (Clearance=4mil) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPHWIP1XZSGPRIE0QQ2IG1NWNXIAQ2WAM4LSSVTM4S5LBKG00JS0O">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDH3PNUCNY5ZPLBXQ43V3P0MRR1LPC25A0B2JLVEJR5FLVMXA0BZJL">Board Clearance Constraint (Gap=0mil) (All)</a></td>
+<td class="column2">20</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTZYOWW2IA0W1PEZN3QYCYT4HZO4F4WSGYZXATIJJTZ45UN0BPAG">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">38</td>
+</tr>
+</table><br><a name="IDM1ZLNNVE3HMRB044SAPG3IVKLGRB1UZCGYKU5LKHN2JUZB5MKGQD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Annular Ring (Minimum=5.118mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23160.32mil|Location2.X=23166.688mil|Location1.Y=18897.997mil|Location2.Y=18904.365mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23160.32mil|Location2.X=23166.688mil|Location1.Y=18897.997mil|Location2.Y=18904.365mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (1037.874mil,1595.827mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23289.462mil|Location2.X=23295.83mil|Location1.Y=17824.928mil|Location2.Y=17831.296mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23289.462mil|Location2.X=23295.83mil|Location1.Y=17824.928mil|Location2.Y=17831.296mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (1167.016mil,522.757mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23369.298mil|Location2.X=23375.666mil|Location1.Y=18871.422mil|Location2.Y=18877.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23369.298mil|Location2.X=23375.666mil|Location1.Y=18871.422mil|Location2.Y=18877.79mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (1246.852mil,1569.252mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23686.619mil|Location2.X=23692.987mil|Location1.Y=18567.112mil|Location2.Y=18573.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23686.619mil|Location2.X=23692.987mil|Location1.Y=18567.112mil|Location2.Y=18573.48mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (1564.173mil,1264.941mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23686.619mil|Location2.X=23692.987mil|Location1.Y=18666.044mil|Location2.Y=18672.412mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23686.619mil|Location2.X=23692.987mil|Location1.Y=18666.044mil|Location2.Y=18672.412mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (1564.173mil,1363.874mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22318.344mil|Location2.X=22324.713mil|Location1.Y=18204.978mil|Location2.Y=18211.346mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22318.344mil|Location2.X=22324.713mil|Location1.Y=18204.978mil|Location2.Y=18211.346mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (195.899mil,902.808mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22401.074mil|Location2.X=22407.442mil|Location1.Y=18196.013mil|Location2.Y=18202.381mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22401.074mil|Location2.X=22407.442mil|Location1.Y=18196.013mil|Location2.Y=18202.381mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (278.628mil,893.842mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22481.68mil|Location2.X=22488.048mil|Location1.Y=18320.761mil|Location2.Y=18327.129mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22481.68mil|Location2.X=22488.048mil|Location1.Y=18320.761mil|Location2.Y=18327.129mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (359.234mil,1018.59mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22487.333mil|Location2.X=22493.701mil|Location1.Y=18261.658mil|Location2.Y=18268.026mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22487.333mil|Location2.X=22493.701mil|Location1.Y=18261.658mil|Location2.Y=18268.026mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (364.887mil,959.488mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22570.953mil|Location2.X=22577.321mil|Location1.Y=21329.74mil|Location2.Y=21336.108mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22570.953mil|Location2.X=22577.321mil|Location1.Y=21329.74mil|Location2.Y=21336.108mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (448.507mil,4027.57mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22915.539mil|Location2.X=22921.907mil|Location1.Y=18567.112mil|Location2.Y=18573.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22915.539mil|Location2.X=22921.907mil|Location1.Y=18567.112mil|Location2.Y=18573.48mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (793.093mil,1264.941mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22927.237mil|Location2.X=22933.605mil|Location1.Y=18485.123mil|Location2.Y=18491.491mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22927.237mil|Location2.X=22933.605mil|Location1.Y=18485.123mil|Location2.Y=18491.491mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (804.791mil,1182.953mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDAIA54QLMRKTTI2P4DSSF1JU5QCD03X0HKFLJAPPALVONC4ZCPJY"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.945mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22320.862mil|Location2.X=22322.492mil|Location1.Y=21108.762mil|Location2.Y=21110.392mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22320.862mil|Location2.X=22322.492mil|Location1.Y=21108.762mil|Location2.Y=21110.392mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.945mil) Between Pad MTH1-1(196.85mil,3937.008mil) on Multi-Layer And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22321.665mil|Location2.X=22323.295mil|Location1.Y=21108.762mil|Location2.Y=21110.392mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22321.665mil|Location2.X=22323.295mil|Location1.Y=21108.762mil|Location2.Y=21110.392mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.945mil) Between Pad MTH1-1(196.85mil,3937.008mil) on Multi-Layer And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDC2XXHKSKPNHXOOYT0KATQLM11ACR4K1CEZV3ZPXTOFKRNQU4JXB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=4mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22325.713mil|Location2.X=22330.963mil|Location1.Y=18823.698mil|Location2.Y=18828.948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22325.713mil|Location2.X=22330.963mil|Location1.Y=18823.698mil|Location2.Y=18828.948mil|Absolute=True">Silk To Silk Clearance Constraint: (3.323mil &lt; 4mil) Between Text "C5" (207.37mil,1495.52mil) on Top Overlay And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [3.323mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21071.592mil|Location2.X=21075.258mil|Location1.Y=19124.269mil|Location2.Y=19127.936mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21071.592mil|Location2.X=21075.258mil|Location1.Y=19124.269mil|Location2.Y=19127.936mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "PCB REV #" (-854.37mil,1828.622mil) on Bottom Overlay And Track (-1051.22mil,1712.48mil)(-1051.22mil,1872.913mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21072.576mil|Location2.X=21076.243mil|Location1.Y=19168.56mil|Location2.Y=19172.227mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21072.576mil|Location2.X=21076.243mil|Location1.Y=19168.56mil|Location2.Y=19172.227mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "PCB REV #" (-854.37mil,1828.622mil) on Bottom Overlay And Track (-1051.22mil,1872.913mil)(-854.37mil,1872.913mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21269.427mil|Location2.X=21273.093mil|Location1.Y=19124.269mil|Location2.Y=19127.936mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21269.427mil|Location2.X=21273.093mil|Location1.Y=19124.269mil|Location2.Y=19127.936mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "PCB REV #" (-854.37mil,1828.622mil) on Bottom Overlay And Track (-854.37mil,1712.48mil)(-854.37mil,1872.913mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDH3PNUCNY5ZPLBXQ43V3P0MRR1LPC25A0B2JLVEJR5FLVMXA0BZJL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21409.209mil|Location2.X=21415.458mil|Location1.Y=19064.907mil|Location2.Y=19071.156mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21409.209mil|Location2.X=21415.458mil|Location1.Y=19064.907mil|Location2.Y=19071.156mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Area Fill (-812.203mil,1712.48mil) (-614.39mil,1828.622mil) on Bottom Overlay And Board Edge </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21517.901mil|Location2.X=21524.15mil|Location1.Y=20046.123mil|Location2.Y=20052.372mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21517.901mil|Location2.X=21524.15mil|Location1.Y=20046.123mil|Location2.Y=20052.372mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text ".Projet_Concepteur1
+" (-395mil,2695mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21445.577mil|Location2.X=21451.826mil|Location1.Y=19877.793mil|Location2.Y=19884.042mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21445.577mil|Location2.X=21451.826mil|Location1.Y=19877.793mil|Location2.Y=19884.042mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text ".Projet_Concepteur2
+" (-385mil,2520mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21436.589mil|Location2.X=21442.839mil|Location1.Y=20386.352mil|Location2.Y=20392.601mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21436.589mil|Location2.X=21442.839mil|Location1.Y=20386.352mil|Location2.Y=20392.601mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text ".Projet_Date" (-425mil,3080mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21166.455mil|Location2.X=21172.704mil|Location1.Y=20584.236mil|Location2.Y=20590.486mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21166.455mil|Location2.X=21172.704mil|Location1.Y=20584.236mil|Location2.Y=20590.486mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text ".Projet_nom_du_cours
+" (-416.05mil,3170mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21169.218mil|Location2.X=21175.467mil|Location1.Y=19061.954mil|Location2.Y=19068.203mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21169.218mil|Location2.X=21175.467mil|Location1.Y=19061.954mil|Location2.Y=19068.203mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text ".Projet_PCB_Rev" (-586.792mil,1712.598mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21122.505mil|Location2.X=21128.754mil|Location1.Y=20754.356mil|Location2.Y=20760.605mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21122.505mil|Location2.X=21128.754mil|Location1.Y=20754.356mil|Location2.Y=20760.605mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text ".Projet_Titre" (-416.05mil,3402.88mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21112.505mil|Location2.X=21118.754mil|Location1.Y=21094.356mil|Location2.Y=21100.605mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21112.505mil|Location2.X=21118.754mil|Location1.Y=21094.356mil|Location2.Y=21100.605mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text "0" (-412.122mil,3630.096mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21557.901mil|Location2.X=21564.15mil|Location1.Y=20177.671mil|Location2.Y=20183.92mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21557.901mil|Location2.X=21564.15mil|Location1.Y=20177.671mil|Location2.Y=20183.92mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text "Conçu par :
+" (-355mil,2850mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20497.932mil|Location2.X=20504.181mil|Location1.Y=19561.004mil|Location2.Y=19567.253mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=20497.932mil|Location2.X=20504.181mil|Location1.Y=19561.004mil|Location2.Y=19567.253mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text "JLCJLCJLCJLC" (-1440.905mil,2250.905mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21169.218mil|Location2.X=21175.467mil|Location1.Y=19145.123mil|Location2.Y=19151.373mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21169.218mil|Location2.X=21175.467mil|Location1.Y=19145.123mil|Location2.Y=19151.373mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text "PCB REV #" (-854.37mil,1828.622mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21409.71mil|Location2.X=21415.959mil|Location1.Y=19145.104mil|Location2.Y=19151.353mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21409.71mil|Location2.X=21415.959mil|Location1.Y=19145.104mil|Location2.Y=19151.353mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Text "SERIAL #" (-636.537mil,1838.154mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21071.285mil|Location2.X=21077.534mil|Location1.Y=19087.053mil|Location2.Y=19093.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21071.285mil|Location2.X=21077.534mil|Location1.Y=19087.053mil|Location2.Y=19093.302mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-1051.22mil,1712.48mil)(-1051.22mil,1872.913mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21169.71mil|Location2.X=21175.959mil|Location1.Y=19006.836mil|Location2.Y=19013.085mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21169.71mil|Location2.X=21175.959mil|Location1.Y=19006.836mil|Location2.Y=19013.085mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-1051.22mil,1712.48mil)(-854.37mil,1712.48mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21169.71mil|Location2.X=21175.959mil|Location1.Y=19167.269mil|Location2.Y=19173.518mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21169.71mil|Location2.X=21175.959mil|Location1.Y=19167.269mil|Location2.Y=19173.518mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-1051.22mil,1872.913mil)(-854.37mil,1872.913mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21508.135mil|Location2.X=21514.384mil|Location1.Y=19087.053mil|Location2.Y=19093.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21508.135mil|Location2.X=21514.384mil|Location1.Y=19087.053mil|Location2.Y=19093.302mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-614.37mil,1712.48mil)(-614.37mil,1872.913mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21409.71mil|Location2.X=21415.959mil|Location1.Y=19006.836mil|Location2.Y=19013.085mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21409.71mil|Location2.X=21415.959mil|Location1.Y=19006.836mil|Location2.Y=19013.085mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-811.221mil,1712.48mil)(-614.37mil,1712.48mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21311.285mil|Location2.X=21317.534mil|Location1.Y=19087.053mil|Location2.Y=19093.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21311.285mil|Location2.X=21317.534mil|Location1.Y=19087.053mil|Location2.Y=19093.302mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-811.221mil,1712.48mil)(-811.221mil,1872.913mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21409.71mil|Location2.X=21415.959mil|Location1.Y=19167.269mil|Location2.Y=19173.518mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21409.71mil|Location2.X=21415.959mil|Location1.Y=19167.269mil|Location2.Y=19173.518mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-811.221mil,1872.913mil)(-614.37mil,1872.913mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Sch%C3%A9ma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21268.135mil|Location2.X=21274.384mil|Location1.Y=19087.053mil|Location2.Y=19093.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=21268.135mil|Location2.X=21274.384mil|Location1.Y=19087.053mil|Location2.Y=19093.302mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 7.874mil) Between Board Edge And Track (-854.37mil,1712.48mil)(-854.37mil,1872.913mil) on Bottom Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
