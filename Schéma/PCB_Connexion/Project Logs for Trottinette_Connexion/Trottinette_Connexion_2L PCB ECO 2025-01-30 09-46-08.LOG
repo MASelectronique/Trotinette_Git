@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=SPI_MISO Pin=R2-1
+Removed Pin From Net: NetName=NetJ1_15 Pin=R2-2
+Change Component Footprint: Designator=R2 Old Footprint=KOA RES RK73 RN73 0603_1608 New Footprint=RESC1608X55X30LL15T15
+Change Component Comment : Designator=R2 Old Comment=30 Ohms New Comment=ERJ3EKF30R0V
+Change Managed Component Library Link : Designator=R2 Old VaultGUID= New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID= New ItemGUID=F9BE7E94-E2E5-4A53-80CB-157F5AF8C86B Old RevisionGUID= New RevisionGUID=1B85F463-1D33-409D-8979-57645B84201A
+Change component parameters: Designator = "R2" ("R2"); Footprint = "KOA RES RK73 RN73 0603_1608"; UniqueID = "\VETIAZQK" ("\VETIAZQK")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Panasonic"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "ERJ3EKF30R0V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "1%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "30ohm"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetJ1_15 Pin=R2-1
+Added Pin To Net: NetName=SPI_MISO Pin=R2-2

@@ -62,7 +62,7 @@ void setup() {
   Serial.begin(115200);
 
   tft.init();	//Initialise l'écran tactile
-  tft.setRotation(0); //Écran en mode vertical
+  tft.setRotation(0); // 0 = (0,0) en haut à gauche/ 1 = (0,0) est bas à gauche/ 2 = (0,0) est haut à droite / 3 = en bas à droite
   //Vide l'écran et met la couleur de la police à noir
   tft.fillScreen(TFT_WHITE);
   tft.setTextColor(TFT_BLACK, TFT_WHITE);
