@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc
-Date     : 2025-02-03
-Time     : 12:52:55
+Date     : 2025-02-04
+Time     : 11:33:03
 
 Processing Rule : Clearance Constraint (Gap=6mil) (All),(All)
 Rule Violations :0
@@ -10,7 +10,8 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-Rule Violations :0
+   Violation between Un-Routed Net Constraint: Polygon  (NONET_L02_P006) on Bottom Dead Copper - Net Not Assigned.
+Rule Violations :1
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -22,19 +23,7 @@ Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Co
 Rule Violations :0
 
 Processing Rule : Minimum Annular Ring (Minimum=5.118mil) (All)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1037.874mil,1595.827mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1167.016mil,522.757mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1246.852mil,1569.252mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1564.173mil,1264.941mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1564.173mil,1363.874mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (195.899mil,902.808mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (278.628mil,893.842mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (359.234mil,1018.59mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (364.887mil,959.488mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (448.507mil,4027.57mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (793.093mil,1264.941mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-   Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (804.791mil,1182.953mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)
-Rule Violations :12
+Rule Violations :0
 
 Processing Rule : Hole Size Constraint (Min=11.811mil) (Max=248.031mil) (All)
 Rule Violations :0
@@ -46,51 +35,72 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)
 Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.945mil) (IsPad),(All)
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.945mil) Between Pad MTH1-1(196.85mil,3937.008mil) on Multi-Layer And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.945mil) Between Pad MTH1-1(196.85mil,3937.008mil) on Multi-Layer And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]
-Rule Violations :2
+Rule Violations :0
 
 Processing Rule : Silk to Silk (Clearance=4mil) (All),(All)
-   Violation between Silk To Silk Clearance Constraint: (3.323mil < 4mil) Between Text "C5" (207.37mil,1495.52mil) on Top Overlay And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [3.323mil]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "PCB REV #" (-854.37mil,1828.622mil) on Bottom Overlay And Track (-1051.22mil,1712.48mil)(-1051.22mil,1872.913mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "PCB REV #" (-854.37mil,1828.622mil) on Bottom Overlay And Track (-1051.22mil,1872.913mil)(-854.37mil,1872.913mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "PCB REV #" (-854.37mil,1828.622mil) on Bottom Overlay And Track (-854.37mil,1712.48mil)(-854.37mil,1872.913mil) on Bottom Overlay Silk Text to Silk Clearance [0mil]
-Rule Violations :4
+Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=0mil) (All)
 Rule Violations :0
 
 Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Area Fill (-812.203mil,1712.48mil) (-614.39mil,1828.622mil) on Bottom Overlay And Board Edge 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text ".Projet_Concepteur1
-" (-395mil,2695mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text ".Projet_Concepteur2
-" (-385mil,2520mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text ".Projet_Date" (-425mil,3080mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text ".Projet_nom_du_cours
-" (-416.05mil,3170mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text ".Projet_PCB_Rev" (-586.792mil,1712.598mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text ".Projet_Titre" (-416.05mil,3402.88mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "0" (-412.122mil,3630.096mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "Conçu par :
-" (-355mil,2850mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "JLCJLCJLCJLC" (-1440.905mil,2250.905mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "PCB REV #" (-854.37mil,1828.622mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Text "SERIAL #" (-636.537mil,1838.154mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-1051.22mil,1712.48mil)(-1051.22mil,1872.913mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-1051.22mil,1712.48mil)(-854.37mil,1712.48mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-1051.22mil,1872.913mil)(-854.37mil,1872.913mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-614.37mil,1712.48mil)(-614.37mil,1872.913mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-811.221mil,1712.48mil)(-614.37mil,1712.48mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-811.221mil,1712.48mil)(-811.221mil,1872.913mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-811.221mil,1872.913mil)(-614.37mil,1872.913mil) on Bottom Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 7.874mil) Between Board Edge And Track (-854.37mil,1712.48mil)(-854.37mil,1872.913mil) on Bottom Overlay 
-Rule Violations :20
+Rule Violations :0
 
 Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
 Rule Violations :0
 
+Waived Violations Of Rule : Minimum Annular Ring (Minimum=5.118mil) (All)
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1037.874mil,1595.827mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1167.016mil,522.757mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:09:14
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1246.852mil,1569.252mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1302.452mil,499.044mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:09:14
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1325.107mil,523.841mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1325.107mil,564.083mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1367.38mil,1246.243mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1367.38mil,1370.269mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1564.173mil,1264.941mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:09:14
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (1564.173mil,1363.874mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (195.899mil,902.808mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (278.628mil,893.842mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (298.099mil,1404.201mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:09:14
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (359.234mil,1018.59mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (364.887mil,959.488mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (410.323mil,1402.222mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (448.507mil,4027.57mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (792.956mil,1182.953mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (792.956mil,1264.941mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+Waived Violations :19
 
-Violations Detected : 38
-Waived Violations : 0
-Time Elapsed        : 00:00:02
+Waived Violations Of Rule : Silk To Solder Mask (Clearance=0.945mil) (IsPad),(All)
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.945mil) Between Pad MTH1-1(196.85mil,3937.008mil) on Multi-Layer And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.945mil) Between Pad MTH1-1(196.85mil,3937.008mil) on Multi-Layer And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+Waived Violations :2
+
+Waived Violations Of Rule : Silk to Silk (Clearance=4mil) (All),(All)
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "3V3" (596.56mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "D/C" (993.217mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "GND" (693.117mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "LED" (1292.607mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MISO" (1295.392mil,4084.585mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MISO" (1388.7mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MISO" (1795.349mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MOSI" (1089.993mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MOSI" (1198.631mil,4084.585mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MOSI" (1698.546mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "PCB REV #" (1692.795mil,4003.622mil) on Top Overlay And Track (1692.795mil,3887.48mil)(1692.795mil,4047.913mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 09:08:18
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "PCB REV #" (1692.795mil,4003.622mil) on Top Overlay And Track (1692.795mil,4047.913mil)(1889.646mil,4047.913mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 09:08:18
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "PCB REV #" (1692.795mil,4003.622mil) on Top Overlay And Track (1889.646mil,3887.48mil)(1889.646mil,4047.913mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 09:08:18
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "RESET" (896.442mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SD_CS" (1397.012mil,4084.585mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SPI_CS" (794.779mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SPI_SCK" (1097.012mil,4084.585mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SPI_SCK" (1191.655mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SPI_SCK" (1490.362mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "T_CS" (1596.884mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "T_IRQ" (1897.011mil,300.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+Waived Violations :21
+
+
+Violations Detected : 1
+Waived Violations : 42
+Time Elapsed        : 00:00:01
