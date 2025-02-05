@@ -1,0 +1,36 @@
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Removed Pin From Net: NetName=GND Pin=U2-GND
+Change Component Footprint: Designator=U2 Old Footprint=XCVR_ESP32-S3-WROOM-1-N16R2 New Footprint=XCVR_ESP32-S3-WROOM-1U-N16R8
+Change Component Comment : Designator=U2 Old Comment=ESP32-S3-WROOM-1-N16R8 New Comment=ESP32-S3-WROOM-1U-N16R8
+Change Managed Component Library Link : Designator=U2 Old VaultGUID=8051A890-20B5-4808-9216-C54EAAAEFA7E New VaultGUID= Old ItemGUID=8BDD62C3-7A2A-457A-BAEE-B885BB41ACD4 New ItemGUID= Old RevisionGUID=af592a55-e445-48a5-b39a-a426f1753291 New RevisionGUID=
+Change component parameters: Designator = "U2" ("U2"); Footprint = "XCVR_ESP32-S3-WROOM-1-N16R2"; UniqueID = "\KBVVZIMP" ("\KBVVZIMP")
+Change component parameters (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/ESP32-S3-WROOM-1U-N16R8/Espressif+Systems/view-part/?ref=eda"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MF"; Value = "Espressif Systems"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "MP"; Value = "ESP32-S3-WROOM-1U-N16R8"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/ESP32-S3-WROOM-1U-N16R8/Espressif+Systems/view-part/?ref=snap"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=U2-1
+Added Pin To Net: NetName=GND Pin=U2-40
+Added Pin To Net: NetName=GND Pin=U2-41_1
+Added Pin To Net: NetName=GND Pin=U2-41_2
+Added Pin To Net: NetName=GND Pin=U2-41_3
+Added Pin To Net: NetName=GND Pin=U2-41_4
+Added Pin To Net: NetName=GND Pin=U2-41_5
+Added Pin To Net: NetName=GND Pin=U2-41_6
+Added Pin To Net: NetName=GND Pin=U2-41_7
+Added Pin To Net: NetName=GND Pin=U2-41_8
+Added Pin To Net: NetName=GND Pin=U2-41_9
+Added Room: Name=Trottinette_Telemetrie_Circuit
+Added Room: Name=Trottinette_Telemetrie_Title
