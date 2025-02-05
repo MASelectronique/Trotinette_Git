@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc
 Date     : 2025-02-05
-Time     : 08:51:09
+Time     : 09:49:17
 
 Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
 Rule Violations :0
@@ -22,7 +22,12 @@ Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (
 Rule Violations :0
 
 Processing Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
-Rule Violations :0
+   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (20.344mm,30.047mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (39.73mm,34.415mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (39.785mm,32.257mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.268mm,24.371mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.842mm,35.587mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
+Rule Violations :5
 
 Processing Rule : Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)
 Rule Violations :0
@@ -49,9 +54,7 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
-   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (10.422mm,35.616mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (11.392mm,102.3mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
-   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (20.141mm,30.047mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (20.141mm,32.13mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (26.362mm,40.534mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (29.642mm,13.278mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:09:14
@@ -61,14 +64,11 @@ Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (33.658mm,14.328mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (34.731mm,31.655mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (34.731mm,34.805mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
-   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (39.73mm,32.13mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:09:14
-   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (39.73mm,34.642mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (4.976mm,22.931mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (7.077mm,22.704mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (7.572mm,35.667mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:09:14
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.125mm,25.872mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
-   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.268mm,24.371mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
-Waived Violations :19
+Waived Violations :14
 
 Waived Violations Of Rule : Silk To Solder Mask (Clearance=0.024mm) (IsPad),(All)
    Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.024mm) Between Pad MTH1-1(5mm,100mm) on Multi-Layer And Track (4.98mm,7.527mm)(4.98mm,96.827mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
@@ -100,6 +100,6 @@ Waived Violations Of Rule : Silk to Silk (Clearance=0.102mm) (All),(All)
 Waived Violations :21
 
 
-Violations Detected : 0
-Waived Violations : 42
+Violations Detected : 5
+Waived Violations : 37
 Time Elapsed        : 00:00:01
