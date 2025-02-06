@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc
-Date     : 2025-02-05
-Time     : 09:49:17
+Date     : 2025-02-06
+Time     : 09:20:14
 
 Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
 Rule Violations :0
@@ -22,12 +22,7 @@ Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (
 Rule Violations :0
 
 Processing Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (20.344mm,30.047mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (39.73mm,34.415mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (39.785mm,32.257mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.268mm,24.371mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.842mm,35.587mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-Rule Violations :5
+Rule Violations :0
 
 Processing Rule : Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)
 Rule Violations :0
@@ -39,10 +34,33 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.024mm) (IsPad),(All)
-Rule Violations :0
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.024mm) Between Pad MTH1-1(5mm,100mm) on Multi-Layer And Track (4.98mm,7.527mm)(4.98mm,96.827mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.024mm) Between Pad MTH1-1(5mm,100mm) on Multi-Layer And Track (4.98mm,96.827mm)(60.02mm,96.827mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+Rule Violations :2
 
 Processing Rule : Silk to Silk (Clearance=0.102mm) (All),(All)
-Rule Violations :0
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "3V3" (15.153mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "D/C" (25.228mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "GND" (17.605mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "LED" (32.832mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MISO" (32.903mm,103.748mm) on Top Overlay And Track (4.98mm,96.827mm)(60.02mm,96.827mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MISO" (35.273mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MISO" (45.602mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MOSI" (27.686mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MOSI" (30.445mm,103.748mm) on Top Overlay And Track (4.98mm,96.827mm)(60.02mm,96.827mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MOSI" (43.143mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (42.418mm,101.756mm) on Top Overlay And Track (42.418mm,102.881mm)(47.418mm,102.881mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (42.418mm,101.756mm) on Top Overlay And Track (42.418mm,98.806mm)(42.418mm,102.881mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (42.418mm,101.756mm) on Top Overlay And Track (47.418mm,98.806mm)(47.418mm,102.881mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "RESET" (22.77mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "SD_CS" (35.484mm,103.748mm) on Top Overlay And Track (4.98mm,96.827mm)(60.02mm,96.827mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "SPI_CS" (20.187mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "SPI_SCK" (27.864mm,103.748mm) on Top Overlay And Track (4.98mm,96.827mm)(60.02mm,96.827mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "SPI_SCK" (30.268mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "SPI_SCK" (37.855mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "T_CS" (40.561mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "T_IRQ" (48.184mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+Rule Violations :21
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
 Rule Violations :0
@@ -56,6 +74,7 @@ Rule Violations :0
 Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (11.392mm,102.3mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (20.141mm,32.13mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (20.344mm,30.047mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-05 09:49:32
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (26.362mm,40.534mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (29.642mm,13.278mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:09:14
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (31.67mm,39.859mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
@@ -64,42 +83,17 @@ Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (33.658mm,14.328mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (34.731mm,31.655mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (34.731mm,34.805mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:32:37
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (39.73mm,34.415mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-05 09:49:32
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (39.785mm,32.257mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-05 09:49:32
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (4.976mm,22.931mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (7.077mm,22.704mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (7.572mm,35.667mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 11:09:14
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.125mm,25.872mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-04 09:01:54
-Waived Violations :14
-
-Waived Violations Of Rule : Silk To Solder Mask (Clearance=0.024mm) (IsPad),(All)
-   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.024mm) Between Pad MTH1-1(5mm,100mm) on Multi-Layer And Track (4.98mm,7.527mm)(4.98mm,96.827mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.024mm) Between Pad MTH1-1(5mm,100mm) on Multi-Layer And Track (4.98mm,96.827mm)(60.02mm,96.827mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-Waived Violations :2
-
-Waived Violations Of Rule : Silk to Silk (Clearance=0.102mm) (All),(All)
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "3V3" (15.153mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "D/C" (25.228mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "GND" (17.605mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "LED" (32.832mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MISO" (32.903mm,103.748mm) on Top Overlay And Track (4.98mm,96.827mm)(60.02mm,96.827mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MISO" (35.273mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MISO" (45.602mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MOSI" (27.686mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MOSI" (30.445mm,103.748mm) on Top Overlay And Track (4.98mm,96.827mm)(60.02mm,96.827mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "MOSI" (43.143mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (42.997mm,101.692mm) on Top Overlay And Track (42.997mm,102.817mm)(47.997mm,102.817mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 09:08:18
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (42.997mm,101.692mm) on Top Overlay And Track (42.997mm,98.742mm)(42.997mm,102.817mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 09:08:18
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (42.997mm,101.692mm) on Top Overlay And Track (47.997mm,98.742mm)(47.997mm,102.817mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 09:08:18
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "RESET" (22.77mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "SD_CS" (35.484mm,103.748mm) on Top Overlay And Track (4.98mm,96.827mm)(60.02mm,96.827mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "SPI_CS" (20.187mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "SPI_SCK" (27.864mm,103.748mm) on Top Overlay And Track (4.98mm,96.827mm)(60.02mm,96.827mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "SPI_SCK" (30.268mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "SPI_SCK" (37.855mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "T_CS" (40.561mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "T_IRQ" (48.184mm,7.634mm) on Top Overlay And Track (4.98mm,7.527mm)(60.02mm,7.527mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Marc-Antoine Sauve at 2025-02-04 11:29:39
-Waived Violations :21
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.268mm,24.371mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-05 09:49:32
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.842mm,35.587mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-05 09:49:32
+Waived Violations :19
 
 
-Violations Detected : 5
-Waived Violations : 37
+Violations Detected : 23
+Waived Violations : 19
 Time Elapsed        : 00:00:01
