@@ -1,0 +1,19 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Trottinette_Connexion_2L.PcbDoc   2025-02-11  10:28:28
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top to Bottom
+ASCII RoundHoles File : Trottinette_Connexion_PCB REV 1.00-RoundHoles.TXT
+ASCII SlotHoles File : Trottinette_Connexion_PCB REV 1.00-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.3mm)                                             Round             12        PTH        5.73inch (145.47mm)
+T2      24mil (0.6mm)                                             Slot              4         PTH        1.67inch (42.32mm)
+T3      35mil (0.9mm)                                             Round             18        PTH        5.69inch (144.57mm)
+T4      130mil (3.3mm)                                            Round             1         PTH        0.00inch (0.00mm)
+T5      130mil (3.3mm)                                            Round             3         NPTH       6.49inch (164.77mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              38
+
+Total Processing Time (hh:mm:ss) : 00:00:00
