@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=CON_GPIO21 Pin=U2-4
+Removed Pin From Net: NetName=CON_GPIO18 Pin=U2-15
+Added Pin To Net: NetName=CON_GPIO21 Pin=U2-29
+Added Pin To Net: NetName=CON_GPIO18 Pin=U2-30
+Added Room: Name=Trottinette_Telemetrie_Circuit
+Added Room: Name=Trottinette_Telemetrie_Title

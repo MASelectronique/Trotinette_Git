@@ -1,0 +1,23 @@
+Removed Pin From Net: NetName=NetD1_3 Pin=J1-A6
+Removed Pin From Net: NetName=NetD1_1 Pin=J1-A7
+Removed Pin From Net: NetName=NetD1_3 Pin=J1-B6
+Removed Pin From Net: NetName=NetD1_1 Pin=J1-B7
+Removed Pin From Net: NetName=USB.USB_N Pin=R15-1
+Removed Pin From Net: NetName=USB.USB_P Pin=R16-1
+Removed Member From Class: ClassName=Trottinette_Telemetrie_Circuit Member=R15
+Removed Member From Class: ClassName=Trottinette_Telemetrie_Circuit Member=R16
+Added Pin To Net: NetName=NetD1_1 Pin=R15-2
+Added Pin To Net: NetName=NetD1_3 Pin=R16-2
+Added Pin To Net: NetName=USB.USB_N Pin=U2-13
+Added Pin To Net: NetName=USB.USB_P Pin=U2-14
+Added Pin To Net: NetName=NetJ1_A6 Pin=J1-A6
+Added Pin To Net: NetName=NetJ1_A6 Pin=J1-B6
+Added Pin To Net: NetName=NetJ1_A6 Pin=R16-1
+Added Net: Name=NetJ1_A6
+Added Pin To Net: NetName=NetJ1_A7 Pin=J1-A7
+Added Pin To Net: NetName=NetJ1_A7 Pin=J1-B7
+Added Pin To Net: NetName=NetJ1_A7 Pin=R15-1
+Added Net: Name=NetJ1_A7
+Added Member To Class: ClassName=Trottinette_Telemetrie_Connectors Member=Component R15 ERJ3EKF30R0V
+Added Member To Class: ClassName=Trottinette_Telemetrie_Connectors Member=Component R16 ERJ3EKF30R0V
+Added Room: Name=Trottinette_Telemetrie_Circuit
