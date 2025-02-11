@@ -134,11 +134,11 @@ AnnotateOrder=-1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
+ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=GNYTCPOA
+DocumentUniqueId=URNUUNFY
 
 [Document6]
 DocumentPath=Trottinette_Telemetrie_Connectors.SchDoc

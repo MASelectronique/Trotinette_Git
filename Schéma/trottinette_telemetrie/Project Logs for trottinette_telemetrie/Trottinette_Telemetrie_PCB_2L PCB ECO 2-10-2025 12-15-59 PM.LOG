@@ -1,0 +1,36 @@
+Removed Pin From Net: NetName=GND Pin=U2-41_10
+Removed Pin From Net: NetName=GND Pin=U2-41_11
+Removed Pin From Net: NetName=GND Pin=U2-41_12
+Removed Pin From Net: NetName=GND Pin=U2-41_13
+Removed Pin From Net: NetName=GND Pin=U2-41_14
+Removed Pin From Net: NetName=GND Pin=U2-41_15
+Removed Pin From Net: NetName=GND Pin=U2-41_16
+Removed Pin From Net: NetName=GND Pin=U2-41_17
+Removed Pin From Net: NetName=GND Pin=U2-41_18
+Removed Pin From Net: NetName=GND Pin=U2-41_19
+Removed Pin From Net: NetName=GND Pin=U2-41_20
+Removed Pin From Net: NetName=GND Pin=U2-41_21
+Added Component: Designator=R15(RESC1608X55X30LL15T15)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Panasonic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "ERJ3EKF30R0V"; VariantName = "[No Variations]"
+Added Component: Designator=R16(RESC1608X55X30LL15T15)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Panasonic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "ERJ3EKF30R0V"; VariantName = "[No Variations]"
+Change Net Name : Old Net Name=USB_CON_N New Net Name=NetD1_1
+Change Net Name : Old Net Name=USB_CON_P New Net Name=NetD1_3
+Added Pin To Net: NetName=NetR15_2 Pin=R15-2
+Added Pin To Net: NetName=NetR15_2 Pin=U2-13
+Added Net: Name=NetR15_2
+Added Pin To Net: NetName=NetR16_2 Pin=R16-2
+Added Pin To Net: NetName=NetR16_2 Pin=U2-14
+Added Net: Name=NetR16_2
+Added Pin To Net: NetName=USB.USB_N Pin=D1-6
+Added Pin To Net: NetName=USB.USB_N Pin=R15-1
+Added Net: Name=USB.USB_N
+Added Pin To Net: NetName=USB.USB_P Pin=D1-4
+Added Pin To Net: NetName=USB.USB_P Pin=R16-1
+Added Net: Name=USB.USB_P
+Added Member To Class: ClassName=Trottinette_Telemetrie_Circuit Member=Component R15 ERJ3EKF30R0V
+Added Member To Class: ClassName=Trottinette_Telemetrie_Circuit Member=Component R16 ERJ3EKF30R0V
+Added Room: Name=Trottinette_Telemetrie_Circuit
+Added Room: Name=Trottinette_Telemetrie_Title
