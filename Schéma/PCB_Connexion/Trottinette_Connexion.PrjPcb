@@ -53,7 +53,7 @@ PrefsRevisionGUID=
 
 [Release]
 ReleaseTarget=1
-ReleaseFolderPath=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion
+ReleaseFolderPath=E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma
 ReleaseZipPath=[OutputPath][ProjectName].zip
 
 [Document1]
