@@ -1,0 +1,231 @@
+*************************************************************
+FileName = Trottinette_Connexion_PCB REV 1.00.GBR
+AutoAperture = True
+*************************************************************
+Generating : Bottom Overlay
+      File : Trottinette_Connexion_PCB REV 1.00.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D46
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Trottinette_Connexion_PCB REV 1.00.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D23
+    D45
+*************************************************************
+
+*************************************************************
+Generating : Board Outline
+      File : Trottinette_Connexion_PCB REV 1.00.GM5
+
+    Adding Layer      : Board Outline
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Route Tool Path
+      File : Trottinette_Connexion_PCB REV 1.00.GM7
+
+    Adding Layer      : Route Tool Path
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Manufacturing Notes
+      File : Trottinette_Connexion_PCB REV 1.00.GM9
+
+    Adding Layer      : Manufacturing Notes
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Trottinette_Connexion_PCB REV 1.00.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D33
+    D35
+    D36
+    D37
+    D38
+    D39
+    D45
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : Trottinette_Connexion_PCB REV 1.00.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Bottom
+      File : Trottinette_Connexion_PCB REV 1.00.GBL
+
+    Adding Layer      : Bottom
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D14
+    D23
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+*************************************************************
+
+*************************************************************
+Generating : Top
+      File : Trottinette_Connexion_PCB REV 1.00.GTL
+
+    Adding Layer      : Top
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D14
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D40
+    D41
+    D42
+    D43
+    D44
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : Trottinette_Connexion_PCB REV 1.00.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D24
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Trottinette_Connexion_PCB REV 1.00.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : Trottinette_Connexion_PCB REV 1.00.GD1
+
+    Adding Drill Pair : Top-Bottom
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D47
+    D48
+*************************************************************
+
+*************************************************************
+Generating : Drill Guide
+      File : Trottinette_Connexion_PCB REV 1.00.GG1
+
+    Adding Drill Pair : Top-Bottom
+
+    Adding Layer      : Drill Guide
+
+
+Used DCodes :
+    D47
+*************************************************************
+

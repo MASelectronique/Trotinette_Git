@@ -1,0 +1,33 @@
+Altium Designer Pick and Place Locations
+C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\2\Sources\REV 1.00 (2025-02-11)\04 - ASSEMBLY\Trottinette_Connexion_PCB PNP XY REV 1.00.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       11-02-25
+Time:       11:12
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+"Designator","Description","Package","Layer","Center-X(mil)","Center-Y(mil)","Rotation","Assembly Note","Assembly Type","Polarized","Manufacturer #1","Part Number #1","Supplier 1","Supplier Part Number 1","HelpURL"
+"SER1","SER - SERIAL CARTRIDGE MICRO","","TopLayer","-22125,630","-17297,480","0","","NONE","","","","","",""
+"REV1","REV - REVISION CARTRIDGE MINI","","TopLayer","-22125,630","-17297,480","0","","NONE","","","","","",""
+"MTH4","MTH - MOUNTING HOLE M3 NON-PLATED - M3","M3","TopLayer","2362,205","196,850","0","","NONE","","","","","","https://littlemachineshop.com/images/gallery/PDF/TapDrillSizes.pdf"
+"MTH3","MTH - MOUNTING HOLE M3 NON-PLATED - M3","M3","TopLayer","196,850","196,850","0","","NONE","","","","","","https://littlemachineshop.com/images/gallery/PDF/TapDrillSizes.pdf"
+"MTH2","MTH - MOUNTING HOLE M3 NON-PLATED - M3","M3","TopLayer","2362,205","3937,008","0","","NONE","","","","","","https://littlemachineshop.com/images/gallery/PDF/TapDrillSizes.pdf"
+"MTH1","MTH - MOUNTING HOLE M3 PLATED - M3","M3","TopLayer","196,850","3937,008","0","","NONE","","","","","","https://littlemachineshop.com/images/gallery/PDF/TapDrillSizes.pdf"
+"U1","800mA Low-Dropout Linear Regulator, 4-pin SOT-223","","TopLayer","766,970","1685,171","0","","","","","","","",""
+"S1","3.2" 240x320 TFT LCD ILI9341","","TopLayer","1279,512","2045,251","90","","","","","","","",""
+"R2","30Ohms","","TopLayer","1134,189","547,364","270","","","","","","","",""
+"Q1","MOSFET P-CHA 60V 720MW SOT23","","BottomLayer","1181,959","802,612","270","","","","","","","",""
+"J1","","","TopLayer","215,236","865,000","270","","","","","","","",""
+"R4","RES SMD 300 OHM 1% 1/10W 0603","","TopLayer","518,858","1680,224","180","","","","","","DigiKey","541-300HCT-ND",""
+"R3","RES 180 OHM 1% 1/8W 0603","","TopLayer","518,858","1750,677","180","","","","","","DigiKey","RNCP0603FTD180RCT-ND",""
+"C5","CAP ALUM 100UF 20% 10V SMD","","TopLayer","344,173","1299,252","90","","","","","","DigiKey","1189-2392-1-ND",""
+"C3","CAP ALUM 100UF 20% 10V SMD","","TopLayer","1118,966","1693,088","0","","","","","","DigiKey","1189-2392-1-ND",""
+"R5","RES 10K OHM 0.1% 1/16W 0603","","BottomLayer","1190,834","915,000","0","","","","","","DigiKey","RNCS0603BKE10K0CT-ND",""
+"C4","CAP CER 10UF 10V X5R 0603","","TopLayer","536,081","1841,697","0","","","","","","DigiKey","490-12311-1-ND",""
+"C2","CAP CER 10UF 10V X5R 0603","","TopLayer","704,093","1470,087","90","","","","","","DigiKey","490-12311-1-ND",""
+"C1","General Purpose Ceramic Capacitor, 0603, 100nF, 20%, X7R, 15%, 10V","","TopLayer","622,103","1467,331","270","","","","","","","",""
+"R1","RESA-AS 0603 0R JUMPER 100MW","","TopLayer","395,357","4027,570","0","","","","","","DigiKey","CR0603AJ/-000EASCT-ND",""
