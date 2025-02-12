@@ -1,4 +1,7 @@
-Dossier qui contient le code pour le prototype (Accelerometer) et pour la version finale du système d'affichage.
+Dossier principale (Code)
+
+Contient : 	Fichier Accelerometre = prototype
+		Fichier Affichage = Version finale du système d'affichage
 Language: C++
 Environnement: Arduino
 Plateforme: PlatformIO
