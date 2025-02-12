@@ -1,27 +1,19 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\yuyam\OneDrive\Documents\GitHub\Trotinette_Git\Schéma\trottinette_telemetrie\Trottinette_Telemetrie_PCB_2L.PcbDoc
-Date     : 2/11/2025
-Time     : 11:43:54 AM
-
-WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
-   Polygon named: NONET_L02_P001 In net GND On Bottom
+Date     : 2/12/2025
+Time     : 9:21:37 AM
 
 Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
-   Violation between Short-Circuit Constraint: Between Pad J1-(40.75mm,30.938mm) on Multi-Layer And Polygon Region (1 hole(s)) Top Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J1-(40.75mm,30.938mm) on Multi-Layer And Polygon Region (67 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J1-(46.75mm,30.938mm) on Multi-Layer And Polygon Region (1 hole(s)) Top Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J1-(46.75mm,30.938mm) on Multi-Layer And Polygon Region (67 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]
-Rule Violations :4
+Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
 Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
-   Violation between Modified Polygon: Polygon Shelved  (NONET_L02_P001) on Bottom 
-Rule Violations :1
+Rule Violations :0
 
 Processing Rule : Width Constraint (Min=0.127mm) (Max=25.4mm) (Preferred=0.152mm) (All)
 Rule Violations :0
@@ -30,91 +22,10 @@ Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (
 Rule Violations :0
 
 Processing Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_10(30.25mm,14.75mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_11(28.85mm,14.75mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_12(30.95mm,15.45mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_13(29.55mm,15.45mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_14(28.15mm,15.45mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_15(30.25mm,16.15mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_16(28.85mm,16.15mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_17(30.95mm,16.85mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_18(29.55mm,16.85mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_19(28.15mm,16.85mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_20(30.25mm,17.55mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_21(28.85mm,17.55mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (13mm,12.235mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (15mm,33.435mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (20.471mm,8.38mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (21.84mm,31.275mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (21.983mm,3.181mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (22.335mm,22mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (22.33mm,19.86mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (22.95mm,27.779mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (23.179mm,16.05mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (23.207mm,11.055mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (23.207mm,17.283mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (23.207mm,18.59mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (23.207mm,9.55mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (23.57mm,31.31mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (24.185mm,30.55mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (25.521mm,30.881mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (25.921mm,28.022mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (26.749mm,32.179mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (27.35mm,31.225mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (27.415mm,1.607mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (27.728mm,5.884mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (28.95mm,30.55mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (29.315mm,28.56mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (32.495mm,24.94mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (32.66mm,11.65mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (32.897mm,1.558mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (33.48mm,11.65mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (34.372mm,3.656mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (35.165mm,9.494mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (35.324mm,10.44mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (35.555mm,22.4mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (40.345mm,28.724mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (41.535mm,7.24mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (42.5mm,30.79mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (43.751mm,25.666mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (43mm,15.658mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (44.29mm,15.857mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (44.37mm,17.013mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (44.884mm,17.703mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (44.912mm,30.825mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (45.184mm,15.414mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (47.5mm,28.586mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (47.665mm,18.914mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (48.07mm,17.44mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (49.25mm,14.179mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (49.25mm,17.36mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (49.3mm,2.75mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (5.473mm,21.684mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (50.009mm,30.302mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (50.411mm,13.054mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (50.4mm,10.25mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (50.4mm,21.5mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (50mm,33.667mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (5mm,31.498mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (7.5mm,12.75mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (8.927mm,21.684mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.7mm,1.687mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
-Rule Violations :69
+Rule Violations :0
 
 Processing Rule : Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_10(30.25mm,14.75mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_11(28.85mm,14.75mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_12(30.95mm,15.45mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_13(29.55mm,15.45mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_14(28.15mm,15.45mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_15(30.25mm,16.15mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_16(28.85mm,16.15mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_17(30.95mm,16.85mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_18(29.55mm,16.85mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_19(28.15mm,16.85mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_20(30.25mm,17.55mm) on Multi-Layer Actual Hole Size = 0.2mm
-   Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_21(28.85mm,17.55mm) on Multi-Layer Actual Hole Size = 0.2mm
-Rule Violations :12
+Rule Violations :0
 
 Processing Rule : Hole To Hole Clearance (Gap=0.5mm) (All),(All)
 Rule Violations :0
@@ -123,51 +34,137 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.024mm) (IsPad),(All)
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.024mm) Between Arc (38.55mm,8.43mm) on Top Overlay And Pad P1-1(39mm,9.11mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]
-Rule Violations :1
+Rule Violations :0
 
 Processing Rule : Silk to Silk (Clearance=0.102mm) (All),(All)
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (-39.751mm,73.054mm) on Top Overlay And Track (-34.751mm,70.104mm)(-34.751mm,74.179mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (-39.751mm,73.054mm) on Top Overlay And Track (-39.751mm,70.104mm)(-39.751mm,74.179mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (-39.751mm,73.054mm) on Top Overlay And Track (-39.751mm,74.179mm)(-34.751mm,74.179mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-Rule Violations :3
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "ACC_INT1" (46.762mm,4.516mm) on Top Overlay And Track (44.855mm,4.472mm)(50.235mm,4.472mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "ACC_INT2" (49.359mm,4.516mm) on Top Overlay And Track (44.855mm,4.472mm)(50.235mm,4.472mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "GND" (37.998mm,4.705mm) on Top Overlay And Track (38.033mm,2.221mm)(38.033mm,4.705mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "GND" (37.998mm,4.705mm) on Top Overlay And Track (38.033mm,4.705mm)(39.176mm,4.705mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "GND" (37.998mm,4.705mm) on Top Overlay And Track (39.176mm,4.705mm)(41.462mm,4.705mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "GND" (37.998mm,4.705mm) on Top Overlay And Track (41.462mm,4.705mm)(43.113mm,4.705mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "GND" (37.998mm,4.705mm) on Top Overlay And Track (43.113mm,1.657mm)(43.113mm,4.705mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+Rule Violations :7
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
 Rule Violations :0
 
 Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Area Fill (-32.765mm,69.85mm) (-27.741mm,72.8mm) on Top Overlay And Board Edge 
-   Violation between Board Outline Clearance(Outline Edge): (0.1mm < 0.2mm) Between Board Edge And Pad J2-Shell(20.325mm,35.05mm) on Multi-Layer 
-   Violation between Board Outline Clearance(Outline Edge): (0.1mm < 0.2mm) Between Board Edge And Pad J2-Shell(31.175mm,35.05mm) on Multi-Layer 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text ".Projet_Concepteur1
-" (-30.099mm,65.5mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text ".Projet_Concepteur2
-" (-30.099mm,62mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text ".Projet_Date" (-39.751mm,75.438mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text ".Projet_nom_du_cours
-" (-44.831mm,77.47mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text ".Projet_PCB_Rev" (-46.547mm,70.107mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text ".Projet_Titre" (-54.215mm,84.146mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text "0" (-46.682mm,89.918mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text "Conçu par :
-" (-41.021mm,65.786mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text "JLCJLCJLCJLC" (-38.966mm,56.411mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text "PCB REV #" (-39.751mm,73.054mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text "SERIAL #" (-32.204mm,73.042mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-27.766mm,69.85mm)(-27.766mm,73.925mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-32.766mm,69.85mm)(-27.766mm,69.85mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-32.766mm,69.85mm)(-32.766mm,73.925mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-32.766mm,73.925mm)(-27.766mm,73.925mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-34.751mm,70.104mm)(-34.751mm,74.179mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-39.751mm,70.104mm)(-34.751mm,70.104mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-39.751mm,70.104mm)(-39.751mm,74.179mm) on Top Overlay 
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (-39.751mm,74.179mm)(-34.751mm,74.179mm) on Top Overlay 
-Rule Violations :22
+Rule Violations :0
 
 Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
 Rule Violations :0
 
+Waived Violations Of Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Waived Violation between Short-Circuit Constraint: Between Pad J1-(40.75mm,30.938mm) on Multi-Layer And Polygon Region (1 hole(s)) Top Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
+   Waived Violation between Short-Circuit Constraint: Between Pad J1-(40.75mm,30.938mm) on Multi-Layer And Polygon Region (79 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
+   Waived Violation between Short-Circuit Constraint: Between Pad J1-(46.75mm,30.938mm) on Multi-Layer And Polygon Region (1 hole(s)) Top Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
+   Waived Violation between Short-Circuit Constraint: Between Pad J1-(46.75mm,30.938mm) on Multi-Layer And Polygon Region (79 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
+Waived Violations :4
 
-Violations Detected : 112
-Waived Violations : 0
+Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_10(30.25mm,14.75mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_11(28.85mm,14.75mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_12(30.95mm,15.45mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_13(29.55mm,15.45mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_14(28.15mm,15.45mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_15(30.25mm,16.15mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_16(28.85mm,16.15mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_17(30.95mm,16.85mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_18(29.55mm,16.85mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_19(28.15mm,16.85mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_20(30.25mm,17.55mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_21(28.85mm,17.55mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (13mm,12.235mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (15mm,33.435mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (20.471mm,8.38mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (21.84mm,31.275mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (21.983mm,3.181mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (22.335mm,22mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (22.33mm,19.86mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (22.95mm,27.779mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (23.179mm,16.05mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (23.207mm,11.055mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (23.207mm,9.55mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (23.57mm,31.31mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (24.185mm,30.55mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (24.255mm,17.301mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (24.875mm,18.59mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (25.521mm,30.881mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (25.921mm,28.022mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (26.749mm,32.179mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (27.35mm,31.225mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (27.415mm,1.607mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (27.728mm,5.884mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (28.95mm,30.55mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (29.315mm,28.56mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (32.495mm,24.94mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (32.66mm,11.65mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (32.897mm,1.558mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (33.48mm,11.65mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (34.372mm,3.656mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (35.165mm,9.494mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (35.324mm,10.44mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (35.555mm,22.4mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (40.345mm,28.724mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (41.535mm,7.24mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (42.5mm,30.79mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (43.717mm,3.181mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (43.751mm,25.666mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (43mm,15.658mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (44.29mm,15.857mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (44.37mm,17.013mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (44.884mm,17.703mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (44.912mm,30.825mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (45.184mm,15.414mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (47.5mm,28.586mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (47.665mm,18.914mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (48.07mm,17.44mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (49.25mm,14.179mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (49.25mm,17.36mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (5.473mm,21.684mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (50.009mm,30.302mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (50.411mm,13.054mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (50.4mm,10.25mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (50.4mm,21.5mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (50mm,33.667mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (5mm,31.498mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (7.5mm,12.75mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (8.927mm,21.684mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.7mm,1.687mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
+Waived Violations :69
+
+Waived Violations Of Rule : Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_10(30.25mm,14.75mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_11(28.85mm,14.75mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_12(30.95mm,15.45mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_13(29.55mm,15.45mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_14(28.15mm,15.45mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_15(30.25mm,16.15mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_16(28.85mm,16.15mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_17(30.95mm,16.85mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_18(29.55mm,16.85mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_19(28.15mm,16.85mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_20(30.25mm,17.55mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+   Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_21(28.85mm,17.55mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/12/2025 8:53:34 AM
+Waived Violations :12
+
+Waived Violations Of Rule : Silk To Solder Mask (Clearance=0.024mm) (IsPad),(All)
+   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.024mm) Between Arc (38.55mm,8.43mm) on Top Overlay And Pad P1-1(39mm,9.11mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 8:54:18 AM
+Waived Violations :1
+
+Waived Violations Of Rule : Silk to Silk (Clearance=0.102mm) (All),(All)
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (33.605mm,24.211mm) on Bottom Overlay And Track (32.48mm,19.211mm)(32.48mm,24.211mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 8:57:10 AM
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (33.605mm,24.211mm) on Bottom Overlay And Track (32.48mm,19.211mm)(36.555mm,19.211mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 8:57:10 AM
+   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (33.605mm,24.211mm) on Bottom Overlay And Track (32.48mm,24.211mm)(36.555mm,24.211mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 8:57:10 AM
+Waived Violations :3
+
+Waived Violations Of Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text ".Projet_Titre" (16.978mm,35.879mm) on Bottom Overlay Waived by Lucas Lalumière Longpré at 2/12/2025 8:57:10 AM
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text "0" (9.065mm,34.177mm) on Bottom Overlay Waived by Lucas Lalumière Longpré at 2/12/2025 8:57:10 AM
+Waived Violations :2
+
+
+Violations Detected : 7
+Waived Violations : 91
 Time Elapsed        : 00:00:01
