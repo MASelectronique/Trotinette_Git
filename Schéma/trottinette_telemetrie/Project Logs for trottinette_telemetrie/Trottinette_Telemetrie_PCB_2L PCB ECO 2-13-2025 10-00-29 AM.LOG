@@ -1,0 +1,59 @@
+Removed Pin From Net: NetName=GND Pin=TP2-1
+Removed Pin From Net: NetName=GND Pin=U2-41_10
+Removed Pin From Net: NetName=GND Pin=U2-41_11
+Removed Pin From Net: NetName=GND Pin=U2-41_12
+Removed Pin From Net: NetName=GND Pin=U2-41_13
+Removed Pin From Net: NetName=GND Pin=U2-41_14
+Removed Pin From Net: NetName=GND Pin=U2-41_15
+Removed Pin From Net: NetName=GND Pin=U2-41_16
+Removed Pin From Net: NetName=GND Pin=U2-41_17
+Removed Pin From Net: NetName=GND Pin=U2-41_18
+Removed Pin From Net: NetName=GND Pin=U2-41_19
+Removed Pin From Net: NetName=GND Pin=U2-41_20
+Removed Pin From Net: NetName=GND Pin=U2-41_21
+Removed Member From Class: ClassName=Trottinette_Telemetrie_Circuit Member=TP2
+Added Component: Designator=D2(DIOM4336X33N)
+Add component (AddParameter): Name = "Assembly Type"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Cryo"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "GRAMS Lib Spec"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Magnetic Material"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #2"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #2"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Polarized"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Max"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder Paste Type"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stencil Thickness (Recommended)"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=TP1(TPO_SMD_5019)
+Add component (AddParameter): Name = "Assembly Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly Type"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "TPO_SMD_5019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "https://www.digikey.ca/product-detail/en/keystone-electronics/5019/36-5019CT-ND/3907344"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #1"; Value = "Keystone Electronics"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "SMD"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #1"; Value = "5019"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Polarized"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Max"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "CEGEP_SHERBROOKE_TGE_LIBRARY.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "3.81mm x 2.03mm"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=5V0 Pin=D2-1
+Added Pin To Net: NetName=VBUS Pin=D2-2
+Added Pin To Net: NetName=GND Pin=TP1-1
+Added Member To Class: ClassName=Trottinette_Telemetrie_Circuit Member=Component C4 0603ZC104MAT2A
+Added Member To Class: ClassName=Trottinette_Telemetrie_Connectors Member=Component D2 LSM115JE3/TR13
+Added Member To Class: ClassName=Trottinette_Telemetrie_Circuit Member=Component TP1 TPO_SMD_5019
+Added Room: Name=Trottinette_Telemetrie_Circuit
+Added Room: Name=Trottinette_Telemetrie_Title

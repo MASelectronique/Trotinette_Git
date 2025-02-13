@@ -1,0 +1,24 @@
+Added Component: Designator=STENCIL?(STN_STENCIL_TOP_PASTE_181x280)
+Add component (AddParameter): Name = "Assembly Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Assembly Type"; Value = "NONE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current Rating"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "STN_STENCIL_TOP_PASTE_LPKF_ZELFLEX-181x280"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Magnetic Material"; Value = "NO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number #1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Polarized"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Max"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "Schlib1.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage Rating"; Value = ""; VariantName = "[No Variations]"
+Added Class: Name=Trottinette_Telemetrie_overview
+Added Room: Name=Trottinette_Telemetrie_Circuit
+Added Room: Name=Trottinette_Telemetrie_overview
+Added Room: Name=Trottinette_Telemetrie_Title
