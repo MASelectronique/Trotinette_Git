@@ -1,0 +1,483 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+        h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+            padding: 0.3em;
+        }
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+        body {
+			font-family : segoe ui;
+        }
+
+        td, th {
+            padding: 0.5em;
+			text-align : left;
+			width: 10em;
+        }
+        th {
+			background-color : #EEEEEE;
+
+        }
+        th.column1, td.column1 {
+            text-align: left;
+            width : auto;
+        }
+        table {
+            width : 100%;
+			font-size: 0.9em;
+        }
+        
+        .DRC_summary_header {                           
+            padding-bottom : 0.1em;
+            border : 0px solid black;                           
+            width: 100%;
+			align: left;
+        }
+
+        .DRC_summary_header_col1, 
+        .DRC_summary_header_col2, 
+        .DRC_summary_header_col3  {
+            color : black;
+            font-size:100%;
+                        padding : 0em;
+            padding-top : 0.2em;
+            padding-bottom 0.2em;
+            border : 0px solid black;
+            vertical-align: top;
+			text-align: left;
+        }
+        
+        .DRC_summary_header_col1 {                              
+			font-weight: bold;
+			width: 8em;
+        }
+
+        .DRC_summary_header_col2 {       
+			width: 0.1em;
+		
+        }
+
+        .DRC_summary_header_col3 {       
+			width : auto;
+        }
+
+        .header_holder  {
+        Width = 100%;
+        border = 0px solid green;
+        padding = 0;
+        }
+        
+        
+        .front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+            left:0;
+            top:0;
+			padding: 0em;
+            padding-top : 0.1em;            
+            border : 0px solid black;
+            width : 100%;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .front_matter_column1 {
+            width : 8em;   
+			font-weight: bold;
+        }
+        
+        .front_matter_column2 {
+            width: 0.1em;
+        }
+
+        .front_matter_column3 {
+            width         : auto;  
+        }
+        
+        .total_column1, .total_column {
+            font-weight : bold;
+        }
+        .total_column1 {
+			text-align : left;
+        }
+        .warning, .error {
+            color : red;
+            font-weight : bold;
+        }
+        tr.onmouseout_odd {
+			background-color : #white;
+        }
+        tr.onmouseout_even { 
+			background-color : #FAFAFA;
+        }
+        tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+        } 
+        a:link, a:visited, .q a:link,.q a:active,.q {
+            color: #21489e; 
+        }
+        a:link.callback, a:visited.callback { 
+            color: #21489e; 
+        }
+        p.contents_level1 {
+            font-weight : bold;
+            font-size : 110%;
+            margin : 0.5em;
+        }
+        p.contents_level2 {
+            position : relative;
+            left : 20px;
+            margin : 0.5em;
+        }
+    </style><script type="text/javascript">
+        function coordToMils(coord) {
+            var number = coord / 10000;
+            
+            if (number != number.toFixed(3))
+                number = number.toFixed(3);
+
+            return number + 'mil'
+        }
+
+        function coordToMM(coord) {
+            var number = 0.0254 * coord / 10000;
+            
+            if (number != number.toFixed(4))
+                number = number.toFixed(4);
+            
+            return number + 'mm'
+        }
+    
+        function convertCoord(coordNode, units) {
+            for (var i = 0; i < coordNode.childNodes.length; i++) {
+                coordNode.removeChild(coordNode.childNodes[i]);
+            }
+
+            var coord = coordNode.getAttribute('value');
+            if (coord != null) {
+                if (units == 'mm') {
+                    textNode = document.createTextNode(coordToMM(coord));
+                    coordNode.appendChild(textNode);
+                } else if (units == 'mil') {
+                    textNode = document.createTextNode(coordToMils(coord));     
+                    coordNode.appendChild(textNode);    
+                }
+            }
+        }
+    
+        function convertUnits(unitNode, units) {
+            for (var i = 0; i < unitNode.childNodes.length; i++) {
+                unitNode.removeChild(unitNode.childNodes[i]);       
+            }
+        
+            textNode = document.createTextNode(units); 
+            unitNode.appendChild(textNode);
+        }
+    
+        function changeUnits(radio_input, units) {
+            if (radio_input.checked) {
+            
+                var elements = document.getElementsByName('coordinate');
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        convertCoord(elements[i], units);
+                    }
+                }
+    
+                var elements = document.getElementsByName('units');
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        convertUnits(elements[i], units);
+                    }
+                }
+            }
+        }
+    </script></head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD22\Templates\AD_logo.png
+        "><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2025-02-18</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">09:38:07</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc" class="file"><acronym title="C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc">C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">40</td></tr>
+</table>
+</td>
+</table><a name="IDB3T35W0K1IOBL40IKSRXYHTMPIA1DYLSS3HJDJEMAODMNFYHPNOD"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTEA52UHMZQXNP2MF2QFVFDJHXE24AHVZ1EC542C42S03JVD31XGJ">Clearance Constraint (Gap=6mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2RPFMVBTZ4USB4AFAJBG1V1Y1CVFSULBXLLBDIJXOBGNKB2BCMGG">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQ54VQSX5OO5OH05CKY0LDJ5SLF141QDZSJZK1YJLBRQJCDHLATII">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID2TATOPJTZROTCPLGDCQTVPGGCPA4SGVHDUNHBWJAOZ111XA2YFVM">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRUQP1PI2KTROK3WWRSYWCAR4GE1KQVLEETSSJWNWMLAF0Q1B3SWJ">Width Constraint (Min=5mil) (Max=1000mil) (Preferred=6mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZCGWWQ1EJ21BJBOE1YKCT4F0IKJUPQVFNWU5QUHB403QOS05IC1K">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1YW4UAPWAC3EORXGMJYRO4VKPMGZIA0NJQRYHCNQ5FA53OUWA2KD">Minimum Annular Ring (Minimum=5.118mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQRMVH4MCAPG4MAIORLZI2TZBBJSHTTPFNLIVQLJRYMSSFKR2GKWH">Hole Size Constraint (Min=11.811mil) (Max=248.031mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVWZ2LANC1CWGKFUOBPZ54LKYCJKD2O23V5C3MPIRUC1OR52VPBF">Hole To Hole Clearance (Gap=19.685mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID50PBT1NDZIWPF4JXIWAVZVS2KCDGJV5U1FFJR2KFTFNEE3NLTGGM">Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDF33I0GOCJZQCEUZRLPLERX2LOCE30WWH53NFY3OESB2X0ZT2NFLF">Silk To Solder Mask (Clearance=0.945mil) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZ3GEXUN11SGKPIUFPYVLUNL0XCTFM100K20VJ4NNIM2BJJEBHJ3B">Silk to Silk (Clearance=4mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOH0VHCCJKZQNEWJTMCPFCHCZ3CR33E2D3VVTTYTTNZILUZFYDBE">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQXUTPPJ0BATYNVJPRNNYOY3DYEHOO4T0C5LYXWDGYTUFOIHLW5VL">Board Clearance Constraint (Gap=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDG4BV5U42HX0NFPZQMPPPD2YV4H3QAQCE5FYUPPNVZVLJRVCZPLXB">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3GR0M0UMFEVOGT0JGPNVKLZNUN1OLTE15NIMX0GQI1F0WHKA0UQD">Minimum Annular Ring (Minimum=5.118mil) (All)</a></td>
+<td class="column2">11</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMJVQZIKMPHL5LOJR2OEPTPJWJB34E0WIODUEEOI0WSIJYX5VPUMJ">Silk To Solder Mask (Clearance=0.945mil) (IsPad),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDI0QCWZ52BTQVG3R3YSICJ4ZF3OPMJXZELCUJTXKWXQH335QS0E5K">Silk to Silk (Clearance=4mil) (All),(All)</a></td>
+<td class="column2">25</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">40</td>
+</tr>
+</table><br><a name="IDXBUDFY3DCMXLPKPGXIPLIESOJMCI15FKQ5TYWDLSCJYFWOXZ1O0B"><h2>Rule Violations</h2></a><a name="IDWBTYLZ4HICXITW0AZSP422NNDAEZI3DKCZX44HMCDN4NYV2LIM"><h2>Waived Violations</h2></a><a name="ID3GR0M0UMFEVOGT0JGPNVKLZNUN1OLTE15NIMX0GQI1F0WHKA0UQD"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Minimum Annular Ring (Minimum=5.118mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22229.604mil|Location2.X=22235.972mil|Location1.Y=18157.247mil|Location2.Y=18163.615mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22229.604mil|Location2.X=22235.972mil|Location1.Y=18157.247mil|Location2.Y=18163.615mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (107.158mil,855.077mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-13 11:21:56</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23311.536mil|Location2.X=23317.904mil|Location1.Y=17964.346mil|Location2.Y=17970.714mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23311.536mil|Location2.X=23317.904mil|Location1.Y=17964.346mil|Location2.Y=17970.714mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (1189.09mil,662.176mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22279.605mil|Location2.X=22285.973mil|Location1.Y=17964.172mil|Location2.Y=17970.54mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22279.605mil|Location2.X=22285.973mil|Location1.Y=17964.172mil|Location2.Y=17970.54mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (157.159mil,662.002mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-13 11:21:56</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22459.347mil|Location2.X=22465.715mil|Location1.Y=17867.17mil|Location2.Y=17873.538mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22459.347mil|Location2.X=22465.715mil|Location1.Y=17867.17mil|Location2.Y=17873.538mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (336.901mil,565mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-13 11:21:56</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22548.996mil|Location2.X=22555.363mil|Location1.Y=17875.595mil|Location2.Y=17881.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22548.996mil|Location2.X=22555.363mil|Location1.Y=17875.595mil|Location2.Y=17881.964mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (426.55mil,573.425mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-13 11:21:56</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22570.953mil|Location2.X=22577.321mil|Location1.Y=21329.74mil|Location2.Y=21336.108mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22570.953mil|Location2.X=22577.321mil|Location1.Y=21329.74mil|Location2.Y=21336.108mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (448.507mil,4027.57mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-10 09:48:32</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22637.446mil|Location2.X=22643.814mil|Location1.Y=17522.17mil|Location2.Y=17528.538mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22637.446mil|Location2.X=22643.814mil|Location1.Y=17522.17mil|Location2.Y=17528.538mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (515mil,220mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-13 11:21:56</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22741.279mil|Location2.X=22747.647mil|Location1.Y=18560.595mil|Location2.Y=18566.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22741.279mil|Location2.X=22747.647mil|Location1.Y=18560.595mil|Location2.Y=18566.964mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (618.833mil,1258.425mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-13 11:30:10</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22753.495mil|Location2.X=22759.863mil|Location1.Y=18005.085mil|Location2.Y=18011.453mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22753.495mil|Location2.X=22759.863mil|Location1.Y=18005.085mil|Location2.Y=18011.453mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (631.049mil,702.915mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22762.19mil|Location2.X=22768.558mil|Location1.Y=18081.209mil|Location2.Y=18087.577mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22762.19mil|Location2.X=22768.558mil|Location1.Y=18081.209mil|Location2.Y=18087.577mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (639.744mil,779.039mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-13 11:21:56</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22815.124mil|Location2.X=22821.492mil|Location1.Y=18560.595mil|Location2.Y=18566.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22815.124mil|Location2.X=22821.492mil|Location1.Y=18560.595mil|Location2.Y=18566.964mil|Absolute=True">Minimum Annular Ring: (3.937mil &lt; 5.118mil) Via (692.678mil,1258.425mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-13 11:30:10</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDMJVQZIKMPHL5LOJR2OEPTPJWJB34E0WIODUEEOI0WSIJYX5VPUMJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Silk To Solder Mask (Clearance=0.945mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22320.862mil|Location2.X=22322.492mil|Location1.Y=21108.762mil|Location2.Y=21110.392mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22320.862mil|Location2.X=22322.492mil|Location1.Y=21108.762mil|Location2.Y=21110.392mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.945mil) Between Pad MTH1-1(196.85mil,3937.008mil) on Multi-Layer And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22321.665mil|Location2.X=22323.295mil|Location1.Y=21108.762mil|Location2.Y=21110.392mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22321.665mil|Location2.X=22323.295mil|Location1.Y=21108.762mil|Location2.Y=21110.392mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.945mil) Between Pad MTH1-1(196.85mil,3937.008mil) on Multi-Layer And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22320.862mil|Location2.X=22322.492mil|Location1.Y=18252.006mil|Location2.Y=18253.636mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22320.862mil|Location2.X=22322.492mil|Location1.Y=18252.006mil|Location2.Y=18253.636mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.945mil) Between Pad R3-1(185.898mil,934.64mil) on Top And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22320.862mil|Location2.X=22322.492mil|Location1.Y=18172.443mil|Location2.Y=18174.073mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22320.862mil|Location2.X=22322.492mil|Location1.Y=18172.443mil|Location2.Y=18174.073mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.945mil) Between Pad R4-1(185.898mil,855.077mil) on Top And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDI0QCWZ52BTQVG3R3YSICJ4ZF3OPMJXZELCUJTXKWXQH335QS0E5K"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Silk to Silk (Clearance=4mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22714.924mil|Location2.X=22718.591mil|Location1.Y=17591.186mil|Location2.Y=17594.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22714.924mil|Location2.X=22718.591mil|Location1.Y=17591.186mil|Location2.Y=17594.853mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "3V3" (591.128mil,295.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23057.014mil|Location2.X=23060.68mil|Location1.Y=17591.186mil|Location2.Y=17594.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23057.014mil|Location2.X=23060.68mil|Location1.Y=17591.186mil|Location2.Y=17594.853mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "D/C" (933.217mil,295.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23105.509mil|Location2.X=23109.176mil|Location1.Y=17589.78mil|Location2.Y=17593.446mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23105.509mil|Location2.X=23109.176mil|Location1.Y=17589.78mil|Location2.Y=17593.446mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "D/C" (933.217mil,295.539mil) on Top Overlay And Track (981.712mil,294.132mil)(981.712mil,327.523mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22821.196mil|Location2.X=22824.863mil|Location1.Y=17591.186mil|Location2.Y=17594.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22821.196mil|Location2.X=22824.863mil|Location1.Y=17591.186mil|Location2.Y=17594.853mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "GND" (697.4mil,295.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23414.58mil|Location2.X=23418.247mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23414.58mil|Location2.X=23418.247mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "LED" (1290.784mil,300.789mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23484.188mil|Location2.X=23487.855mil|Location1.Y=21105.233mil|Location2.Y=21108.9mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23484.188mil|Location2.X=23487.855mil|Location1.Y=21105.233mil|Location2.Y=21108.9mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "MISO" (1295.392mil,4084.586mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23491.296mil|Location2.X=23494.963mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23491.296mil|Location2.X=23494.963mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "MISO" (1367.5mil,300.789mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23921.228mil|Location2.X=23924.895mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23921.228mil|Location2.X=23924.895mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "MISO" (1797.432mil,301.332mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23216.763mil|Location2.X=23220.429mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23216.763mil|Location2.X=23220.429mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "MOSI" (1092.966mil,300.789mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23322.428mil|Location2.X=23326.095mil|Location1.Y=21105.233mil|Location2.Y=21108.9mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23322.428mil|Location2.X=23326.095mil|Location1.Y=21105.233mil|Location2.Y=21108.9mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "MOSI" (1198.631mil,4084.586mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23819.873mil|Location2.X=23823.54mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23819.873mil|Location2.X=23823.54mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "MOSI" (1696.076mil,301.332mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23793.797mil|Location2.X=23797.463mil|Location1.Y=21301.789mil|Location2.Y=21305.455mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23793.797mil|Location2.X=23797.463mil|Location1.Y=21301.789mil|Location2.Y=21305.455mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "PCB REV #" (1670mil,4006.142mil) on Top Overlay And Track (1670mil,3890mil)(1670mil,4050.433mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-06 09:20:42</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23793.797mil|Location2.X=23797.463mil|Location1.Y=21346.08mil|Location2.Y=21349.747mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23793.797mil|Location2.X=23797.463mil|Location1.Y=21346.08mil|Location2.Y=21349.747mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "PCB REV #" (1670mil,4006.142mil) on Top Overlay And Track (1670mil,4050.433mil)(1866.85mil,4050.433mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-06 09:20:42</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23990.647mil|Location2.X=23994.314mil|Location1.Y=21301.789mil|Location2.Y=21305.455mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23990.647mil|Location2.X=23994.314mil|Location1.Y=21301.789mil|Location2.Y=21305.455mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "PCB REV #" (1670mil,4006.142mil) on Top Overlay And Track (1866.85mil,3890mil)(1866.85mil,4050.433mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-06 09:20:42</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22979.796mil|Location2.X=22983.463mil|Location1.Y=17591.186mil|Location2.Y=17594.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22979.796mil|Location2.X=22983.463mil|Location1.Y=17591.186mil|Location2.Y=17594.853mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "RESET" (856mil,295.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23006.754mil|Location2.X=23010.421mil|Location1.Y=17588.124mil|Location2.Y=17591.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23006.754mil|Location2.X=23010.421mil|Location1.Y=17588.124mil|Location2.Y=17591.79mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "RESET" (856mil,295.539mil) on Top Overlay And Track (882.957mil,292.476mil)(897.853mil,292.476mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23021.65mil|Location2.X=23025.317mil|Location1.Y=17588.124mil|Location2.Y=17591.79mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23021.65mil|Location2.X=23025.317mil|Location1.Y=17588.124mil|Location2.Y=17591.79mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "RESET" (856mil,295.539mil) on Top Overlay And Track (897.853mil,292.476mil)(897.853mil,327.523mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23585.808mil|Location2.X=23589.475mil|Location1.Y=21105.233mil|Location2.Y=21108.9mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23585.808mil|Location2.X=23589.475mil|Location1.Y=21105.233mil|Location2.Y=21108.9mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "SD_CS" (1397.012mil,4084.586mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22903.772mil|Location2.X=22907.439mil|Location1.Y=17591.186mil|Location2.Y=17594.853mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22903.772mil|Location2.X=22907.439mil|Location1.Y=17591.186mil|Location2.Y=17594.853mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "SPI_CS" (779.976mil,295.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22935.031mil|Location2.X=22938.697mil|Location1.Y=17582.703mil|Location2.Y=17586.369mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22935.031mil|Location2.X=22938.697mil|Location1.Y=17582.703mil|Location2.Y=17586.369mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "SPI_CS" (779.976mil,295.539mil) on Top Overlay And Track (811.234mil,287.056mil)(811.234mil,327.523mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23220.808mil|Location2.X=23224.475mil|Location1.Y=21105.233mil|Location2.Y=21108.9mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23220.808mil|Location2.X=23224.475mil|Location1.Y=21105.233mil|Location2.Y=21108.9mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "SPI_SCK" (1097.012mil,4084.586mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23318.427mil|Location2.X=23322.093mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23318.427mil|Location2.X=23322.093mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "SPI_SCK" (1194.63mil,300.789mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23634.159mil|Location2.X=23637.826mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23634.159mil|Location2.X=23637.826mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "SPI_SCK" (1510.363mil,301.332mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23714.596mil|Location2.X=23718.263mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23714.596mil|Location2.X=23718.263mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "T_CS" (1590.8mil,301.332mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24040.808mil|Location2.X=24044.475mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Portable M-A\AppData\Local\Temp\Releases\Snapshot\1\Trottinette_Connexion_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24040.808mil|Location2.X=24044.475mil|Location1.Y=17591.996mil|Location2.Y=17595.663mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 4mil) Between Text "T_IRQ" (1917.012mil,301.332mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br>Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
