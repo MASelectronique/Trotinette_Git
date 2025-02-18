@@ -174,45 +174,62 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document8]
+DocumentPath=Managed\OutputJobs\801F4BAA-7D38-40F0-84F0-30FF4E9ED885\OUT-0002-11.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
 DocumentPath=Project Outputs for trottinette_telemetrie\Design Rule Check - Trottinette_Telemetrie_PCB_2L.html
 DItemRevisionGUID=
 
 [Parameter1]
-Name=Projet_Concepteur1
-Value=Lucas Lalumière Longpré
+Name=Projet_Titre
+Value=Trottinette - Module de télémétrie
 
 [Parameter2]
-Name=Projet_Concepteur2
-Value=Marc-Antoine Sauvé
+Name=Projet_stencil_Top_epaisseur
+Value=0.1 MM
 
 [Parameter3]
-Name=Projet_Date
-Value=22-01-2025
+Name=Projet_stencil_Bot_epaisseur
+Value=0.1 MM
 
 [Parameter4]
-Name=Projet_nom_du_cours
-Value=247-67P-SH PROJET DE FIN D'ÉTUDES
+Name=Projet_SCH_Rev
+Value=00
 
 [Parameter5]
 Name=Projet_PCB_Rev
 Value=1
 
 [Parameter6]
-Name=Projet_SCH_Rev
-Value=00
+Name=Projet_nom_du_cours
+Value=247-67P-SH PROJET DE FIN D'ÉTUDES
 
 [Parameter7]
-Name=Projet_stencil_Bot_epaisseur
-Value=0.1 MM
+Name=Projet_Date
+Value=22-01-2025
 
 [Parameter8]
-Name=Projet_stencil_Top_epaisseur
-Value=0.1 MM
+Name=Projet_Concepteur2
+Value=Marc-Antoine Sauvé
 
 [Parameter9]
-Name=Projet_Titre
-Value=Trottinette - Module de télémétrie
+Name=Projet_Concepteur1
+Value=Lucas Lalumière Longpré
 
 [Configuration1]
 Name=Sources
@@ -221,8 +238,21 @@ ConstraintFileCount=0
 ReleaseItemId=
 Variant=[No Variations]
 OutputJobsCount=1
-DocumentReferenceClass1=DocumentReference
-OutputJobFileName1=PCB_Ruler.OutJob
+DocumentReferenceClass1=ManagedDocumentReference
+OutputJobFileName1=OUT-0002-11.OutJob
+VaultGUID1=8051A890-20B5-4808-9216-C54EAAAEFA7E
+VaultHRID1=Cegep de Sherbrooke
+ItemGUID1=C95C3252-6C96-411D-9B23-B65F4469AB39
+ItemHRID1=OUT-0002
+RevisionGUID1=801F4BAA-7D38-40F0-84F0-30FF4E9ED885
+RevisionHRID1=OUT-0002-11
+Cached_RevisionCaption1=TGE_outputjob_2L
+Cached_RevisionDescription1=
+Cached_LifeCycleStateHRID1=Draft
+Cached_LifeCycleStateGUID1=[Unknown]
+Cached_LifeCycleStateColor1=00F0F0F0
+Cached_LifeCycleStateTextColor1=00606060
+Cached_RevisionReleaseDate1=11/20/2024 2:47:25 PM
 ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
 ConfigurationType=Source
 
@@ -232,45 +262,17 @@ ParameterCount=0
 ConstraintFileCount=0
 ReleaseItemId=
 Variant=[No Variations]
-OutputJobsCount=1
-DocumentReferenceClass1=DocumentReference
-OutputJobFileName1=PCB_Ruler.OutJob
+OutputJobsCount=0
 ContentTypeGUID=0C520D2A-E60C-11DF-B822-12313F0024A2
 ConfigurationType=Fabrication
 
 [Configuration3]
-Name=Assembly Populated
-ParameterCount=0
-ConstraintFileCount=0
-ReleaseItemId=
-Variant=Populated
-OutputJobsCount=1
-DocumentReferenceClass1=DocumentReference
-OutputJobFileName1=PCB_Ruler.OutJob
-ContentTypeGUID=0D12F8DC-E60C-11DF-B822-12313F0024A2
-ConfigurationType=Assembly
-
-[Configuration4]
 Name=Assembly
 ParameterCount=0
 ConstraintFileCount=0
 ReleaseItemId=
 Variant=[No Variations]
-OutputJobsCount=1
-DocumentReferenceClass1=DocumentReference
-OutputJobFileName1=PCB_Ruler.OutJob
-ContentTypeGUID=0D12F8DC-E60C-11DF-B822-12313F0024A2
-ConfigurationType=Assembly
-
-[Configuration5]
-Name=Assembly Populated_no_0201
-ParameterCount=0
-ConstraintFileCount=0
-ReleaseItemId=
-Variant=Populated_no_0201
-OutputJobsCount=1
-DocumentReferenceClass1=DocumentReference
-OutputJobFileName1=PCB_Ruler.OutJob
+OutputJobsCount=0
 ContentTypeGUID=0D12F8DC-E60C-11DF-B822-12313F0024A2
 ConfigurationType=Assembly
 
@@ -1360,4 +1362,19 @@ ComparisonOptions5=Kind=Structure Class|MinPercent=75|MinMatch=3|ShowMatch=-1|Us
 
 [SmartPDF]
 PageOptions=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+
+[ManagedOutputJobs1]
+VaultGUID=8051A890-20B5-4808-9216-C54EAAAEFA7E
+VaultHRID=Cegep de Sherbrooke
+ItemGUID=C95C3252-6C96-411D-9B23-B65F4469AB39
+ItemHRID=OUT-0002
+RevisionGUID=801F4BAA-7D38-40F0-84F0-30FF4E9ED885
+RevisionHRID=OUT-0002-11
+Cached_RevisionCaption=TGE_outputjob_2L
+Cached_RevisionDescription=
+Cached_LifeCycleStateHRID=Draft
+Cached_LifeCycleStateGUID=[Unknown]
+Cached_LifeCycleStateColor=00F0F0F0
+Cached_LifeCycleStateTextColor=00606060
+Cached_RevisionReleaseDate=11/20/2024 2:47:25 PM
 
