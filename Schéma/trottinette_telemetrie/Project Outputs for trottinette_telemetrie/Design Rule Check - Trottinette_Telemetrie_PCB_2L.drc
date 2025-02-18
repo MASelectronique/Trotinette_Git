@@ -1,15 +1,13 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\yuyam\OneDrive\Documents\GitHub\Trotinette_Git\Schéma\trottinette_telemetrie\Trottinette_Telemetrie_PCB_2L.PcbDoc
 Date     : 2/18/2025
-Time     : 9:48:46 AM
+Time     : 10:19:45 AM
 
 Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
-   Violation between Short-Circuit Constraint: Between Pad J1-(40.75mm,30.938mm) on Multi-Layer And Polygon Region (82 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J1-(46.75mm,30.938mm) on Multi-Layer And Polygon Region (82 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]
-Rule Violations :2
+Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
 Rule Violations :0
@@ -55,8 +53,10 @@ Rule Violations :0
 
 Waived Violations Of Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
    Waived Violation between Short-Circuit Constraint: Between Pad J1-(40.75mm,30.938mm) on Multi-Layer And Polygon Region (17 hole(s)) Top Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/13/2025 10:41:34 AM
+   Waived Violation between Short-Circuit Constraint: Between Pad J1-(40.75mm,30.938mm) on Multi-Layer And Polygon Region (82 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/18/2025 9:49:11 AM
    Waived Violation between Short-Circuit Constraint: Between Pad J1-(46.75mm,30.938mm) on Multi-Layer And Polygon Region (17 hole(s)) Top Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/13/2025 10:41:34 AM
-Waived Violations :2
+   Waived Violation between Short-Circuit Constraint: Between Pad J1-(46.75mm,30.938mm) on Multi-Layer And Polygon Region (82 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/18/2025 9:49:11 AM
+Waived Violations :4
 
 Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_10(30.25mm,14.75mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM
@@ -153,12 +153,6 @@ Waived Violations Of Rule : Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)
    Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_21(28.85mm,17.55mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/13/2025 10:45:40 AM
 Waived Violations :12
 
-Waived Violations Of Rule : Silk To Solder Mask (Clearance=0.024mm) (IsPad),(All)
-   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.024mm) Between Arc (38.55mm,8.43mm) on Top Overlay And Pad P1-1(39mm,9.11mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 8:54:18 AM
-   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.024mm) Between Pad J2-Shell(20.325mm,30.55mm) on Multi-Layer And Text "Screen" (20.15mm,29.509mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]Waived by Lucas Lalumière Longpré at 2/13/2025 8:53:27 AM
-   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.024mm) Between Pad J2-Shell(20.325mm,35.05mm) on Multi-Layer And Text "Screen" (20.15mm,29.509mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]Waived by Lucas Lalumière Longpré at 2/13/2025 8:53:27 AM
-Waived Violations :3
-
 Waived Violations Of Rule : Silk to Silk (Clearance=0.102mm) (All),(All)
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "ACC_INT1" (46.762mm,4.516mm) on Top Overlay And Track (44.855mm,4.472mm)(50.235mm,4.472mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 9:21:51 AM
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "ACC_INT2" (49.359mm,4.516mm) on Top Overlay And Track (44.855mm,4.472mm)(50.235mm,4.472mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 9:21:51 AM
@@ -170,8 +164,7 @@ Waived Violations Of Rule : Silk to Silk (Clearance=0.102mm) (All),(All)
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (33.605mm,24.211mm) on Bottom Overlay And Track (32.48mm,19.211mm)(32.48mm,24.211mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 8:57:10 AM
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (33.605mm,24.211mm) on Bottom Overlay And Track (32.48mm,19.211mm)(36.555mm,19.211mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 8:57:10 AM
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "PCB REV #" (33.605mm,24.211mm) on Bottom Overlay And Track (32.48mm,24.211mm)(36.555mm,24.211mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]Waived by Lucas Lalumière Longpré at 2/12/2025 8:57:10 AM
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 0.102mm) Between Text "Screen" (20.15mm,29.509mm) on Top Overlay And Track (20.15mm,31.8mm)(20.15mm,33.9mm) on Top Overlay Silk Text to Silk Clearance [0mm]Waived by Lucas Lalumière Longpré at 2/13/2025 8:53:27 AM
-Waived Violations :11
+Waived Violations :10
 
 Waived Violations Of Rule : Board Clearance Constraint (Gap=0mm) (All)
    Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text ".Projet_Titre" (17.503mm,35.78mm) on Bottom Overlay Waived by Lucas Lalumière Longpré at 2/13/2025 8:53:27 AM
@@ -179,6 +172,6 @@ Waived Violations Of Rule : Board Clearance Constraint (Gap=0mm) (All)
 Waived Violations :2
 
 
-Violations Detected : 2
-Waived Violations : 107
+Violations Detected : 0
+Waived Violations : 105
 Time Elapsed        : 00:00:01

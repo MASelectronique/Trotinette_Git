@@ -1,0 +1,58 @@
+Altium Designer Pick and Place Locations
+C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Sources\REV 1.00 (2025-02-18)\04 - ASSEMBLY\trottinette_telemetrie_PCB PNP XY REV 1.00.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       18/02/25
+Time:       09:51
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+"Designator","Description","Package","Layer","Center-X(mil)","Center-Y(mil)","Rotation","Assembly Note","Assembly Type","Polarized","Manufacturer #1","Part Number #1","Supplier 1","Supplier Part Number 1","HelpURL"
+"D1","TVS DIODE 5.25V 17V SOT666","","TopLayer","1722,418","922,443","270","","","","","","","",""
+"U3","Low Quiescent Current, Programmable-Delay Supervisory Circuit, 1 Supply Monitored, -40 to 125 degC, 6-pin SOT-23 (DBV), Green (RoHS & no Sb/Br)","","TopLayer","1092,224","148,268","270","","","","","","","",""
+"TP1","TPO - PC TEST POINT MINI - SMD","SMD","TopLayer","1597,351","125,235","0","","SMD","No","Keystone Electronics","5019","","","https://www.digikey.ca/product-detail/en/keystone-electronics/5019/36-5019CT-ND/3907344"
+"STENCIL1","MEC - STENCIL TOP PASTE - 181x280","","TopLayer","-22125,630","-17297,480","0","","NONE","","","","","",""
+"SER1","SER - SERIAL CARTRIDGE MICRO","","BottomLayer","-22125,630","-17297,480","270","","NONE","","","","","",""
+"REV1","REV - REVISION CARTRIDGE MINI","","BottomLayer","-22125,630","-17297,480","270","","NONE","","","","","",""
+"D2","DIODE SCHOTTKY 15V 1A DO214BA","","TopLayer","1943,259","942,128","0","","","","","","","",""
+"U1","800mA Low-Dropout Linear Regulator, 4-pin SOT-223","","TopLayer","283,465","675,082","180","","","","","","","",""
+"MT1","","None","TopLayer","1824,799","675,763","90","","","","","","","",""
+"U2","Bluetooth, WiFi 802.11b/g/n, Bluetooth v5.0 Transceiver Module 2.4GHz Antenna Not Included, U.FL Surface Mount","None","TopLayer","1104,331","681,498","180","","","","","","","",""
+"R16","","","TopLayer","1692,915","1066,731","270","","","","","","","",""
+"R15","","","TopLayer","1751,968","1066,731","270","","","","","","","",""
+"R14","","","TopLayer","1299,211","1257,285","90","","","","","","","",""
+"R12","","","TopLayer","1409,648","1257,286","90","","","","","","","",""
+"J1","CONN RCP USB2.0 TYP C 24P SMD RA","","TopLayer","1722,441","1257,383","180","","","","","","","",""
+"J2","","","TopLayer","1013,780","1270,670","180","","","","","","","",""
+"R9","RES 63.4K OHM 1% 1/10W 0603","","BottomLayer","929,330","125,235","180","","","","","","DigiKey","RMCF0603FT63K4CT-ND",""
+"P2","WR-PHD Pin Header, THT, Vertical, pitch 2.54mm, 1 Row, 8P","","BottomLayer","669,292","708,662","90","","","","","","","",""
+"P1","WR-PHD Pin Header, THT, Vertical, pitch 2.54mm, 1 Row, 6P","","BottomLayer","1535,432","608,662","90","","","","","","","",""
+"P3","WR-PHD Pin Header, THT, Vertical, pitch 2.54mm, 1 Row, 2P","","TopLayer","1871,846","123,126","0","","","","","","","",""
+"R11","RES 5.1K OHM 1% 1/10W 0603","","BottomLayer","1643,701","1289,370","270","","","","","","DigiKey","RMCF0603FT5K10CT-ND",""
+"R3","RES 5.1K OHM 1% 1/10W 0603","","BottomLayer","1777,562","1287,797","270","","","","","","DigiKey","RMCF0603FT5K10CT-ND",""
+"R2","RES 250 OHM 5% 1/8W 0603","","TopLayer","511,809","543,193","90","","","","","","DigiKey","716-1168-1-ND",""
+"C7","CAP CER 2.2UF 16V Y5V 0603","","TopLayer","1917,744","513,956","180","","","","","","DigiKey","311-3416-1-ND",""
+"R1","RES 150 OHM 1% 1/10W 0603","","TopLayer","511,808","659,465","90","","","","","","DigiKey","RMCF0603FT150RCT-ND",""
+"R8","RES 124K OHM 1% 1/10W 0603","","TopLayer","929,330","63,269","180","","","","","","DigiKey","RMCF0603FT124KCT-ND",""
+"R7","RES 124K OHM 1% 1/10W 0603","","TopLayer","1285,829","226,387","0","","","","","","DigiKey","RMCF0603FT124KCT-ND",""
+"R10","RES 10K OHM 0.1% 1/16W 0603","","BottomLayer","929,330","195,078","0","","","","","","DigiKey","RNCS0603BKE10K0CT-ND",""
+"R6","RES 10K OHM 0.1% 1/16W 0603","","BottomLayer","1634,811","350,594","270","","","","","","DigiKey","RNCS0603BKE10K0CT-ND",""
+"R5","RES 10K OHM 0.1% 1/16W 0603","","BottomLayer","1917,744","403,544","0","","","","","","DigiKey","RNCS0603BKE10K0CT-ND",""
+"R4","RES 10K OHM 0.1% 1/16W 0603","","BottomLayer","1917,745","846,457","0","","","","","","DigiKey","RNCS0603BKE10K0CT-ND",""
+"C12","CAP CER 10000PF 100V X7R 0603","","TopLayer","1229,329","61,135","180","","","","","","DigiKey","311-3100-1-ND",""
+"C6","CAP CER 0603 10NF 16V X7R 10%","","TopLayer","1938,976","744,661","90","","","","","","DigiKey","399-17880-1-ND",""
+"C13","CAP ALUM 100UF 20% 10V SMD","","TopLayer","381,889","1240,079","180","","","","","","DigiKey","1189-2392-1-ND",""
+"C1","CAP ALUM 100UF 20% 10V SMD","","TopLayer","381,888","255,906","270","","","","","","DigiKey","1189-2392-1-ND",""
+"C14","CAP CER 10UF 10V X5R 0603","","BottomLayer","1251,381","331,893","90","","","","","","DigiKey","490-12311-1-ND",""
+"C9","CAP CER 10UF 10V X5R 0603","","BottomLayer","1439,171","331,892","90","","","","","","DigiKey","490-12311-1-ND",""
+"C8","CAP CER 10UF 10V X5R 0603","","TopLayer","1968,504","1125,444","270","","","","","","DigiKey","490-12311-1-ND",""
+"C3","CAP CER 10UF 10V X5R 0603","","TopLayer","362,191","501,969","0","","","","","","DigiKey","490-12311-1-ND",""
+"C2","CAP CER 10UF 10V X5R 0603","","TopLayer","413,363","854,122","0","","","","","","DigiKey","490-12311-1-ND",""
+"C11","General Purpose Ceramic Capacitor, 0603, 100nF, 20%, X7R, 15%, 10V","","TopLayer","1285,827","144,921","0","","","","","","","",""
+"C10","General Purpose Ceramic Capacitor, 0603, 100nF, 20%, X7R, 15%, 10V","","TopLayer","283,464","854,122","180","","","","","","","",""
+"C5","General Purpose Ceramic Capacitor, 0603, 100nF, 20%, X7R, 15%, 10V","","TopLayer","1938,976","616,461","270","","","","","","","",""
+"C4","General Purpose Ceramic Capacitor, 0603, 100nF, 20%, X7R, 15%, 10V","","BottomLayer","1338,977","331,891","270","","","","","","","",""
+"R13","0603 26 AMP JUMPER","","TopLayer","1968,504","1257,285","90","","","","","","DigiKey","JR0603X26ECT-ND",""
