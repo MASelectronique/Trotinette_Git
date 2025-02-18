@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : E:\Programme\_TSO\_Projet tso final\Trotinette_Git\Schéma\PCB_Connexion\Trottinette_Connexion_2L.PcbDoc
 Date     : 2025-02-18
-Time     : 09:07:48
+Time     : 09:57:41
 
 Processing Rule : Clearance Constraint (Gap=6mil) (All),(All)
 Rule Violations :0
@@ -62,42 +62,17 @@ Waived Violations Of Rule : Minimum Annular Ring (Minimum=5.118mil) (All)
    Waived Violation between Minimum Annular Ring: (3.937mil < 5.118mil) Via (692.678mil,1258.425mil) from Top to Bottom (Annular Ring=3.937mil) On (Top Layer)Waived by Marc-Antoine Sauve at 2025-02-13 11:30:10
 Waived Violations :11
 
-Waived Violations Of Rule : Silk To Solder Mask (Clearance=0.945mil) (IsPad),(All)
-   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.945mil) Between Pad MTH1-1(196.85mil,3937.008mil) on Multi-Layer And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.945mil) Between Pad MTH1-1(196.85mil,3937.008mil) on Multi-Layer And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.945mil) Between Pad R3-1(185.898mil,934.64mil) on Top And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.945mil) Between Pad R4-1(185.898mil,855.077mil) on Top And Track (196.047mil,296.349mil)(196.047mil,3812.097mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-Waived Violations :4
-
 Waived Violations Of Rule : Silk to Silk (Clearance=4mil) (All),(All)
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "3V3" (591.128mil,295.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "D/C" (933.217mil,295.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "D/C" (933.217mil,295.539mil) on Top Overlay And Track (981.712mil,294.132mil)(981.712mil,327.523mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "GND" (697.4mil,295.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "LED" (1290.784mil,300.789mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MISO" (1295.392mil,4084.586mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MISO" (1367.5mil,300.789mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MISO" (1797.432mil,301.332mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MOSI" (1092.966mil,300.789mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MOSI" (1198.631mil,4084.586mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "MOSI" (1696.076mil,301.332mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "PCB REV #" (1670mil,4006.142mil) on Top Overlay And Track (1670mil,3890mil)(1670mil,4050.433mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-06 09:20:42
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "PCB REV #" (1670mil,4006.142mil) on Top Overlay And Track (1670mil,4050.433mil)(1866.85mil,4050.433mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-06 09:20:42
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "PCB REV #" (1670mil,4006.142mil) on Top Overlay And Track (1866.85mil,3890mil)(1866.85mil,4050.433mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-06 09:20:42
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "RESET" (856mil,295.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "RESET" (856mil,295.539mil) on Top Overlay And Track (882.957mil,292.476mil)(897.853mil,292.476mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "RESET" (856mil,295.539mil) on Top Overlay And Track (897.853mil,292.476mil)(897.853mil,327.523mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SD_CS" (1397.012mil,4084.586mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SPI_CS" (779.976mil,295.539mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
    Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SPI_CS" (779.976mil,295.539mil) on Top Overlay And Track (811.234mil,287.056mil)(811.234mil,327.523mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SPI_SCK" (1097.012mil,4084.586mil) on Top Overlay And Track (196.047mil,3812.097mil)(2362.976mil,3812.097mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SPI_SCK" (1194.63mil,300.789mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "SPI_SCK" (1510.362mil,301.332mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "T_CS" (1590.8mil,301.332mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-   Waived Violation between Silk To Silk Clearance Constraint: (Collision < 4mil) Between Text "T_IRQ" (1917.012mil,301.332mil) on Top Overlay And Track (196.047mil,296.349mil)(2362.976mil,296.349mil) on Top Overlay Silk Text to Silk Clearance [0mil]Waived by Marc-Antoine Sauve at 2025-02-18 09:05:03
-Waived Violations :25
+Waived Violations :7
 
 
 Violations Detected : 0
-Waived Violations : 40
+Waived Violations : 18
 Time Elapsed        : 00:00:01
