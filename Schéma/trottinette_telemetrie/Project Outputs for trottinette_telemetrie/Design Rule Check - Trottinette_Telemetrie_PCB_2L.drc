@@ -1,13 +1,15 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\yuyam\OneDrive\Documents\GitHub\Trotinette_Git\Schéma\trottinette_telemetrie\Trottinette_Telemetrie_PCB_2L.PcbDoc
-Date     : 2/13/2025
-Time     : 11:07:19 AM
+Date     : 2/18/2025
+Time     : 9:21:26 AM
 
 Processing Rule : Clearance Constraint (Gap=0.152mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
-Rule Violations :0
+   Violation between Short-Circuit Constraint: Between Pad J1-(40.75mm,30.938mm) on Multi-Layer And Polygon Region (82 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J1-(46.75mm,30.938mm) on Multi-Layer And Polygon Region (82 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]
+Rule Violations :2
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
 Rule Violations :0
@@ -22,7 +24,11 @@ Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (
 Rule Violations :0
 
 Processing Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
-Rule Violations :0
+   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (24.414mm,33.178mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (26.752mm,32.177mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (34.069mm,10.083mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
+   Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (35.322mm,8.873mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)
+Rule Violations :4
 
 Processing Rule : Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)
 Rule Violations :0
@@ -43,8 +49,7 @@ Processing Rule : Net Antennae (Tolerance=0mm) (All)
 Rule Violations :0
 
 Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
-   Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text "STENCIL1" (-79.998mm,158.033mm) on Top Overlay 
-Rule Violations :1
+Rule Violations :0
 
 Processing Rule : Room Trottinette_Telemetrie_overview (Bounding Region = (481.341mm, 290.506mm, 698.152mm, 599.296mm) (InComponentClass('Trottinette_Telemetrie_overview'))
 Rule Violations :0
@@ -54,10 +59,8 @@ Rule Violations :0
 
 Waived Violations Of Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
    Waived Violation between Short-Circuit Constraint: Between Pad J1-(40.75mm,30.938mm) on Multi-Layer And Polygon Region (17 hole(s)) Top Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/13/2025 10:41:34 AM
-   Waived Violation between Short-Circuit Constraint: Between Pad J1-(40.75mm,30.938mm) on Multi-Layer And Polygon Region (79 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/13/2025 10:41:34 AM
    Waived Violation between Short-Circuit Constraint: Between Pad J1-(46.75mm,30.938mm) on Multi-Layer And Polygon Region (17 hole(s)) Top Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/13/2025 10:41:34 AM
-   Waived Violation between Short-Circuit Constraint: Between Pad J1-(46.75mm,30.938mm) on Multi-Layer And Polygon Region (79 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]Waived by Lucas Lalumière Longpré at 2/13/2025 10:41:34 AM
-Waived Violations :4
+Waived Violations :2
 
 Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_10(30.25mm,14.75mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM
@@ -73,7 +76,6 @@ Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_20(30.25mm,17.55mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Pad U2-41_21(28.85mm,17.55mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (13mm,12.235mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
-   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (15mm,33.435mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (20.471mm,8.38mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (21.983mm,3.181mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (21.983mm,30.6mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM
@@ -91,7 +93,6 @@ Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (24.875mm,18.59mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (25.521mm,30.881mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (25.769mm,28.586mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM
-   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (26.749mm,32.179mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (26.95mm,28.598mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (27.35mm,31.225mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (27.415mm,1.607mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
@@ -104,7 +105,6 @@ Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (32.897mm,1.558mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (33.48mm,11.65mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (34.372mm,3.656mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
-   Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (35.165mm,9.494mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (35.322mm,10.97mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (35.555mm,22.4mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (40.345mm,28.724mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
@@ -136,7 +136,7 @@ Waived Violations Of Rule : Minimum Annular Ring (Minimum=0.13mm) (All)
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.359mm,31.498mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/13/2025 8:53:27 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.7mm,1.687mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM
    Waived Violation between Minimum Annular Ring: (0.1mm < 0.13mm) Via (9.7mm,6.208mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)Waived by Lucas Lalumière Longpré at 2/13/2025 8:53:27 AM
-Waived Violations :76
+Waived Violations :73
 
 Waived Violations Of Rule : Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)
    Waived Violation between Hole Size Constraint: (0.2mm < 0.3mm) Pad U2-41_10(30.25mm,14.75mm) on Multi-Layer Actual Hole Size = 0.2mmWaived by Lucas Lalumière Longpré at 2/13/2025 10:45:40 AM
@@ -176,9 +176,10 @@ Waived Violations :12
 
 Waived Violations Of Rule : Board Clearance Constraint (Gap=0mm) (All)
    Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text ".Projet_Titre" (17.503mm,35.78mm) on Bottom Overlay Waived by Lucas Lalumière Longpré at 2/13/2025 8:53:27 AM
-Waived Violations :1
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Text "STENCIL1" (-79.998mm,158.033mm) on Top Overlay Waived by Lucas Lalumière Longpré at 2/13/2025 11:07:31 AM
+Waived Violations :2
 
 
-Violations Detected : 1
-Waived Violations : 108
+Violations Detected : 6
+Waived Violations : 104
 Time Elapsed        : 00:00:01
