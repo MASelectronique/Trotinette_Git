@@ -1,19 +1,3 @@
-/* Correction: 17/20
-Wire.write(0x3B); utiliser des constantes pour les registres
-int16_t AcX,AcY,AcZ;	mettre un g_ devant. Est-ce obligatoire d'avoir ces variables globales? Sinon, mettre locales.
- 
- Expliquer d'où viennent ces valeurs.
- //Valeurs d'offset pour X,Y,Z  
-  AcXoff = -950;
-  AcYoff = -300;
-  AcZoff = 0;
-
-if (g_pitch >= 30 || g_pitch <= -30)  Utiliser des constantes
-
-Faire des fonctions dans la boucle principales.
-*/
-
-
 /**
   @file   main.cpp, projet: Prototype affichage Trottinette électrique
   @author Lucas Lalumière Longpré
@@ -34,6 +18,7 @@ Faire des fonctions dans la boucle principales.
             -Écran = ILI9341
             -Accéléromètre = MPU-6050
 */
+
 #include <Arduino.h>
 #include <Wire.h>
 #include <SPI.h>
@@ -62,7 +47,7 @@ void setup() {
   Serial.begin(115200);
 
   tft.init();	//Initialise l'écran tactile
-  tft.setRotation(0); // 0 = (0,0) en haut à gauche/ 1 = (0,0) est bas à gauche/ 2 = (0,0) est haut à droite / 3 = en bas à droite
+  tft.setRotation(0); //Écran en mode vertical
   //Vide l'écran et met la couleur de la police à noir
   tft.fillScreen(TFT_WHITE);
   tft.setTextColor(TFT_BLACK, TFT_WHITE);
