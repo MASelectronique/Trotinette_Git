@@ -7,7 +7,6 @@
 #include <SPI.h>
 #include <math.h>
 #include <TFT_eSPI.h>      //Librairie pour l'écran tactile
-#include "lvgl.h"
 #include "esp_timer.h"
 //#include <ui.h>
 
