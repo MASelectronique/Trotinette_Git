@@ -1,0 +1,25 @@
+.pio/build/esp32-c3-devkitc-02/lib9be/lvgl/stdlib/builtin/lv_tlsf.c.o: \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/stdlib/builtin/lv_tlsf.c \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\lv_conf_internal.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\lv_conf_kconfig.h \
+ C:/Users/201037421/.platformio/packages/framework-arduinoespressif32@src-e2e946657dbcd16e4aabb8a644a06175/tools/sdk/esp32c3/qio_qspi/include/sdkconfig.h \
+ C:/Users/201037421/.platformio/packages/framework-arduinoespressif32@src-e2e946657dbcd16e4aabb8a644a06175/tools/sdk/esp32c3/include/esp_common/include/esp_attr.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/lv_conf.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/stdlib/builtin/lv_tlsf_private.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/stdlib/builtin/lv_tlsf.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\osal\lv_os.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\lv_conf_internal.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\misc\lv_types.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\lv_conf_internal.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\osal\lv_os_none.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\misc\lv_ll.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\misc\lv_types.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\misc\lv_types.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\stdlib\lv_string.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\lv_conf_internal.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\misc\lv_types.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\misc\lv_log.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\misc\lv_assert.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\misc\lv_log.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\stdlib\lv_mem.h \
+ d:\affichage_test\.pio\libdeps\esp32-c3-devkitc-02\lvgl\src\stdlib\lv_string.h
