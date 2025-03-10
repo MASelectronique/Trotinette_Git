@@ -1,6 +1,6 @@
-.pio/build/seeed_xiao_esp32s3/libfcd/ICM42670P/imu/inv_imu_selftest.c.o: \
- .pio/libdeps/seeed_xiao_esp32s3/ICM42670P/src/imu/inv_imu_selftest.c \
- .pio/libdeps/seeed_xiao_esp32s3/ICM42670P/src/imu/inv_imu_selftest.h \
+.pio/build/seeed_xiao_esp32s3/libdbb/ICM42670P/imu/inv_imu_apex.c.o: \
+ .pio/libdeps/seeed_xiao_esp32s3/ICM42670P/src/imu/inv_imu_apex.c \
+ .pio/libdeps/seeed_xiao_esp32s3/ICM42670P/src/imu/inv_imu_apex.h \
  .pio/libdeps/seeed_xiao_esp32s3/ICM42670P/src/imu/inv_imu_driver.h \
  .pio/libdeps/seeed_xiao_esp32s3/ICM42670P/src/imu/inv_imu_defs.h \
  .pio/libdeps/seeed_xiao_esp32s3/ICM42670P/src/imu/inv_imu.h \
