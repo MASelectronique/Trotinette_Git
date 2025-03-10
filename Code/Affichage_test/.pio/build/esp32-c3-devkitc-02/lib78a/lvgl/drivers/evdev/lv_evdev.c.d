@@ -1,0 +1,25 @@
+.pio/build/esp32-c3-devkitc-02/lib78a/lvgl/drivers/evdev/lv_evdev.c.o: \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/lv_evdev.c \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/lv_evdev.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/lv_indev.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../core/lv_group.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../core/../lv_conf_internal.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../core/../lv_conf_kconfig.h \
+ C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32@src-e2e946657dbcd16e4aabb8a644a06175/tools/sdk/esp32c3/qio_qspi/include/sdkconfig.h \
+ C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32@src-e2e946657dbcd16e4aabb8a644a06175/tools/sdk/esp32c3/include/esp_common/include/esp_attr.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/lv_conf.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../core/../misc/lv_types.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../core/../misc/../lv_conf_internal.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../core/../misc/lv_ll.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../core/../misc/lv_types.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/lv_area.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/../lv_conf_internal.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/lv_types.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/lv_math.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/lv_timer.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/../tick/lv_tick.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/../tick/../lv_conf_internal.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/../tick/../misc/lv_types.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/lv_ll.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/lv_event.h \
+ .pio/libdeps/esp32-c3-devkitc-02/lvgl/src/drivers/evdev/../../indev/../misc/lv_array.h
