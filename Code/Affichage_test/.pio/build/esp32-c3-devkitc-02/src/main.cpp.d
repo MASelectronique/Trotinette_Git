@@ -671,4 +671,5 @@
  .pio/libdeps/esp32-c3-devkitc-02/TFT_eSPI/Extensions/Touch.h \
  .pio/libdeps/esp32-c3-devkitc-02/TFT_eSPI/Extensions/Smooth_font.h \
  .pio/libdeps/esp32-c3-devkitc-02/TFT_eSPI/Extensions/Button.h \
- .pio/libdeps/esp32-c3-devkitc-02/TFT_eSPI/Extensions/Sprite.h
+ .pio/libdeps/esp32-c3-devkitc-02/TFT_eSPI/Extensions/Sprite.h \
+ lib/ui/ui.h lib/ui/screens.h

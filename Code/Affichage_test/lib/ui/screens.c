@@ -22,17 +22,9 @@ void create_screen_main() {
         lv_obj_t *parent_obj = obj;
         {
             lv_obj_t *obj = lv_label_create(parent_obj);
-            lv_obj_set_pos(obj, 356, 232);
+            lv_obj_set_pos(obj, 78, 113);
             lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_label_set_text(obj, "Hello, world!");
-        }
-        {
-            // allo
-            lv_obj_t *obj = lv_label_create(parent_obj);
-            objects.allo = obj;
-            lv_obj_set_pos(obj, 108, 118);
-            lv_obj_set_size(obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
-            lv_label_set_text(obj, "allo");
+            lv_label_set_text(obj, "Read it boy!\n");
         }
     }
     
