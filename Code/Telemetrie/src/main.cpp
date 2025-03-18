@@ -13,8 +13,8 @@
 #include <ArduinoJson.h>  //Lib pour JSON
 #include <ICM42670P.h>    //Lib pour accéléromètre
 
-#define RX_PIN D7
-#define TX_PIN D6
+#define RX_PIN 36
+#define TX_PIN 37
 
 JsonDocument doc;   //Objet JSON reçu
 String jsonString;  //Objet JSON décodé
