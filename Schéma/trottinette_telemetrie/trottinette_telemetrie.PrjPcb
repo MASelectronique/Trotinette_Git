@@ -213,7 +213,7 @@ Value=00
 
 [Parameter5]
 Name=Projet_PCB_Rev
-Value=1
+Value=2
 
 [Parameter6]
 Name=Projet_nom_du_cours
