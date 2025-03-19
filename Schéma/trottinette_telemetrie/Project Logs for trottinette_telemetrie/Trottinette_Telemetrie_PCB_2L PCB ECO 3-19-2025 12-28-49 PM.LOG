@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=\RESET Pin=R6-1
+Removed Pin From Net: NetName=3V3 Pin=R6-2
+Removed Pin From Net: NetName=CON_GPIO21 Pin=U2-29
+Removed Pin From Net: NetName=CON_GPIO18 Pin=U2-30
+Removed Pin From Net: NetName=GND Pin=U2-41_10
+Removed Pin From Net: NetName=GND Pin=U2-41_11
+Removed Pin From Net: NetName=GND Pin=U2-41_12
+Removed Pin From Net: NetName=GND Pin=U2-41_13
+Removed Pin From Net: NetName=GND Pin=U2-41_14
+Removed Pin From Net: NetName=GND Pin=U2-41_15
+Removed Pin From Net: NetName=GND Pin=U2-41_16
+Removed Pin From Net: NetName=GND Pin=U2-41_17
+Removed Pin From Net: NetName=GND Pin=U2-41_18
+Removed Pin From Net: NetName=GND Pin=U2-41_19
+Removed Pin From Net: NetName=GND Pin=U2-41_20
+Removed Pin From Net: NetName=GND Pin=U2-41_21
+Added Pin To Net: NetName=GND Pin=R6-1
+Added Pin To Net: NetName=CON_GPIO18 Pin=U2-10
+Added Pin To Net: NetName=CON_GPIO21 Pin=U2-11
+Added Pin To Net: NetName=NetR6_2 Pin=R6-2
+Added Pin To Net: NetName=NetR6_2 Pin=U2-16
+Added Net: Name=NetR6_2
+Added Room: Name=Trottinette_Telemetrie_Circuit
+Added Room: Name=Trottinette_Telemetrie_Title
