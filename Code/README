@@ -3,6 +3,7 @@ Dossier principale (Code)
 Contient : 	Fichier Accelerometre = prototype
 		Fichier Affichage (Plus utilisé) = Développement du système d'affichage
 		Fichier Touch_calibration = Code pour générer les données nécessaire à la calibration de l'écran
+		Fichier EEz Studio : contient le projet du GUI de l'affichage
 				
 Language: C++
 Environnement: Arduino
