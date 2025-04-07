@@ -1,8 +1,11 @@
 Dossier principale (Code)
 
-Contient : 	Fichier Accelerometre = prototype
-		Fichier Affichage = Développement du système d'affichage
+Contient : 	Fichier Accelerometre = Prototype du code pour avoir le pitch et le roll de l'accéléromètre
+		Fichier Affichage (Plus utilisé) = Développement du système d'affichage
+		Fichier Touch_calibration = Code pour générer les données nécessaire à la calibration de l'écran
+		Fichier EEZ_Studio : contient le projet du GUI de l'affichage
+		Fichier Telemetrie : Permet de décoder le JSON envoyer par le client
+				
 Language: C++
 Environnement: Arduino
 Plateforme: PlatformIO
-
