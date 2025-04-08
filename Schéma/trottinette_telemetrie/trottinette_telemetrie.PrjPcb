@@ -196,40 +196,40 @@ DocumentPath=Project Outputs for trottinette_telemetrie\Design Rule Check - Trot
 DItemRevisionGUID=
 
 [Parameter1]
-Name=Projet_Concepteur1
-Value=Lucas Lalumière Longpré
+Name=Projet_Titre
+Value=Trottinette - Module de télémétrie
 
 [Parameter2]
-Name=Projet_Concepteur2
-Value=Marc-Antoine Sauvé
+Name=Projet_stencil_Top_epaisseur
+Value=0.1 MM
 
 [Parameter3]
-Name=Projet_Date
-Value=22-01-2025
+Name=Projet_stencil_Bot_epaisseur
+Value=0.1 MM
 
 [Parameter4]
-Name=Projet_nom_du_cours
-Value=247-67P-SH PROJET DE FIN D'ÉTUDES
+Name=Projet_SCH_Rev
+Value=00
 
 [Parameter5]
 Name=Projet_PCB_Rev
 Value=2
 
 [Parameter6]
-Name=Projet_SCH_Rev
-Value=00
+Name=Projet_nom_du_cours
+Value=247-67P-SH PROJET DE FIN D'ÉTUDES
 
 [Parameter7]
-Name=Projet_stencil_Bot_epaisseur
-Value=0.1 MM
+Name=Projet_Date
+Value=08-04-2025
 
 [Parameter8]
-Name=Projet_stencil_Top_epaisseur
-Value=0.1 MM
+Name=Projet_Concepteur2
+Value=Marc-Antoine Sauvé
 
 [Parameter9]
-Name=Projet_Titre
-Value=Trottinette - Module de télémétrie
+Name=Projet_Concepteur1
+Value=Lucas Lalumière Longpré
 
 [Configuration1]
 Name=Sources
@@ -262,7 +262,22 @@ ParameterCount=0
 ConstraintFileCount=0
 ReleaseItemId=
 Variant=[No Variations]
-OutputJobsCount=0
+OutputJobsCount=1
+DocumentReferenceClass1=ManagedDocumentReference
+OutputJobFileName1=OUT-0002-11.OutJob
+VaultGUID1=8051A890-20B5-4808-9216-C54EAAAEFA7E
+VaultHRID1=Cegep de Sherbrooke
+ItemGUID1=C95C3252-6C96-411D-9B23-B65F4469AB39
+ItemHRID1=OUT-0002
+RevisionGUID1=801F4BAA-7D38-40F0-84F0-30FF4E9ED885
+RevisionHRID1=OUT-0002-11
+Cached_RevisionCaption1=TGE_outputjob_2L
+Cached_RevisionDescription1=
+Cached_LifeCycleStateHRID1=Draft
+Cached_LifeCycleStateGUID1=[Unknown]
+Cached_LifeCycleStateColor1=00F0F0F0
+Cached_LifeCycleStateTextColor1=00606060
+Cached_RevisionReleaseDate1=11/20/2024 2:47:25 PM
 ContentTypeGUID=0C520D2A-E60C-11DF-B822-12313F0024A2
 ConfigurationType=Fabrication
 
@@ -272,7 +287,22 @@ ParameterCount=0
 ConstraintFileCount=0
 ReleaseItemId=
 Variant=[No Variations]
-OutputJobsCount=0
+OutputJobsCount=1
+DocumentReferenceClass1=ManagedDocumentReference
+OutputJobFileName1=OUT-0002-11.OutJob
+VaultGUID1=8051A890-20B5-4808-9216-C54EAAAEFA7E
+VaultHRID1=Cegep de Sherbrooke
+ItemGUID1=C95C3252-6C96-411D-9B23-B65F4469AB39
+ItemHRID1=OUT-0002
+RevisionGUID1=801F4BAA-7D38-40F0-84F0-30FF4E9ED885
+RevisionHRID1=OUT-0002-11
+Cached_RevisionCaption1=TGE_outputjob_2L
+Cached_RevisionDescription1=
+Cached_LifeCycleStateHRID1=Draft
+Cached_LifeCycleStateGUID1=[Unknown]
+Cached_LifeCycleStateColor1=00F0F0F0
+Cached_LifeCycleStateTextColor1=00606060
+Cached_RevisionReleaseDate1=11/20/2024 2:47:25 PM
 ContentTypeGUID=0D12F8DC-E60C-11DF-B822-12313F0024A2
 ConfigurationType=Assembly
 
