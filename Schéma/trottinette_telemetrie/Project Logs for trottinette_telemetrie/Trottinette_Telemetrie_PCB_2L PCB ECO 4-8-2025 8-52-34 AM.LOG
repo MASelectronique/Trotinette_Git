@@ -1,0 +1,56 @@
+Removed Pin From Net: NetName=GND Pin=U2-41_10
+Removed Pin From Net: NetName=GND Pin=U2-41_11
+Removed Pin From Net: NetName=GND Pin=U2-41_12
+Removed Pin From Net: NetName=GND Pin=U2-41_13
+Removed Pin From Net: NetName=GND Pin=U2-41_14
+Removed Pin From Net: NetName=GND Pin=U2-41_15
+Removed Pin From Net: NetName=GND Pin=U2-41_16
+Removed Pin From Net: NetName=GND Pin=U2-41_17
+Removed Pin From Net: NetName=GND Pin=U2-41_18
+Removed Pin From Net: NetName=GND Pin=U2-41_19
+Removed Pin From Net: NetName=GND Pin=U2-41_20
+Removed Pin From Net: NetName=GND Pin=U2-41_21
+Added Component: Designator=D3(LED 0603_1608 GREEN)
+Add component (AddParameter): Name = "Color"; Value = "Green"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.dialightsignalsandcomponents.com/Assets/Drawings/2D_Drawings_DrawingDetailedSpec/NewDrawings/C18371C.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "DigiKey Link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://www.digikey.com/en/products/detail/dialight/5973316507F/9385428"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Configuration"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current - Test"; Value = "20mA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Device Package"; Value = "0603 (1608 Metric)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height (Max)"; Value = "1.24mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LastUpdated"; Value = "6/3/2024 7:58:53 PM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lens Color"; Value = "1.24mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lens Style"; Value = "Round with Domed Top"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lifecycle Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Dialight"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Millicandela Rating"; Value = "34mcd"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Minimum Order"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "0603 (1608 Metric)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "TapeAndReel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "5973316507F"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Status"; Value = "Active"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartId"; Value = "587"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "0.13"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "597"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "1.60mm L x 0.80mm W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "DigiKey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Device Package"; Value = "0603"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "350-4373-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Green"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage - Forward (Vf) (Typ)"; Value = "2V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Wavelength - Dominant"; Value = "560nm"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VBUS Pin=D3-1
+Added Pin To Net: NetName=GND Pin=D3-2
+Added Pin To Net: NetName=MCU_RX Pin=P1-3
+Added Pin To Net: NetName=MCU_RX Pin=U2-7
+Added Net: Name=MCU_RX
+Added Pin To Net: NetName=MCU_TX Pin=P1-2
+Added Pin To Net: NetName=MCU_TX Pin=U2-8
+Added Net: Name=MCU_TX
+Added Member To Class: ClassName=Trottinette_Telemetrie_Connectors Member=Component D3 Green
+Added Room: Name=Trottinette_Telemetrie_Circuit
+Added Room: Name=Trottinette_Telemetrie_overview
+Added Room: Name=Trottinette_Telemetrie_Title
