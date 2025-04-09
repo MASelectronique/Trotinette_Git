@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=GND Pin=D3-2
+Removed Pin From Net: NetName=VBUS Pin=R17-2
+Removed Member From Class: ClassName=Trottinette_Telemetrie_Connectors Member=D3
+Removed Member From Class: ClassName=Trottinette_Telemetrie_Connectors Member=R17
+Added Room: Name=Trottinette_Telemetrie_Circuit
+Added Room: Name=Trottinette_Telemetrie_overview
+Added Room: Name=Trottinette_Telemetrie_Title

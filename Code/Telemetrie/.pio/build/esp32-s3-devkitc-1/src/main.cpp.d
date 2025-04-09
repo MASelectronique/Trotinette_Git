@@ -177,14 +177,17 @@
  C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32s3/include/esp_hw_support/include/soc/esp32/spiram.h \
  C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/cores/esp32/io_pin_remap.h \
  C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
+ .pio/libdeps/esp32-s3-devkitc-1/EspSoftwareSerial/src/SoftwareSerial.h \
+ .pio/libdeps/esp32-s3-devkitc-1/ghostl/src/circular_queue.h \
+ .pio/libdeps/esp32-s3-devkitc-1/ghostl/src/Delegate.h \
  .pio/libdeps/esp32-s3-devkitc-1/ArduinoJson/src/ArduinoJson.h \
  .pio/libdeps/esp32-s3-devkitc-1/ArduinoJson/src/ArduinoJson.hpp \
  .pio/libdeps/esp32-s3-devkitc-1/ArduinoJson/src/ArduinoJson/Configuration.hpp \
+ C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.h \
+ C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal.h \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/ICM42670P.h \
  C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src/SPI.h \
  C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-spi.h \
- C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src/Wire.h \
- C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal.h \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_driver.h \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_defs.h \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu.h \
