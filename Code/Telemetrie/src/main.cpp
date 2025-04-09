@@ -64,7 +64,7 @@ int pitch_offset = -41;
 void setup() {
   int ret;
   Serial.begin(115200); //Port pour moniteur série
-  jsonSerial.begin(9600, EspSoftwareSerial::SWSERIAL_8N1, RX_PIN, TX_PIN);  //Port pour recevoir objet JSON
+  jsonSerial.begin(115200, EspSoftwareSerial::SWSERIAL_8N1, RX_PIN, TX_PIN);  //Port pour recevoir objet JSON
   while(!Serial) {} //Attend que le moniteur série soit initialisé
 
   pinMode(INT_PIN, INPUT_PULLUP);
@@ -109,10 +109,7 @@ void loop() {
     digitalWrite(LED_PIN, LOW);
   }
 
-  // Run @ ODR 100Hz
-  delay(1000);
-
-  /*jsonString = jsonSerial.readStringUntil('\n');  //Lit le message recu jusqu'a \n
+  jsonString = jsonSerial.readStringUntil('\n');  //Lit le message recu jusqu'a \n
   jsonErrorMessage = jsonString;
   jsonError = deserializeJson(doc, jsonString);  //Décode l'objet
 
@@ -134,7 +131,7 @@ void loop() {
   else {  //Si erreur de décodage
     Serial.println("json error:");
     Serial.println(jsonErrorMessage);
-  }*/
+  }
 
 }
 

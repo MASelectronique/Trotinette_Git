@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Trottinette_Telemetrie_PCB_2L.PcbDoc   4/9/2025  9:56:01 AM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top to Bottom
+ASCII RoundHoles File : trottinette_telemetrie_PCB REV 2.00-RoundHoles.TXT
+ASCII SlotHoles File : trottinette_telemetrie_PCB REV 2.00-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      8mil (0.2mm)                                              Round             12        PTH        0.53inch (13.35mm)
+T2      12mil (0.3mm)                                             Round             70        PTH        13.03inch (331.02mm)
+T3      24mil (0.6mm)                                             Slot              8         PTH        4.41inch (112.10mm)
+T4      43mil (1.1mm)                                             Round             16        PTH        3.36inch (85.44mm)
+T5      24mil (0.6mm)                                             Round             1         NPTH       0.00inch (0.00mm)
+T6      24mil (0.6mm)                                             Slot              1         NPTH       0.01inch (0.25mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              108
+
+Total Processing Time (hh:mm:ss) : 00:00:00

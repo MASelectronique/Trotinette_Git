@@ -1,0 +1,763 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+        h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+            padding: 0.3em;
+        }
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+        body {
+			font-family : segoe ui;
+        }
+
+        td, th {
+            padding: 0.5em;
+			text-align : left;
+			width: 10em;
+        }
+        th {
+			background-color : #EEEEEE;
+
+        }
+        th.column1, td.column1 {
+            text-align: left;
+            width : auto;
+        }
+        table {
+            width : 100%;
+			font-size: 0.9em;
+        }
+        
+        .DRC_summary_header {                           
+            padding-bottom : 0.1em;
+            border : 0px solid black;                           
+            width: 100%;
+			align: left;
+        }
+
+        .DRC_summary_header_col1, 
+        .DRC_summary_header_col2, 
+        .DRC_summary_header_col3  {
+            color : black;
+            font-size:100%;
+                        padding : 0em;
+            padding-top : 0.2em;
+            padding-bottom 0.2em;
+            border : 0px solid black;
+            vertical-align: top;
+			text-align: left;
+        }
+        
+        .DRC_summary_header_col1 {                              
+			font-weight: bold;
+			width: 8em;
+        }
+
+        .DRC_summary_header_col2 {       
+			width: 0.1em;
+		
+        }
+
+        .DRC_summary_header_col3 {       
+			width : auto;
+        }
+
+        .header_holder  {
+        Width = 100%;
+        border = 0px solid green;
+        padding = 0;
+        }
+        
+        
+        .front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+            left:0;
+            top:0;
+			padding: 0em;
+            padding-top : 0.1em;            
+            border : 0px solid black;
+            width : 100%;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .front_matter_column1 {
+            width : 8em;   
+			font-weight: bold;
+        }
+        
+        .front_matter_column2 {
+            width: 0.1em;
+        }
+
+        .front_matter_column3 {
+            width         : auto;  
+        }
+        
+        .total_column1, .total_column {
+            font-weight : bold;
+        }
+        .total_column1 {
+			text-align : left;
+        }
+        .warning, .error {
+            color : red;
+            font-weight : bold;
+        }
+        tr.onmouseout_odd {
+			background-color : #white;
+        }
+        tr.onmouseout_even { 
+			background-color : #FAFAFA;
+        }
+        tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+        } 
+        a:link, a:visited, .q a:link,.q a:active,.q {
+            color: #21489e; 
+        }
+        a:link.callback, a:visited.callback { 
+            color: #21489e; 
+        }
+        p.contents_level1 {
+            font-weight : bold;
+            font-size : 110%;
+            margin : 0.5em;
+        }
+        p.contents_level2 {
+            position : relative;
+            left : 20px;
+            margin : 0.5em;
+        }
+    </style><script type="text/javascript">
+        function coordToMils(coord) {
+            var number = coord / 10000;
+            
+            if (number != number.toFixed(3))
+                number = number.toFixed(3);
+
+            return number + 'mil'
+        }
+
+        function coordToMM(coord) {
+            var number = 0.0254 * coord / 10000;
+            
+            if (number != number.toFixed(4))
+                number = number.toFixed(4);
+            
+            return number + 'mm'
+        }
+    
+        function convertCoord(coordNode, units) {
+            for (var i = 0; i < coordNode.childNodes.length; i++) {
+                coordNode.removeChild(coordNode.childNodes[i]);
+            }
+
+            var coord = coordNode.getAttribute('value');
+            if (coord != null) {
+                if (units == 'mm') {
+                    textNode = document.createTextNode(coordToMM(coord));
+                    coordNode.appendChild(textNode);
+                } else if (units == 'mil') {
+                    textNode = document.createTextNode(coordToMils(coord));     
+                    coordNode.appendChild(textNode);    
+                }
+            }
+        }
+    
+        function convertUnits(unitNode, units) {
+            for (var i = 0; i < unitNode.childNodes.length; i++) {
+                unitNode.removeChild(unitNode.childNodes[i]);       
+            }
+        
+            textNode = document.createTextNode(units); 
+            unitNode.appendChild(textNode);
+        }
+    
+        function changeUnits(radio_input, units) {
+            if (radio_input.checked) {
+            
+                var elements = document.getElementsByName('coordinate');
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        convertCoord(elements[i], units);
+                    }
+                }
+    
+                var elements = document.getElementsByName('units');
+                if (elements) {
+                    for (var i = 0; i < elements.length; i++) {
+                        convertUnits(elements[i], units);
+                    }
+                }
+            }
+        }
+    </script></head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+        "><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">4/9/2025</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9:55:14 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc" class="file"><acronym title="C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc">C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">128</td></tr>
+</table>
+</td>
+</table><a name="IDJRKWWJIOKHXKE0V4024NGQDE2LFJLZXV035XSBFFJF1GZWPAAZ4J"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDM4UKRD4O5PEJNYNPATB53INZ2OIE0PH0ENLI0ANQXT1S4D5RLNOI">Clearance Constraint (Gap=0.152mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3SRCYRSACR44PYL5DOCZUL51OTQY3LUZMYI41DH4KRVIBWM2ITJ">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVSK5P1GWGJR2CBK2F44UWPFNWWAPMAWTTEUSQDY40Z2KIQZNTXO">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDARABWGZFWO4WKJTHDUVFSPNWSN34LHXZNVLFP2FECYAYPA2EQNKI">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUVRPYHETDPCREQW1OPU5XPNYPHZ1WKQHIX53N5G1AF5VRJGBRY0I">Width Constraint (Min=0.127mm) (Max=25.4mm) (Preferred=0.152mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYTSRCZ4QRDRFITWBLE1Y5YTD3O0HH3DLRQZLUGGZMS3CPLCIXDXM">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKHK2LYIKJDVINO333ALPJMHDGIJMVXDMBWNEC4B0QTUEWBY4IDAB">Minimum Annular Ring (Minimum=0.13mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDO1LXGAYNAUIIOPSKFSMWN5TQN1HXCOTGYCBHGCUYJZ4FZBE2F4I">Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSU1NFHVXM5PWHZGYXWCHY5C3PNGYQE4L003TFMMGX0HZUQLPK3LE">Hole To Hole Clearance (Gap=0.5mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFEZNW0AKMZKHHLGTG4SLBJGL5PZGLKKL5L2KDVHALGBZ3DVJ1PUJ">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDALTNR5SSUMTMGMCQ3GXN4EMRQBQYC4CTMSVXZSN35OA41VLLHFO">Silk To Solder Mask (Clearance=0.024mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJF022PJHEWTPEAQ15TZLHV552J2J0BGVOJ5J4SLKBYMTM33HAEMN">Silk to Silk (Clearance=0.102mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSPONKA2I1NLUIRM3CH42TBBDLGTLGIB4T2UOUSCQ1ESTKASG1D1O">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWUH2WVII4L3OP4NZKIRSTJVDWOQNJ4LD23QE0XJGXLVPPSTYHTTO">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNF5CQYRT1XWJHRYDZHHEQKRSLMGCYWA33KZBL1BE1KIY5ENBNULJ">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNW02QV5ZYR4JORHW00CBQYUCNERC3YAEAR0RIHGET0QHGPDFNQNF">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDG5UCK1OJPHDIPWEACNJEBHIUILHRYXJXULJXSYFOSWLFJQIOXQ5B">Minimum Annular Ring (Minimum=0.13mm) (All)</a></td>
+<td class="column2">82</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBOP0JKODI4ZQMMEUNKICIJQ53IT1S2CSCLX1BCMJH5JKKWJ433BE">Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">12</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVWLW2CQ3BFQTDJFX1P4AGLFVDCRUXN2ZOBJORTCA40E1HCNA0HUC">Silk to Silk (Clearance=0.102mm) (All),(All)</a></td>
+<td class="column2">28</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID50HP1EJ5Z2WSNFAFOCYB0UAEPESSPRXR0O2AFJOOGHMETQD0K2PF">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">128</td>
+</tr>
+</table><br><a name="IDOTGZ0BY4BDJSCWVDYIFLOQGM3NQUS2YGEHVABWHSBVYUX44GZ1V"><h2>Rule Violations</h2></a><a name="IDS5QQDJPIZTNTHVBGCBHLP1THEID1DWA1GJ1QTVGLUKCLXE3L5ZGD"><h2>Waived Violations</h2></a><a name="IDNW02QV5ZYR4JORHW00CBQYUCNERC3YAEAR0RIHGET0QHGPDFNQNF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Short-Circuit Constraint (Allowed=No) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J1-(40.223mm,30.695mm) on Multi-Layer And Polygon Region (14 hole(s)) Top Location : [X = 0mm][Y = 0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/8/2025 9:24:50 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J1-(40.223mm,30.695mm) on Multi-Layer And Polygon Region (83 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:37:50 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J1-(46.223mm,30.695mm) on Multi-Layer And Polygon Region (14 hole(s)) Top Location : [X = 0mm][Y = 0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/8/2025 9:24:50 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J1-(46.223mm,30.695mm) on Multi-Layer And Polygon Region (83 hole(s)) Bottom Location : [X = 0mm][Y = 0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:37:50 AM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDG5UCK1OJPHDIPWEACNJEBHIUILHRYXJXULJXSYFOSWLFJQIOXQ5B"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Minimum Annular Ring (Minimum=0.13mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23313.392mil|Location2.X=23319.76mil|Location1.Y=17880.911mil|Location2.Y=17887.28mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23313.392mil|Location2.X=23319.76mil|Location1.Y=17880.911mil|Location2.Y=17887.28mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_10(30.25mm,14.75mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23258.274mil|Location2.X=23264.642mil|Location1.Y=17880.911mil|Location2.Y=17887.28mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23258.274mil|Location2.X=23264.642mil|Location1.Y=17880.911mil|Location2.Y=17887.28mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_11(28.85mm,14.75mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23340.95mil|Location2.X=23347.318mil|Location1.Y=17908.471mil|Location2.Y=17914.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23340.95mil|Location2.X=23347.318mil|Location1.Y=17908.471mil|Location2.Y=17914.839mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_12(30.95mm,15.45mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23285.832mil|Location2.X=23292.2mil|Location1.Y=17908.471mil|Location2.Y=17914.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23285.832mil|Location2.X=23292.2mil|Location1.Y=17908.471mil|Location2.Y=17914.839mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_13(29.55mm,15.45mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23230.714mil|Location2.X=23237.082mil|Location1.Y=17908.471mil|Location2.Y=17914.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23230.714mil|Location2.X=23237.082mil|Location1.Y=17908.471mil|Location2.Y=17914.839mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_14(28.15mm,15.45mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23313.392mil|Location2.X=23319.76mil|Location1.Y=17936.032mil|Location2.Y=17942.399mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23313.392mil|Location2.X=23319.76mil|Location1.Y=17936.032mil|Location2.Y=17942.399mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_15(30.25mm,16.15mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23258.274mil|Location2.X=23264.642mil|Location1.Y=17936.032mil|Location2.Y=17942.399mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23258.274mil|Location2.X=23264.642mil|Location1.Y=17936.032mil|Location2.Y=17942.399mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_16(28.85mm,16.15mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23340.95mil|Location2.X=23347.318mil|Location1.Y=17963.589mil|Location2.Y=17969.958mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23340.95mil|Location2.X=23347.318mil|Location1.Y=17963.589mil|Location2.Y=17969.958mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_17(30.95mm,16.85mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23285.832mil|Location2.X=23292.2mil|Location1.Y=17963.589mil|Location2.Y=17969.958mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23285.832mil|Location2.X=23292.2mil|Location1.Y=17963.589mil|Location2.Y=17969.958mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_18(29.55mm,16.85mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23230.714mil|Location2.X=23237.082mil|Location1.Y=17963.589mil|Location2.Y=17969.958mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23230.714mil|Location2.X=23237.082mil|Location1.Y=17963.589mil|Location2.Y=17969.958mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_19(28.15mm,16.85mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23313.392mil|Location2.X=23319.76mil|Location1.Y=17991.149mil|Location2.Y=17997.518mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23313.392mil|Location2.X=23319.76mil|Location1.Y=17991.149mil|Location2.Y=17997.518mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_20(30.25mm,17.55mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23258.274mil|Location2.X=23264.642mil|Location1.Y=17991.149mil|Location2.Y=17997.518mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23258.274mil|Location2.X=23264.642mil|Location1.Y=17991.149mil|Location2.Y=17997.518mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Pad U2-41_21(28.85mm,17.55mm) on Multi-Layer (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22183.274mil|Location2.X=22189.642mil|Location1.Y=17725.891mil|Location2.Y=17732.259mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22183.274mil|Location2.X=22189.642mil|Location1.Y=17725.891mil|Location2.Y=17732.259mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (1.545mm,10.763mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22186.422mil|Location2.X=22192.79mil|Location1.Y=18293.312mil|Location2.Y=18299.68mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22186.422mil|Location2.X=22192.79mil|Location1.Y=18293.312mil|Location2.Y=18299.68mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (1.625mm,25.175mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:03 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22634.254mil|Location2.X=22640.622mil|Location1.Y=17783.855mil|Location2.Y=17790.223mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22634.254mil|Location2.X=22640.622mil|Location1.Y=17783.855mil|Location2.Y=17790.223mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (13mm,12.235mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22928.405mil|Location2.X=22934.772mil|Location1.Y=17632.099mil|Location2.Y=17638.467mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22928.405mil|Location2.X=22934.772mil|Location1.Y=17632.099mil|Location2.Y=17638.467mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (20.471mm,8.38mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22943.771mil|Location2.X=22950.139mil|Location1.Y=18194.27mil|Location2.Y=18200.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22943.771mil|Location2.X=22950.139mil|Location1.Y=18194.27mil|Location2.Y=18200.638mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (20.862mm,22.659mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 3/19/2025 12:41:50 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22943.771mil|Location2.X=22950.139mil|Location1.Y=18240.656mil|Location2.Y=18247.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22943.771mil|Location2.X=22950.139mil|Location1.Y=18240.656mil|Location2.Y=18247.024mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (20.862mm,23.838mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 3/19/2025 12:41:50 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22987.922mil|Location2.X=22994.29mil|Location1.Y=17427.405mil|Location2.Y=17433.773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22987.922mil|Location2.X=22994.29mil|Location1.Y=17427.405mil|Location2.Y=17433.773mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (21.983mm,3.181mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22987.922mil|Location2.X=22994.29mil|Location1.Y=18506.894mil|Location2.Y=18513.262mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22987.922mil|Location2.X=22994.29mil|Location1.Y=18506.894mil|Location2.Y=18513.262mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (21.983mm,30.6mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22987.922mil|Location2.X=22994.29mil|Location1.Y=18538.39mil|Location2.Y=18544.758mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22987.922mil|Location2.X=22994.29mil|Location1.Y=18538.39mil|Location2.Y=18544.758mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (21.983mm,31.4mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23001.776mil|Location2.X=23008.144mil|Location1.Y=18168.312mil|Location2.Y=18174.68mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23001.776mil|Location2.X=23008.144mil|Location1.Y=18168.312mil|Location2.Y=18174.68mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (22.335mm,22mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23001.589mil|Location2.X=23007.957mil|Location1.Y=18084.062mil|Location2.Y=18090.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23001.589mil|Location2.X=23007.957mil|Location1.Y=18084.062mil|Location2.Y=18090.43mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (22.33mm,19.86mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23025.99mil|Location2.X=23032.358mil|Location1.Y=18395.847mil|Location2.Y=18402.215mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23025.99mil|Location2.X=23032.358mil|Location1.Y=18395.847mil|Location2.Y=18402.215mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (22.95mm,27.779mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23035.022mil|Location2.X=23041.39mil|Location1.Y=17934.062mil|Location2.Y=17940.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23035.022mil|Location2.X=23041.39mil|Location1.Y=17934.062mil|Location2.Y=17940.43mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (23.179mm,16.05mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23036.116mil|Location2.X=23042.484mil|Location1.Y=17737.397mil|Location2.Y=17743.765mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23036.116mil|Location2.X=23042.484mil|Location1.Y=17737.397mil|Location2.Y=17743.765mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (23.207mm,11.055mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23036.116mil|Location2.X=23042.484mil|Location1.Y=17678.154mil|Location2.Y=17684.522mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23036.116mil|Location2.X=23042.484mil|Location1.Y=17678.154mil|Location2.Y=17684.522mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (23.207mm,9.55mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23050.392mil|Location2.X=23056.76mil|Location1.Y=18534.848mil|Location2.Y=18541.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23050.392mil|Location2.X=23056.76mil|Location1.Y=18534.848mil|Location2.Y=18541.216mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (23.57mm,31.31mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23076.146mil|Location2.X=23082.514mil|Location1.Y=18504.926mil|Location2.Y=18511.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23076.146mil|Location2.X=23082.514mil|Location1.Y=18504.926mil|Location2.Y=18511.294mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (24.224mm,30.55mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23077.366mil|Location2.X=23083.734mil|Location1.Y=17983.327mil|Location2.Y=17989.695mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23077.366mil|Location2.X=23083.734mil|Location1.Y=17983.327mil|Location2.Y=17989.695mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (24.255mm,17.301mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23083.623mil|Location2.X=23089.991mil|Location1.Y=18608.393mil|Location2.Y=18614.761mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23083.623mil|Location2.X=23089.991mil|Location1.Y=18608.393mil|Location2.Y=18614.761mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (24.414mm,33.178mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/18/2025 9:21:40 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23089.527mil|Location2.X=23095.895mil|Location1.Y=18427.613mil|Location2.Y=18433.982mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23089.527mil|Location2.X=23095.895mil|Location1.Y=18427.613mil|Location2.Y=18433.982mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (24.564mm,28.586mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23101.775mil|Location2.X=23108.143mil|Location1.Y=18034.062mil|Location2.Y=18040.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23101.775mil|Location2.X=23108.143mil|Location1.Y=18034.062mil|Location2.Y=18040.43mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (24.875mm,18.59mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23127.226mil|Location2.X=23133.594mil|Location1.Y=18517.942mil|Location2.Y=18524.31mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23127.226mil|Location2.X=23133.594mil|Location1.Y=18517.942mil|Location2.Y=18524.31mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (25.521mm,30.881mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23136.96mil|Location2.X=23143.328mil|Location1.Y=18427.613mil|Location2.Y=18433.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23136.96mil|Location2.X=23143.328mil|Location1.Y=18427.613mil|Location2.Y=18433.981mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (25.769mm,28.586mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23175.684mil|Location2.X=23182.052mil|Location1.Y=18568.972mil|Location2.Y=18575.34mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23175.684mil|Location2.X=23182.052mil|Location1.Y=18568.972mil|Location2.Y=18575.34mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (26.752mm,32.177mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/18/2025 9:21:40 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23183.47mil|Location2.X=23189.838mil|Location1.Y=18428.06mil|Location2.Y=18434.428mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23183.47mil|Location2.X=23189.838mil|Location1.Y=18428.06mil|Location2.Y=18434.428mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (26.95mm,28.598mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23199.218mil|Location2.X=23205.586mil|Location1.Y=18531.501mil|Location2.Y=18537.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23199.218mil|Location2.X=23205.586mil|Location1.Y=18531.501mil|Location2.Y=18537.869mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (27.35mm,31.225mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23201.776mil|Location2.X=23208.144mil|Location1.Y=17365.439mil|Location2.Y=17371.807mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23201.776mil|Location2.X=23208.144mil|Location1.Y=17365.439mil|Location2.Y=17371.807mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (27.415mm,1.607mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23214.103mil|Location2.X=23220.471mil|Location1.Y=17533.842mil|Location2.Y=17540.21mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23214.103mil|Location2.X=23220.471mil|Location1.Y=17533.842mil|Location2.Y=17540.21mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (27.728mm,5.884mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23216.84mil|Location2.X=23223.208mil|Location1.Y=18428.06mil|Location2.Y=18434.428mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23216.84mil|Location2.X=23223.208mil|Location1.Y=18428.06mil|Location2.Y=18434.428mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (27.798mm,28.598mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23262.21mil|Location2.X=23268.578mil|Location1.Y=18504.926mil|Location2.Y=18511.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23262.21mil|Location2.X=23268.578mil|Location1.Y=18504.926mil|Location2.Y=18511.294mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (28.95mm,30.55mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23276.569mil|Location2.X=23282.937mil|Location1.Y=18426.571mil|Location2.Y=18432.939mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23276.569mil|Location2.X=23282.937mil|Location1.Y=18426.571mil|Location2.Y=18432.939mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (29.315mm,28.56mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23401.776mil|Location2.X=23408.144mil|Location1.Y=18284.062mil|Location2.Y=18290.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23401.776mil|Location2.X=23408.144mil|Location1.Y=18284.062mil|Location2.Y=18290.43mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (32.495mm,24.94mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 8:53:43 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23417.603mil|Location2.X=23423.971mil|Location1.Y=17363.501mil|Location2.Y=17369.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23417.603mil|Location2.X=23423.971mil|Location1.Y=17363.501mil|Location2.Y=17369.869mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (32.897mm,1.558mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23445.279mil|Location2.X=23451.647mil|Location1.Y=18477.214mil|Location2.Y=18483.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23445.279mil|Location2.X=23451.647mil|Location1.Y=18477.214mil|Location2.Y=18483.583mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (33.6mm,29.846mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 3/19/2025 12:42:47 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23463.746mil|Location2.X=23470.114mil|Location1.Y=17699.128mil|Location2.Y=17705.496mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23463.746mil|Location2.X=23470.114mil|Location1.Y=17699.128mil|Location2.Y=17705.496mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (34.069mm,10.083mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/18/2025 9:21:40 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23475.674mil|Location2.X=23482.042mil|Location1.Y=17446.107mil|Location2.Y=17452.476mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23475.674mil|Location2.X=23482.042mil|Location1.Y=17446.107mil|Location2.Y=17452.476mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (34.372mm,3.656mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23499.615mil|Location2.X=23505.983mil|Location1.Y=17791.964mil|Location2.Y=17798.333mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23499.615mil|Location2.X=23505.983mil|Location1.Y=17791.964mil|Location2.Y=17798.333mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (34.98mm,12.441mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/8/2025 9:25:02 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23499.615mil|Location2.X=23505.983mil|Location1.Y=17860.832mil|Location2.Y=17867.2mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23499.615mil|Location2.X=23505.983mil|Location1.Y=17860.832mil|Location2.Y=17867.2mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (34.98mm,14.19mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/8/2025 9:25:02 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23513.075mil|Location2.X=23519.443mil|Location1.Y=17734.062mil|Location2.Y=17740.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23513.075mil|Location2.X=23519.443mil|Location1.Y=17734.062mil|Location2.Y=17740.43mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (35.322mm,10.97mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23513.075mil|Location2.X=23519.443mil|Location1.Y=17651.502mil|Location2.Y=17657.87mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23513.075mil|Location2.X=23519.443mil|Location1.Y=17651.502mil|Location2.Y=17657.87mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (35.322mm,8.873mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/18/2025 9:21:40 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23522.251mil|Location2.X=23528.619mil|Location1.Y=18184.062mil|Location2.Y=18190.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23522.251mil|Location2.X=23528.619mil|Location1.Y=18184.062mil|Location2.Y=18190.43mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (35.555mm,22.4mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 3/19/2025 12:41:50 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23694.267mil|Location2.X=23700.635mil|Location1.Y=18426.167mil|Location2.Y=18432.535mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23694.267mil|Location2.X=23700.635mil|Location1.Y=18426.167mil|Location2.Y=18432.535mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (39.924mm,28.55mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/8/2025 9:25:02 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23705.855mil|Location2.X=23712.222mil|Location1.Y=18330.828mil|Location2.Y=18337.196mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23705.855mil|Location2.X=23712.222mil|Location1.Y=18330.828mil|Location2.Y=18337.196mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (40.219mm,26.128mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/8/2025 9:25:02 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23778.223mil|Location2.X=23784.591mil|Location1.Y=18229.211mil|Location2.Y=18235.579mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23778.223mil|Location2.X=23784.591mil|Location1.Y=18229.211mil|Location2.Y=18235.579mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (42.057mm,23.547mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/8/2025 9:25:02 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23793.727mil|Location2.X=23800.095mil|Location1.Y=18518.034mil|Location2.Y=18524.402mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23793.727mil|Location2.X=23800.095mil|Location1.Y=18518.034mil|Location2.Y=18524.402mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (42.451mm,30.883mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/8/2025 9:25:02 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23843.601mil|Location2.X=23849.969mil|Location1.Y=17427.406mil|Location2.Y=17433.773mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23843.601mil|Location2.X=23849.969mil|Location1.Y=17427.406mil|Location2.Y=17433.773mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (43.717mm,3.181mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23815.36mil|Location2.X=23821.728mil|Location1.Y=17918.63mil|Location2.Y=17924.998mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23815.36mil|Location2.X=23821.728mil|Location1.Y=17918.63mil|Location2.Y=17924.998mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (43mm,15.658mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23866.151mil|Location2.X=23872.519mil|Location1.Y=17926.464mil|Location2.Y=17932.832mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23866.151mil|Location2.X=23872.519mil|Location1.Y=17926.464mil|Location2.Y=17932.832mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (44.29mm,15.857mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23869.299mil|Location2.X=23875.667mil|Location1.Y=17971.976mil|Location2.Y=17978.344mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23869.299mil|Location2.X=23875.667mil|Location1.Y=17971.976mil|Location2.Y=17978.344mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (44.37mm,17.013mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23874.827mil|Location2.X=23881.195mil|Location1.Y=18512.624mil|Location2.Y=18518.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23874.827mil|Location2.X=23881.195mil|Location1.Y=18512.624mil|Location2.Y=18518.992mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (44.51mm,30.746mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/8/2025 9:25:02 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23891.136mil|Location2.X=23897.504mil|Location1.Y=18000.767mil|Location2.Y=18007.135mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23891.136mil|Location2.X=23897.504mil|Location1.Y=18000.767mil|Location2.Y=18007.135mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (44.925mm,17.744mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23901.327mil|Location2.X=23907.695mil|Location1.Y=17909.035mil|Location2.Y=17915.403mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23901.327mil|Location2.X=23907.695mil|Location1.Y=17909.035mil|Location2.Y=17915.403mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (45.184mm,15.414mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23961.403mil|Location2.X=23967.771mil|Location1.Y=18432.876mil|Location2.Y=18439.244mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23961.403mil|Location2.X=23967.771mil|Location1.Y=18432.876mil|Location2.Y=18439.244mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (46.71mm,28.72mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/8/2025 9:25:02 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23999.035mil|Location2.X=24005.403mil|Location1.Y=18046.831mil|Location2.Y=18053.199mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23999.035mil|Location2.X=24005.403mil|Location1.Y=18046.831mil|Location2.Y=18053.199mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (47.665mm,18.914mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/12/2025 9:09:20 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24003.697mil|Location2.X=24010.065mil|Location1.Y=18301.802mil|Location2.Y=18308.17mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24003.697mil|Location2.X=24010.065mil|Location1.Y=18301.802mil|Location2.Y=18308.17mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (47.784mm,25.391mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 10:45:34 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24014.966mil|Location2.X=24021.334mil|Location1.Y=17988.778mil|Location2.Y=17995.146mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24014.966mil|Location2.X=24021.334mil|Location1.Y=17988.778mil|Location2.Y=17995.146mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (48.07mm,17.44mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24061.422mil|Location2.X=24067.79mil|Location1.Y=17860.398mil|Location2.Y=17866.767mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24061.422mil|Location2.X=24067.79mil|Location1.Y=17860.398mil|Location2.Y=17866.767mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (49.25mm,14.179mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24061.423mil|Location2.X=24067.79mil|Location1.Y=17985.63mil|Location2.Y=17991.998mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24061.423mil|Location2.X=24067.79mil|Location1.Y=17985.63mil|Location2.Y=17991.998mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (49.25mm,17.36mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22337.918mil|Location2.X=22344.286mil|Location1.Y=18155.871mil|Location2.Y=18162.239mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22337.918mil|Location2.X=22344.286mil|Location1.Y=18155.871mil|Location2.Y=18162.239mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (5.473mm,21.684mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24091.29mil|Location2.X=24097.658mil|Location1.Y=18495.18mil|Location2.Y=18501.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24091.29mil|Location2.X=24097.658mil|Location1.Y=18495.18mil|Location2.Y=18501.548mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (50.009mm,30.302mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24107.116mil|Location2.X=24113.484mil|Location1.Y=17816.126mil|Location2.Y=17822.494mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24107.116mil|Location2.X=24113.484mil|Location1.Y=17816.126mil|Location2.Y=17822.494mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (50.411mm,13.054mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24106.698mil|Location2.X=24113.066mil|Location1.Y=17705.714mil|Location2.Y=17712.082mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24106.698mil|Location2.X=24113.066mil|Location1.Y=17705.714mil|Location2.Y=17712.082mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (50.4mm,10.25mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24106.698mil|Location2.X=24113.066mil|Location1.Y=18148.627mil|Location2.Y=18154.995mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24106.698mil|Location2.X=24113.066mil|Location1.Y=18148.627mil|Location2.Y=18154.995mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (50.4mm,21.5mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24090.948mil|Location2.X=24097.316mil|Location1.Y=18627.64mil|Location2.Y=18634.008mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24090.948mil|Location2.X=24097.316mil|Location1.Y=18627.64mil|Location2.Y=18634.008mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (50mm,33.667mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22319.296mil|Location2.X=22325.664mil|Location1.Y=18542.249mil|Location2.Y=18548.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22319.296mil|Location2.X=22325.664mil|Location1.Y=18542.249mil|Location2.Y=18548.617mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (5mm,31.498mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22417.72mil|Location2.X=22424.088mil|Location1.Y=17804.139mil|Location2.Y=17810.507mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22417.72mil|Location2.X=22424.088mil|Location1.Y=17804.139mil|Location2.Y=17810.507mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (7.5mm,12.75mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22473.902mil|Location2.X=22480.27mil|Location1.Y=18155.871mil|Location2.Y=18162.239mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22473.902mil|Location2.X=22480.27mil|Location1.Y=18155.871mil|Location2.Y=18162.239mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (8.927mm,21.684mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22490.916mil|Location2.X=22497.285mil|Location1.Y=18542.249mil|Location2.Y=18548.617mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22490.916mil|Location2.X=22497.285mil|Location1.Y=18542.249mil|Location2.Y=18548.617mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (9.359mm,31.498mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 8:53:27 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22504.334mil|Location2.X=22510.702mil|Location1.Y=17368.587mil|Location2.Y=17374.955mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22504.334mil|Location2.X=22510.702mil|Location1.Y=17368.587mil|Location2.Y=17374.955mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (9.7mm,1.687mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/11/2025 11:46:36 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22504.334mil|Location2.X=22510.702mil|Location1.Y=17546.593mil|Location2.Y=17552.961mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22504.334mil|Location2.X=22510.702mil|Location1.Y=17546.593mil|Location2.Y=17552.961mil|Absolute=True">Minimum Annular Ring: (0.1mm &lt; 0.13mm) Via (9.7mm,6.208mm) from Top to Bottom (Annular Ring=0.1mm) On (Top Layer)</acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 8:53:27 AM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDBOP0JKODI4ZQMMEUNKICIJQ53IT1S2CSCLX1BCMJH5JKKWJ433BE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Hole Size Constraint (Min=0.3mm) (Max=6.3mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23312.014mil|Location2.X=23321.138mil|Location1.Y=17873.628mil|Location2.Y=17882.752mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23312.014mil|Location2.X=23321.138mil|Location1.Y=17873.628mil|Location2.Y=17882.752mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_10(30.25mm,14.75mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23256.896mil|Location2.X=23266.02mil|Location1.Y=17873.628mil|Location2.Y=17882.752mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23256.896mil|Location2.X=23266.02mil|Location1.Y=17873.628mil|Location2.Y=17882.752mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_11(28.85mm,14.75mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23339.572mil|Location2.X=23348.696mil|Location1.Y=17901.188mil|Location2.Y=17910.312mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23339.572mil|Location2.X=23348.696mil|Location1.Y=17901.188mil|Location2.Y=17910.312mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_12(30.95mm,15.45mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23284.454mil|Location2.X=23293.578mil|Location1.Y=17901.188mil|Location2.Y=17910.312mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23284.454mil|Location2.X=23293.578mil|Location1.Y=17901.188mil|Location2.Y=17910.312mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_13(29.55mm,15.45mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23229.336mil|Location2.X=23238.46mil|Location1.Y=17901.188mil|Location2.Y=17910.312mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23229.336mil|Location2.X=23238.46mil|Location1.Y=17901.188mil|Location2.Y=17910.312mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_14(28.15mm,15.45mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23312.014mil|Location2.X=23321.138mil|Location1.Y=17928.748mil|Location2.Y=17937.872mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23312.014mil|Location2.X=23321.138mil|Location1.Y=17928.748mil|Location2.Y=17937.872mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_15(30.25mm,16.15mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23256.896mil|Location2.X=23266.02mil|Location1.Y=17928.748mil|Location2.Y=17937.872mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23256.896mil|Location2.X=23266.02mil|Location1.Y=17928.748mil|Location2.Y=17937.872mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_16(28.85mm,16.15mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23339.572mil|Location2.X=23348.696mil|Location1.Y=17956.306mil|Location2.Y=17965.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23339.572mil|Location2.X=23348.696mil|Location1.Y=17956.306mil|Location2.Y=17965.43mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_17(30.95mm,16.85mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23284.454mil|Location2.X=23293.578mil|Location1.Y=17956.306mil|Location2.Y=17965.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23284.454mil|Location2.X=23293.578mil|Location1.Y=17956.306mil|Location2.Y=17965.43mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_18(29.55mm,16.85mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23229.336mil|Location2.X=23238.46mil|Location1.Y=17956.306mil|Location2.Y=17965.43mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23229.336mil|Location2.X=23238.46mil|Location1.Y=17956.306mil|Location2.Y=17965.43mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_19(28.15mm,16.85mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23312.014mil|Location2.X=23321.138mil|Location1.Y=17983.866mil|Location2.Y=17992.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23312.014mil|Location2.X=23321.138mil|Location1.Y=17983.866mil|Location2.Y=17992.99mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_20(30.25mm,17.55mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23256.896mil|Location2.X=23266.02mil|Location1.Y=17983.866mil|Location2.Y=17992.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23256.896mil|Location2.X=23266.02mil|Location1.Y=17983.866mil|Location2.Y=17992.99mil|Absolute=True">Hole Size Constraint: (0.2mm &lt; 0.3mm) Pad U2-41_21(28.85mm,17.55mm) on Multi-Layer Actual Hole Size = 0.2mm</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:38:11 AM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVWLW2CQ3BFQTDJFX1P4AGLFVDCRUXN2ZOBJORTCA40E1HCNA0HUC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Silk to Silk (Clearance=0.102mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22201.083mil|Location2.X=22209.155mil|Location1.Y=17746.266mil|Location2.Y=17753.601mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22201.083mil|Location2.X=22209.155mil|Location1.Y=17746.266mil|Location2.Y=17753.601mil|Absolute=True">Silk To Silk Clearance Constraint: (0.003mm &lt; 0.102mm) Between Text "3V3" (1.984mm,11.52mm) on Top Overlay And Track (1.931mm,11.017mm)(1.931mm,11.463mm) on Top Overlay Silk Text to Silk Clearance [0.003mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22201.92mil|Location2.X=22205.587mil|Location1.Y=17749.192mil|Location2.Y=17752.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22201.92mil|Location2.X=22205.587mil|Location1.Y=17749.192mil|Location2.Y=17752.858mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "3V3" (1.984mm,11.52mm) on Top Overlay And Track (1.931mm,11.463mm)(2.058mm,11.463mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22317.724mil|Location2.X=22321.39mil|Location1.Y=17749.192mil|Location2.Y=17752.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22317.724mil|Location2.X=22321.39mil|Location1.Y=17749.192mil|Location2.Y=17752.858mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "3V3" (1.984mm,11.52mm) on Top Overlay And Track (2.055mm,11.463mm)(4.979mm,11.463mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22204.822mil|Location2.X=22208.489mil|Location1.Y=17749.192mil|Location2.Y=17752.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22204.822mil|Location2.X=22208.489mil|Location1.Y=17749.192mil|Location2.Y=17752.858mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "3V3" (1.984mm,11.52mm) on Top Overlay And Track (2.058mm,11.017mm)(2.058mm,11.463mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22259.822mil|Location2.X=22263.489mil|Location1.Y=17749.192mil|Location2.Y=17752.858mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22259.822mil|Location2.X=22263.489mil|Location1.Y=17749.192mil|Location2.Y=17752.858mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "3V3" (1.984mm,11.52mm) on Top Overlay And Track (3.455mm,11.113mm)(3.455mm,11.463mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22316.978mil|Location2.X=22324.982mil|Location1.Y=17748.35mil|Location2.Y=17755.758mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22316.978mil|Location2.X=22324.982mil|Location1.Y=17748.35mil|Location2.Y=17755.758mil|Absolute=True">Silk To Silk Clearance Constraint: (0.003mm &lt; 0.102mm) Between Text "3V3" (1.984mm,11.52mm) on Top Overlay And Track (4.979mm,11.271mm)(4.979mm,11.463mm) on Top Overlay Silk Text to Silk Clearance [0.003mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22201.008mil|Location2.X=22209.549mil|Location1.Y=18254.846mil|Location2.Y=18261.826mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22201.008mil|Location2.X=22209.549mil|Location1.Y=18254.846mil|Location2.Y=18261.826mil|Absolute=True">Silk To Silk Clearance Constraint: (0.01mm &lt; 0.102mm) Between Text "5V" (1.984mm,23.32mm) on Top Overlay And Track (1.931mm,24.446mm)(1.931mm,24.892mm) on Top Overlay Silk Text to Silk Clearance [0.01mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22201.92mil|Location2.X=22205.587mil|Location1.Y=18255.488mil|Location2.Y=18259.155mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22201.92mil|Location2.X=22205.587mil|Location1.Y=18255.488mil|Location2.Y=18259.155mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "5V" (1.984mm,23.32mm) on Top Overlay And Track (1.931mm,24.446mm)(2.058mm,24.446mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22201.92mil|Location2.X=22205.587mil|Location1.Y=18255.488mil|Location2.Y=18259.155mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22201.92mil|Location2.X=22205.587mil|Location1.Y=18255.488mil|Location2.Y=18259.155mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "5V" (1.984mm,23.32mm) on Top Overlay And Track (1.955mm,24.446mm)(4.979mm,24.446mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22204.822mil|Location2.X=22208.489mil|Location1.Y=18255.488mil|Location2.Y=18259.155mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22204.822mil|Location2.X=22208.489mil|Location1.Y=18255.488mil|Location2.Y=18259.155mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "5V" (1.984mm,23.32mm) on Top Overlay And Track (2.058mm,24.446mm)(2.058mm,24.892mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22259.822mil|Location2.X=22263.489mil|Location1.Y=18255.488mil|Location2.Y=18259.155mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22259.822mil|Location2.X=22263.489mil|Location1.Y=18255.488mil|Location2.Y=18259.155mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "5V" (1.984mm,23.32mm) on Top Overlay And Track (3.455mm,24.446mm)(3.455mm,24.796mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22317.053mil|Location2.X=22325.656mil|Location1.Y=18253.193mil|Location2.Y=18260.096mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22317.053mil|Location2.X=22325.656mil|Location1.Y=18253.193mil|Location2.Y=18260.096mil|Absolute=True">Silk To Silk Clearance Constraint: (0.01mm &lt; 0.102mm) Between Text "5V" (1.984mm,23.32mm) on Top Overlay And Track (4.979mm,24.446mm)(4.979mm,24.638mm) on Top Overlay Silk Text to Silk Clearance [0.01mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22850.662mil|Location2.X=22855.912mil|Location1.Y=17605.173mil|Location2.Y=17610.423mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22850.662mil|Location2.X=22855.912mil|Location1.Y=17605.173mil|Location2.Y=17610.423mil|Absolute=True">Silk To Silk Clearance Constraint: (0.075mm &lt; 0.102mm) Between Text "5V" (19.58mm,12.656mm) on Bottom Overlay And Track (18.345mm,7.69mm)(18.345mm,28.31mm) on Bottom Overlay Silk Text to Silk Clearance [0.075mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23976.455mil|Location2.X=23980.121mil|Location1.Y=17474.98mil|Location2.Y=17478.647mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23976.455mil|Location2.X=23980.121mil|Location1.Y=17474.98mil|Location2.Y=17478.647mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "ACC_INT1" (47.058mm,4.555mm) on Top Overlay And Track (44.855mm,4.472mm)(50.235mm,4.472mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24075.17mil|Location2.X=24078.837mil|Location1.Y=17474.98mil|Location2.Y=17478.647mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=24075.17mil|Location2.X=24078.837mil|Location1.Y=17474.98mil|Location2.Y=17478.647mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "ACC_INT2" (49.565mm,4.555mm) on Top Overlay And Track (44.855mm,4.472mm)(50.235mm,4.472mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22848.831mil|Location2.X=22852.497mil|Location1.Y=18336.883mil|Location2.Y=18340.55mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22848.831mil|Location2.X=22852.497mil|Location1.Y=18336.883mil|Location2.Y=18340.55mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "BOOT" (21.259mm,26.269mm) on Bottom Overlay And Track (18.345mm,7.69mm)(18.345mm,28.31mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22844.966mil|Location2.X=22848.633mil|Location1.Y=18246.16mil|Location2.Y=18249.827mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22844.966mil|Location2.X=22848.633mil|Location1.Y=18246.16mil|Location2.Y=18249.827mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "GND" (21.259mm,24.143mm) on Bottom Overlay And Track (18.345mm,7.69mm)(18.345mm,28.31mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23619.792mil|Location2.X=23623.458mil|Location1.Y=17480.882mil|Location2.Y=17484.549mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23619.792mil|Location2.X=23623.458mil|Location1.Y=17480.882mil|Location2.Y=17484.549mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "GND" (37.998mm,4.705mm) on Top Overlay And Track (38.033mm,2.221mm)(38.033mm,4.705mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23621.148mil|Location2.X=23624.815mil|Location1.Y=17480.882mil|Location2.Y=17484.549mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23621.148mil|Location2.X=23624.815mil|Location1.Y=17480.882mil|Location2.Y=17484.549mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "GND" (37.998mm,4.705mm) on Top Overlay And Track (38.033mm,4.705mm)(39.176mm,4.705mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23666.148mil|Location2.X=23669.815mil|Location1.Y=17480.882mil|Location2.Y=17484.549mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23666.148mil|Location2.X=23669.815mil|Location1.Y=17480.882mil|Location2.Y=17484.549mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "GND" (37.998mm,4.705mm) on Top Overlay And Track (39.176mm,4.705mm)(41.462mm,4.705mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23756.148mil|Location2.X=23759.815mil|Location1.Y=17480.882mil|Location2.Y=17484.549mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23756.148mil|Location2.X=23759.815mil|Location1.Y=17480.882mil|Location2.Y=17484.549mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "GND" (37.998mm,4.705mm) on Top Overlay And Track (41.462mm,4.705mm)(43.113mm,4.705mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23821.148mil|Location2.X=23824.815mil|Location1.Y=17480.882mil|Location2.Y=17484.549mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23821.148mil|Location2.X=23824.815mil|Location1.Y=17480.882mil|Location2.Y=17484.549mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "GND" (37.998mm,4.705mm) on Top Overlay And Track (43.113mm,1.657mm)(43.113mm,4.705mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23422.025mil|Location2.X=23425.692mil|Location1.Y=18057.42mil|Location2.Y=18061.087mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23422.025mil|Location2.X=23425.692mil|Location1.Y=18057.42mil|Location2.Y=18061.087mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "PCB REV #" (34.1mm,24.374mm) on Bottom Overlay And Track (32.975mm,19.374mm)(32.975mm,24.374mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 3/19/2025 12:43:03 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23466.317mil|Location2.X=23469.983mil|Location1.Y=18057.42mil|Location2.Y=18061.087mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23466.317mil|Location2.X=23469.983mil|Location1.Y=18057.42mil|Location2.Y=18061.087mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "PCB REV #" (34.1mm,24.374mm) on Bottom Overlay And Track (32.975mm,19.374mm)(37.05mm,19.374mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 3/19/2025 12:43:03 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23422.025mil|Location2.X=23425.692mil|Location1.Y=18255.255mil|Location2.Y=18258.922mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23422.025mil|Location2.X=23425.692mil|Location1.Y=18255.255mil|Location2.Y=18258.922mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "PCB REV #" (34.1mm,24.374mm) on Bottom Overlay And Track (32.975mm,24.374mm)(37.05mm,24.374mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 3/19/2025 12:43:03 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23713.6mil|Location2.X=23717.267mil|Location1.Y=18028.408mil|Location2.Y=18032.075mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23713.6mil|Location2.X=23717.267mil|Location1.Y=18028.408mil|Location2.Y=18032.075mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "RESET" (43.566mm,18.612mm) on Bottom Overlay And Track (40.345mm,7.69mm)(40.345mm,23.23mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23712.482mil|Location2.X=23716.149mil|Location1.Y=17832.775mil|Location2.Y=17836.442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23712.482mil|Location2.X=23716.149mil|Location1.Y=17832.775mil|Location2.Y=17836.442mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "RX" (43.294mm,13.643mm) on Bottom Overlay And Track (40.345mm,7.69mm)(40.345mm,23.23mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23712.482mil|Location2.X=23716.149mil|Location1.Y=17776.12mil|Location2.Y=17779.787mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=23712.482mil|Location2.X=23716.149mil|Location1.Y=17776.12mil|Location2.Y=17779.787mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.102mm) Between Text "TX" (43.294mm,11.144mm) on Bottom Overlay And Track (40.345mm,7.69mm)(40.345mm,23.23mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br>Waived by Lucas Lalumière Longpré at 4/9/2025 9:39:14 AM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID50HP1EJ5Z2WSNFAFOCYB0UAEPESSPRXR0O2AFJOOGHMETQD0K2PF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22615.614mil|Location2.X=22621.863mil|Location1.Y=17275.09mil|Location2.Y=17281.339mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=22615.614mil|Location2.X=22621.863mil|Location1.Y=17275.09mil|Location2.Y=17281.339mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Text ".Projet_Titre" (17.503mm,35.78mm) on Bottom Overlay </acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 8:53:27 AM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19187.92mil|Location2.X=19194.169mil|Location1.Y=23546.098mil|Location2.Y=23552.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=19187.92mil|Location2.X=19194.169mil|Location1.Y=23546.098mil|Location2.Y=23552.348mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Text "STENCIL1" (-79.998mm,158.033mm) on Top Overlay </acronym></a><br>Waived by Lucas Lalumière Longpré at 2/13/2025 11:07:31 AM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\yuyam\AppData\Local\TempReleases\Snapshot\1\Trottinette_Telemetrie_PCB_2L.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=trottinette_telemetrie_pcb rev 2.00-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=trottinette_telemetrie_pcb rev 2.00-slotholes.txt|DrillLayers=gtl,gbl
