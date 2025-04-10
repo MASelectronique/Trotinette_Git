@@ -2,7 +2,7 @@
   "navigation": {
     "selectedUserPageObject": "[Affichage_v.2.eez-project]:/userPages/0",
     "subnavigationSelectedItems": {
-      "variables-tab/sub-navigation/selected-item": "Global"
+      "variables-tab/sub-navigation/selected-item": "Actions"
     }
   },
   "layoutModel": {
@@ -23,7 +23,6 @@
           },
           {
             "type": "border",
-            "selected": 2,
             "size": 348.5,
             "location": "right",
             "children": [
@@ -72,7 +71,7 @@
           {
             "type": "border",
             "selected": 0,
-            "size": 36.5,
+            "size": 32.5,
             "location": "bottom",
             "children": [
               {
@@ -156,7 +155,7 @@
                 {
                   "type": "tabset",
                   "id": "#7db3be1c-90bd-4041-ada4-0a60c7a569f1",
-                  "weight": 1,
+                  "weight": 1.6096385542168674,
                   "enableClose": false,
                   "children": [
                     {
@@ -172,7 +171,7 @@
                 {
                   "type": "tabset",
                   "id": "#6e77f67d-cad7-4b98-ac05-9c6440c38579",
-                  "weight": 1,
+                  "weight": 0.39036144578313253,
                   "enableClose": false,
                   "children": [
                     {
@@ -190,14 +189,13 @@
             {
               "type": "tabset",
               "id": "EDITORS",
-              "weight": 51.31008437595992,
-              "selected": 1,
+              "weight": 55.24356614243048,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
                 {
                   "type": "tab",
-                  "id": "#a38b8dd8-a5fc-474f-909b-ff80879c3c4b",
+                  "id": "#7708c9cd-47b9-4e48-b4ca-28cb2ab6ad77",
                   "name": "Settings",
                   "component": "editor",
                   "config": {
@@ -218,43 +216,29 @@
                   },
                   "icon": "svg:page"
                 }
-              ]
+              ],
+              "active": true
             },
             {
-              "type": "row",
-              "id": "#efc6f690-45ec-464a-a0b1-e2ea00599fac",
-              "weight": 25.960979658705444,
+              "type": "tabset",
+              "id": "#cad19194-1190-47ca-b87c-c6fe0142e2c0",
+              "weight": 22.02749789223494,
               "children": [
                 {
-                  "type": "tabset",
-                  "id": "#cad19194-1190-47ca-b87c-c6fe0142e2c0",
-                  "weight": 1.678147268408551,
-                  "children": [
-                    {
-                      "type": "tab",
-                      "id": "PROPERTIES",
-                      "name": "Properties",
-                      "component": "propertiesPanel",
-                      "enableClose": false,
-                      "icon": "svg:properties"
-                    }
-                  ]
+                  "type": "tab",
+                  "id": "PROPERTIES",
+                  "name": "Properties",
+                  "component": "propertiesPanel",
+                  "enableClose": false,
+                  "icon": "svg:properties"
                 },
                 {
-                  "type": "tabset",
-                  "id": "#1b95e856-c864-4292-8f5d-f955f6f38659",
-                  "weight": 1.321852731591449,
-                  "children": [
-                    {
-                      "type": "tab",
-                      "id": "COMPONENTS_PALETTE",
-                      "name": "Components Palette",
-                      "component": "componentsPalette",
-                      "enableClose": false,
-                      "icon": "svg:components"
-                    }
-                  ],
-                  "active": true
+                  "type": "tab",
+                  "id": "COMPONENTS_PALETTE",
+                  "name": "Components Palette",
+                  "component": "componentsPalette",
+                  "enableClose": false,
+                  "icon": "svg:components"
                 }
               ]
             }
@@ -548,8 +532,7 @@
                       "component": "bitmaps",
                       "enableClose": false
                     }
-                  ],
-                  "active": true
+                  ]
                 },
                 {
                   "type": "tabset",
@@ -567,7 +550,8 @@
                       "component": "preview",
                       "enableClose": false
                     }
-                  ]
+                  ],
+                  "active": true
                 }
               ]
             }
@@ -988,16 +972,43 @@
     "[Affichage_v.2.eez-project]:/userPages/0[flow-state]": {
       "selection": {
         "0": {
-          "1": {},
-          "5": {}
+          "0": {},
+          "4": {},
+          "7": {},
+          "8": {}
         }
       },
       "transform": {
         "translate": {
-          "x": -203.20001220703125,
-          "y": -116.79998779296875
+          "x": -134.57413521133924,
+          "y": -229.23487485500027
         },
-        "scale": 1
+        "scale": 1.5
+      },
+      "timeline": {
+        "isEditorActive": false,
+        "position": 0,
+        "secondToPx": 200,
+        "scrollLeft": 0
+      }
+    },
+    "[Affichage_v.2.eez-project]:/userPages/1[flow-state]": {
+      "selection": {
+        "0": {
+          "0": {},
+          "1": {},
+          "4": {},
+          "7": {},
+          "9": {},
+          "11": {}
+        }
+      },
+      "transform": {
+        "translate": {
+          "x": -130.4000244140625,
+          "y": -251.6591190719605
+        },
+        "scale": 1.5
       },
       "timeline": {
         "isEditorActive": false,
@@ -1019,14 +1030,14 @@
   "showComponentDescriptions": true,
   "logsPanelFilter": "all",
   "selectedStylePropertyName": "",
-  "lvglPart": "INDICATOR",
+  "lvglPart": "MAIN",
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
     "ARC",
-    "MISCELLANEOUS"
+    "TEXT"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,
-  "flowZoom": 1,
+  "flowZoom": 1.5,
   "implementationLanguage": "C"
 }
