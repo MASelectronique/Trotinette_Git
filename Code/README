@@ -1,14 +1,9 @@
 Dossier principale (Code)
 
-Contient : 	Fichier Accelerometre = Prototype du code pour avoir le pitch et le roll de l'accéléromètre
-			Fichier Affichage (Plus utilisé) = Développement du système d'affichage
-			Fichier Touch_calibration = Code pour générer les données nécessaire à la calibration de l'écran
+Contient : 		Fichier Developpement : Contient tous les anciens code utilisé l'ors du développement du projet
 			Fichier EEZ_Studio : contient le projet du GUI de l'affichage
-			Fichier Telemetrie : Permet de décoder le JSON envoyer par le client
-			Fichier Affichage_retour_en_arriere (Plus utilisé) = Projet non commenté de test
-			Fichier Affichage_touch_ui : Un test unitaire testant l'affichage, le touch de l'écran et le UI généré par EEZ studio. Inclus aussi toutes les libraires
 			Fichier Interface_V.1 : Projet à jour de l'affichage avec les librairies et le fichier main
 
 Language: C++
-Environnement: Arduino
-Plateforme: PlatformIO
+Environnement: Arduino avec board manager de ESP32 par Espressif Systems 2.0.14 (une version supérieur ne fonctionnera pas)
+Plateforme: Arduino IDE 2.3.6
