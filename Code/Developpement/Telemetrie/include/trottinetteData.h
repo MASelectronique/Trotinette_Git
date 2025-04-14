@@ -1,10 +1,11 @@
 /*
-  @file   trottinette.h, projet: Module de télémétrie
+  @file   trottinetteData.h, projet: Module de télémétrie
   @author Lucas Lalumière Longpré
   @date   10 Avril 2025
   @brief  Fichier header contenant les valeurs de la trottinette
           que nous devons afficher à l'écran. Contient aussi les
-          variables pour reception de JSON.
+          variables et les fonctions pour reception de l'objet JSON
+          envoyé par le contrôleur de la trottinette.
 
   Environnement:
       Développement: Visual Studio Code

@@ -1,5 +1,5 @@
 /*
-  @file   trottinette.h, projet: Module de télémétrie
+  @file   trottinetteData.cpp, projet: Module de télémétrie
   @author Lucas Lalumière Longpré
   @date   10 Avril 2025
   @brief  Fichier cpp contenant les fonctions pour les
