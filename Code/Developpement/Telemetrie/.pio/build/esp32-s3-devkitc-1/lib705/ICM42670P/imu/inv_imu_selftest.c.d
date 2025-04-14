@@ -1,6 +1,6 @@
-.pio/build/esp32-s3-devkitc-1/lib054/ICM42670P/imu/inv_imu_apex.c.o: \
- .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_apex.c \
- .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_apex.h \
+.pio/build/esp32-s3-devkitc-1/lib705/ICM42670P/imu/inv_imu_selftest.c.o: \
+ .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_selftest.c \
+ .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_selftest.h \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_driver.h \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_defs.h \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu.h \

@@ -1,4 +1,4 @@
-.pio/build/esp32-s3-devkitc-1/lib054/ICM42670P/imu/inv_imu_transport.c.o: \
+.pio/build/esp32-s3-devkitc-1/lib705/ICM42670P/imu/inv_imu_transport.c.o: \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_transport.c \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_transport.h \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/imu/inv_imu_defs.h \

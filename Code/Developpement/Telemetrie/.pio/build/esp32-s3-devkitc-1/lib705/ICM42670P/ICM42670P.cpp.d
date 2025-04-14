@@ -1,4 +1,4 @@
-.pio/build/esp32-s3-devkitc-1/lib054/ICM42670P/ICM42670P.cpp.o: \
+.pio/build/esp32-s3-devkitc-1/lib705/ICM42670P/ICM42670P.cpp.o: \
  .pio/libdeps/esp32-s3-devkitc-1/ICM42670P/src/ICM42670P.cpp \
  C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
  C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp_arduino_version.h \

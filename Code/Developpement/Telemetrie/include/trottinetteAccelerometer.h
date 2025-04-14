@@ -16,12 +16,6 @@
 void initAccel();   //Initialise l'accéléromètre
 int getPitch(); //Calcul du pitch selon valeurs 
 
-ICM42670 IMU(Wire,0); //Crée l'objet de l'accelerateur en I2C
-
-//Variables de l'accéléromètre
-int ret;                //Variable pour initialiser l'accéléromètre
-float x,y,z = 0.0;      //Valeurs X,Y,Z
-int pitch = 0;          //Valeur de pitch
-int pitch_offset = -41; //Offset pour le pitch
+extern int pitch;  //Variable de pitch
 
 

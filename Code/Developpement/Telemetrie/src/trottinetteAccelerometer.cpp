@@ -10,6 +10,14 @@
 */
 #include "trottinetteAccelerometer.h"
 
+ICM42670 IMU(Wire,0); //Crée l'objet de l'accelerateur en I2C
+
+//Variables de l'accéléromètre
+int ret;
+float x,y,z = 0;      //Valeurs X,Y,Z
+int pitch = 0;          //Valeur de pitch
+int pitch_offset = -41; //Offset pour le pitch
+
 //Nom:    initAccel
 //Param:  Aucun
 //Return: Aucun

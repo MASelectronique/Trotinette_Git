@@ -10,6 +10,13 @@
 */
 #include "trottinetteData.h"
 
+Data trottinette; //L'objet trottinette contenant tous les données de la trottinette
+
+JsonDocument doc;   //Objet JSON reçu
+String jsonString;  //Objet JSON décodé
+String jsonErrorMessage;  //Json a affiché si erreur de décodage
+DeserializationError jsonError;  //Variable qui retourne le résultat du décodage du JSON
+
 //Nom:    getData
 //Param:  JsonDocument doc, l'objet json décodé
 //Return: aucun

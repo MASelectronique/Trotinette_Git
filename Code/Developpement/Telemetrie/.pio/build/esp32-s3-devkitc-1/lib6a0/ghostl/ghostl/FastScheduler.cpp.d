@@ -1,4 +1,4 @@
-.pio/build/esp32-s3-devkitc-1/lib641/ghostl/ghostl/FastScheduler.cpp.o: \
+.pio/build/esp32-s3-devkitc-1/lib6a0/ghostl/ghostl/FastScheduler.cpp.o: \
  .pio/libdeps/esp32-s3-devkitc-1/ghostl/src/ghostl/FastScheduler.cpp \
  .pio/libdeps/esp32-s3-devkitc-1/ghostl/src/ghostl/FastScheduler.h \
  C:/Users/yuyam/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \

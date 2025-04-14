@@ -14,32 +14,31 @@
 #include <ArduinoJson.h>    //Lib pour JSON
 
 struct Ctrl { //Struct qui contient les données du contrôleur
-    int etat;
-    int break_active;
-    int fault_code;
-    int cmd;
-  };
+  int etat;
+  int break_active;
+  int fault_code;
+  int cmd;
+};
   
-  struct Drive {  //Struct qui contient les données de la drive moteur
-    int temperature;
-    int tension_total;
-    int courant_total;
-    int energie;
-    String vitesse; //string pour l'instant mais sera changé pour float
-  };
+struct Drive {  //Struct qui contient les données de la drive moteur
+  int temperature;
+  int tension_total;
+  int courant_total;
+  int energie;
+  String vitesse; //string pour l'instant mais sera changé pour float
+};
   
-  struct Data { //Struct qui contient les données de la trottinette
-    int model_num;
-    Ctrl ctrl;
-    Drive drive;
-  };
+struct Data { //Struct qui contient les données de la trottinette
+  int model_num;
+  Ctrl ctrl;
+  Drive drive;
+};
+extern Data trottinette; //L'objet trottinette contenant tous les données de la trottinette
 
-Data trottinette; //L'objet trottinette contenant tous les données de la trottinette
-
-JsonDocument doc;   //Objet JSON reçu
-String jsonString;  //Objet JSON décodé
-String jsonErrorMessage;  //Json a affiché si erreur de décodage
-DeserializationError jsonError;  //Variable qui retourne le résultat du décodage du JSON
+extern JsonDocument doc;   //Objet JSON reçu
+extern String jsonString;  //Objet JSON décodé
+extern String jsonErrorMessage;  //Json a affiché si erreur de décodage
+extern DeserializationError jsonError;  //Variable qui retourne le résultat du décodage du JSON
 
 void getData(JsonDocument);     //Fonction qui assigne les valeurs de l'objet json
 void printData(const Data &t);  //Fonction pour afficher les données de la trottinette
