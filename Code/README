@@ -3,6 +3,7 @@ Dossier principale (Code)
 Contient : 		Fichier Developpement : Contient tous les anciens code utilisé l'ors du développement du projet
 			Fichier EEZ_Studio : contient le projet du GUI de l'affichage
 			Fichier Interface_V.1 : Projet à jour de l'affichage avec les librairies et le fichier main
+			Fichier Interface_V.2 : Projet à jour de l'affichage et développement de l'intégration du JSON 
 
 Language: C++
 Environnement: Arduino avec board manager de ESP32 par Espressif Systems 2.0.14 (une version supérieur ne fonctionnera pas)

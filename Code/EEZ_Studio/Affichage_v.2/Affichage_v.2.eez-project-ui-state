@@ -190,6 +190,7 @@
               "type": "tabset",
               "id": "EDITORS",
               "weight": 55.24356614243048,
+              "selected": 1,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
