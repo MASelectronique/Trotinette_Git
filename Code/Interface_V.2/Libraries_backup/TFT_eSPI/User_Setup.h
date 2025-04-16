@@ -178,15 +178,22 @@
 #define TOUCH_CS 2 // Chip select pin (T_CS) of touch screen
 #define USE_HSPI_PORT
 */
-//Patte PCB telemetrie ESP32 S3 wroom-1u
+
+
+//Patte PCB telemetrie ESP32 S3 WROOM-1U
 #define TFT_MISO 13  // (leave TFT SDO disconnected if other SPI devices share MISO)
 #define TFT_MOSI 11
 #define TFT_SCLK 12
 #define TFT_CS   10  // Chip select control pin
 #define TFT_DC    41  // Data Command control pin
 #define TFT_RST   42  // Reset pin (could connect to RST pin)
-// Optional touch screen chip select
+
+//Optional touch screen chip select
 #define TOUCH_CS 14 // Chip select pin (T_CS) of touch screen
+
+// The ESP32 has 2 free SPI ports i.e. VSPI and HSPI, the VSPI is the default.
+// If the VSPI port is in use and pins are not accessible (e.g. TTGO T-Beam)
+// then uncomment the following line:
 #define USE_HSPI_PORT
 
 
