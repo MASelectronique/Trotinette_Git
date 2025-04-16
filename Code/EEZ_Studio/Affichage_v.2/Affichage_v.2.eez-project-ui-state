@@ -1,6 +1,7 @@
 {
   "navigation": {
     "selectedUserPageObject": "[Affichage_v.2.eez-project]:/userPages/0",
+    "selectedBitmapObject": "[Affichage_v.2.eez-project]:/bitmaps/0",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Actions"
     }
@@ -71,7 +72,7 @@
           {
             "type": "border",
             "selected": 0,
-            "size": 32.5,
+            "size": 24.5,
             "location": "bottom",
             "children": [
               {
@@ -189,14 +190,14 @@
             {
               "type": "tabset",
               "id": "EDITORS",
-              "weight": 55.24356614243048,
+              "weight": 53.24624003168465,
               "selected": 1,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
               "children": [
                 {
                   "type": "tab",
-                  "id": "#7708c9cd-47b9-4e48-b4ca-28cb2ab6ad77",
+                  "id": "#a3091762-d869-4b29-8fc9-3c66a7c911eb",
                   "name": "Settings",
                   "component": "editor",
                   "config": {
@@ -223,7 +224,7 @@
             {
               "type": "tabset",
               "id": "#cad19194-1190-47ca-b87c-c6fe0142e2c0",
-              "weight": 22.02749789223494,
+              "weight": 24.024824002980765,
               "children": [
                 {
                   "type": "tab",
@@ -444,10 +445,22 @@
               "type": "tabset",
               "id": "RUNTIME-EDITORS",
               "weight": 1,
-              "selected": -1,
               "enableDeleteWhenEmpty": false,
               "enableClose": false,
-              "children": []
+              "children": [
+                {
+                  "type": "tab",
+                  "id": "#b5a057fc-4758-4ceb-b946-96f038a0e4d0",
+                  "name": "Main",
+                  "component": "editor",
+                  "config": {
+                    "objectPath": "[Affichage_v.2.eez-project]:/userPages/0",
+                    "permanent": false
+                  },
+                  "icon": "svg:page"
+                }
+              ],
+              "active": true
             },
             {
               "type": "row",
@@ -533,7 +546,8 @@
                       "component": "bitmaps",
                       "enableClose": false
                     }
-                  ]
+                  ],
+                  "active": true
                 },
                 {
                   "type": "tabset",
@@ -551,8 +565,7 @@
                       "component": "preview",
                       "enableClose": false
                     }
-                  ],
-                  "active": true
+                  ]
                 }
               ]
             }
@@ -974,17 +987,19 @@
       "selection": {
         "0": {
           "0": {},
-          "4": {},
           "7": {},
-          "8": {}
+          "8": {},
+          "11": {},
+          "12": {},
+          "17": {}
         }
       },
       "transform": {
         "translate": {
-          "x": -134.57413521133924,
-          "y": -229.23487485500027
+          "x": -194.59588845809242,
+          "y": -220.0194527770791
         },
-        "scale": 1.5
+        "scale": 1.25
       },
       "timeline": {
         "isEditorActive": false,
@@ -996,20 +1011,21 @@
     "[Affichage_v.2.eez-project]:/userPages/1[flow-state]": {
       "selection": {
         "0": {
-          "0": {},
-          "1": {},
+          "1": {
+            "0": {}
+          },
           "4": {},
-          "7": {},
-          "9": {},
-          "11": {}
+          "7": {
+            "$selected": true
+          }
         }
       },
       "transform": {
         "translate": {
-          "x": -130.4000244140625,
-          "y": -251.6591190719605
+          "x": -57.48189263942447,
+          "y": -191.68644121797587
         },
-        "scale": 1.5
+        "scale": 1.25
       },
       "timeline": {
         "isEditorActive": false,
@@ -1031,14 +1047,15 @@
   "showComponentDescriptions": true,
   "logsPanelFilter": "all",
   "selectedStylePropertyName": "",
-  "lvglPart": "MAIN",
+  "lvglPart": "KNOB",
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
-    "ARC",
+    "BACKGROUND",
+    "LINE",
     "TEXT"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,
-  "flowZoom": 1.5,
+  "flowZoom": 1.25,
   "implementationLanguage": "C"
 }

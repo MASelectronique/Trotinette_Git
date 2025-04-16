@@ -1,7 +1,7 @@
 Dossier principale (Code)
 
-Contient : 		Fichier Developpement : Contient tous les anciens code utilisé l'ors du développement du projet
-			Fichier EEZ_Studio : contient le projet du GUI de l'affichage
+Contient : 	Fichier Developpement : Contient tous les fichiers code utilisé lors du développement du projet. (Code prototype et tests d'affichage)
+			Fichier EEZ_Studio : contient le projet EEZ_Studio du GUI de l'affichage
 			Fichier Interface_V.1 : Projet à jour de l'affichage avec les librairies et le fichier main
 			Fichier Interface_V.2 : Projet à jour de l'affichage et développement de l'intégration du JSON 
 
