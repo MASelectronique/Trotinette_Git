@@ -1,10 +1,7 @@
 /*
 À faire :   
-          -Séparer toutes les variables globales en constantes et en objects
-          -Modifier les fonctions pour pouvoir envoyer l'object en paramètre
           -Changer le fonctionnement des bouton dans configuration
           -Supprimer le bouton de configuration de l'heure
-          -define en majuscule
           -lib string besoin?
           -Au lieu de la fonction refresh_data_affichage pour créer un affichage où les valeurs changent, d'écortiquer le JSON envoyé par le PCB de contrôle du client
 
@@ -74,7 +71,8 @@ const char* symbole_Fahrenheit = "°F";
 uint16_t calData[5] = { 243, 3618, 357, 3612, 4 };  //Valeurs de calibration de l'écran
 
 //Vitesse
-float_t vitesseFloat=0;
+String vitesseString="";
+int vitesseInt=0;
 char vitesseChar[4]="";
 char vitesse_texte [5]="";
 
@@ -109,7 +107,7 @@ void my_disp_flush( lv_display_t *disp, const lv_area_t *area, uint8_t * px_map)
     lv_display_flush_ready(disp);
 }
 
-// Utiliser millis() d'Arduino comme source de tic 
+// Utilise millis() d'Arduino comme source de tic 
 static uint32_t my_tick(void)
 {
     return millis();
@@ -127,15 +125,8 @@ void refresh_data_affichage(void)
 //Tension de la batterie
   tensionInt=trottinette.drive.tension_total;
 
-
-
-  /*
-    if (vitesseFloat==arc_max)
-    {
-      vitesseFloat=0;
-    }
-    vitesseFloat++;
-    */
+//Vitesse
+  vitesseString=trottinette.drive.vitesse;
 }
 
 //Permet le rapfraichissement des valeurs et couleur de l'affichage de la température sans avoir à décoder le JSON du PCB de contrôle
@@ -220,7 +211,7 @@ void gestion_btn_conf()
     strcpy(symbole_temperature, symbole_celsius);
   }
 }
-//////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 
@@ -290,20 +281,25 @@ void setup()
 
 void loop()
 {
+  /* //Test pour faire afficher la positionnement de touché de l'utilisateur 
   uint16_t t_x = 0, t_y = 0; //Variables pour storer les coordonnées du "touch"
   bool pressed = tft.getTouch(&t_x, &t_y);  //Vérifie si l'écran a été touché
+  if (pressed == true)  //Si l'utilisateur touche l'écran
+  { 
+    Serial.print("x : ");
+    Serial.print(t_x);
+    Serial.print(", y : ");
+    Serial.println(t_y);
+  }
+  */
   
   //Calcule et retourne le pitch
   pitch = getPitch();
 
-
-/*
-  //Affiche le pitch au moniteur série
+/*//Affiche le pitch au moniteur série
   Serial.print("Pitch: ");
   Serial.println(pitch);
 */
-
-
 
   if (pitch >= 30 || pitch <= -30) {  //Si la trottinette est penchée sur le côté
     digitalWrite(LED_PIN, HIGH);      //Éteind l'écran
@@ -316,30 +312,20 @@ void loop()
   jsonErrorMessage = jsonString;
   jsonError = deserializeJson(doc, jsonString);   //Décode l'objet
 
-  if (!jsonError) {         //Si le JSON est décodé avec succès
+  if (!jsonError) //Si le JSON est décodé avec succès
+  {         
     getData(doc);           //Enregistre les valeurs contenues dans l'objet json décodé
-    //printData(trottinette); //Affiche les données de la trottinette
+    printData(trottinette); //Affiche les données de la trottinette
   }
   else {  //Si erreur de décodage
     Serial.println("JSON ERROR:");
     Serial.println(jsonErrorMessage);
   }
 
-/*
-  if (pressed == true)  //Si l'utilisateur touche l'écran
-  { 
-    Serial.print("x : ");
-    Serial.print(t_x);
-    Serial.print(", y : ");
-    Serial.println(t_y);
-  }
-  */
-
   gestion_btn_conf();
 
 //À enlever lors de l'utilisation avec PCB et JSON décortiqué
   refresh_data_affichage();
-
 
 /////////////////////Mise à jour de l'écran///////////////////////////////
 
@@ -353,27 +339,29 @@ void loop()
   lv_bar_set_value(objects.bar_puissance, cmd, LV_ANIM_OFF); // à laisser avant la ligne dtostrf
   dtostrf(cmd, 4, 0, cmdChar); //**Attention, cmd redevient à 0 après cette ligne**
   lv_label_set_text_fmt(objects.lb_puissance,cmdChar);
-/*
+
 
 //Tension de la batterie
-  lv_bar_set_value(objects.bar_tension, tensionInt, LV_ANIM_ON);  //// Change immédiatement à 50 (sans animation)
+
+  lv_bar_set_value(objects.bar_tension, tensionInt, LV_ANIM_OFF);  //// Change immédiatement à 50 (sans animation)
   dtostrf(tensionInt, 4, 0, tensionChar);//**Attention, tensionInt redevient à 0 après cette ligne**
   lv_label_set_text_fmt(objects.lb_tension,tensionChar);
-*/
 
 
-
-/*
 //Vitesse   
-  dtostrf(vitesseFloat, 4, 0, vitesseChar);
+  Serial.println("vitesse:");
+  Serial.println(vitesse_texte);
+
+  vitesseInt =vitesseString.toInt();
+  lv_arc_set_value(objects.arc_speed,vitesseInt);
+
+  dtostrf(vitesseInt, 4, 0, vitesseChar);
   lv_label_set_text_fmt(objects.lb_speed,vitesseChar);
-  lv_arc_set_value(objects.arc_speed, vitesseFloat);
   lv_label_set_text_fmt(objects.lb_unite_vitesse,vitesse_texte); /////////////////////////////////possibilité de ne pas le faire à chaque fois
-*/
 
 
 //Gestion par lvgl et du UI
   lv_timer_handler(); // let the GUI do its work 
   ui_tick();
-  //delay(15); // let this time pass 
+  delay(15); // let this time pass 
 }
