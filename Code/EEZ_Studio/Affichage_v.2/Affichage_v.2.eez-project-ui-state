@@ -989,8 +989,8 @@
           "0": {},
           "7": {},
           "8": {},
-          "11": {},
           "12": {},
+          "13": {},
           "17": {}
         }
       },
@@ -1015,9 +1015,7 @@
             "0": {}
           },
           "4": {},
-          "7": {
-            "$selected": true
-          }
+          "7": {}
         }
       },
       "transform": {
@@ -1047,12 +1045,13 @@
   "showComponentDescriptions": true,
   "logsPanelFilter": "all",
   "selectedStylePropertyName": "",
-  "lvglPart": "KNOB",
+  "lvglPart": "INDICATOR",
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
-    "BACKGROUND",
     "LINE",
-    "TEXT"
+    "TEXT",
+    "BACKGROUND",
+    "ARC"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,
