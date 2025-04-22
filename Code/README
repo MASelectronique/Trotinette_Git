@@ -5,7 +5,7 @@ Contient : 	Fichier Controleur_client : Contient le code pour envoyer le JSON à
 		Fichier EEZ_Studio : contient le projet du GUI de l'affichage
 		Fichier Interface_V.1 : Projet à jour de l'affichage avec les librairies et le fichier main
 		Fichier Interface_V.2 : Projet à jour de l'affichage et développement de l'intégration du JSON 
-				 
+		Fichier Template_startip : C'Est un template pour partir un projet de zéro avec les lignes nécessaire pour que EEZ Studio, TFT, l'écran ainsi que le touch fonctionne			 
 Language: C++
 Environnement: Arduino avec board manager de ESP32 par Espressif Systems 2.0.14 (une version supérieur ne fonctionnera pas)
 Plateforme: Arduino IDE 2.3.6
