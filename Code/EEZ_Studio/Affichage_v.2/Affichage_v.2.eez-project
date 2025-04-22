@@ -182,10 +182,10 @@
             {
               "objID": "30e33423-a9fd-4c4a-af62-744977d1e372",
               "type": "LVGLLabelWidget",
-              "left": 98,
-              "top": 119,
-              "width": 30,
-              "height": 16,
+              "left": 74,
+              "top": 94,
+              "width": 84,
+              "height": 44,
               "customInputs": [],
               "customOutputs": [],
               "style": {
@@ -217,7 +217,8 @@
                 "definition": {
                   "MAIN": {
                     "DEFAULT": {
-                      "text_color": "#ffffff"
+                      "text_color": "#ffffff",
+                      "text_font": "MONTSERRAT_40"
                     }
                   }
                 }
