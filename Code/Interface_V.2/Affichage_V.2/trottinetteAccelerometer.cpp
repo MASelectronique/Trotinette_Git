@@ -2,12 +2,17 @@
   @file   trottinetteAccelerometer.cpp, projet: Module de télémétrie
   @author Lucas Lalumière Longpré
   @date   10 Avril 2025
-  @brief  Fichier header contenant les fonctions 
-          pour se servir de l'accéléromètre du module de télémétrie.
+  @brief   Fichier d’en-tête définissant les fonctions pour utiliser l'accéléromètre
+ *         ICM42670 du module de télémétrie d’une trottinette électrique.
+ * Environnement de développement :
+ *     - IDE : Visual Studio Code
+ *     - Communication : I2C
+ *
+ * Fonctions principales :
+ *     - initAccel() : Initialise l'accéléromètre avec une fréquence d’échantillonnage de 100 Hz et une plage de ±16G.
+ *     - getPitch()  : Calcule et retourne l'angle de pitch basé sur les valeurs d'accélération (x, y, z).
+ */
 
-  Environnement:
-      Développement: Visual Studio Code
-*/
 #include "trottinetteAccelerometer.h"
 
 ICM42670 IMU(Wire,0); //Crée l'objet de l'accelerateur en I2C

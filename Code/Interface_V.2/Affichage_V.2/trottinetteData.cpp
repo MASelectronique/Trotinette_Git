@@ -1,13 +1,21 @@
 /*
-  @file   trottinetteData.cpp, projet: Module de télémétrie
-  @author Lucas Lalumière Longpré
-  @date   10 Avril 2025
-  @brief  Fichier cpp contenant les fonctions pour les
-          données de la trottinette.
-
-  Environnement:
-      Développement: Visual Studio Code
-*/
+ * @file   trottinetteData.cpp, projet: Module de télémétrie
+ * @brief   Implémentation des fonctions liées à la gestion des données de la trottinette.
+ *          Ce fichier fait partie du projet de module de télémétrie. Il contient les fonctions
+ *          permettant de traiter et d’afficher les données reçues en format JSON, en les stockant
+ *          dans une structure de type `Data`.
+ * 
+ * Fonctions principales :
+ *     - getData(JsonDocument doc) : Décode un objet JSON et remplit la structure `Data`.
+ *     - printData(const Data &t)  : Affiche les données stockées dans la structure `Data` sur le moniteur série.
+ * 
+ * @author Lucas Lalumière Longpré
+ * @date   10 avril 2025
+ * 
+ * Environnement de développement :
+ *     - IDE : Visual Studio Code
+ *     - Format de communication : JSON (via ArduinoJson)
+ */
 #include "trottinetteData.h"
 
 Data trottinette; //L'objet trottinette contenant tous les données de la trottinette
