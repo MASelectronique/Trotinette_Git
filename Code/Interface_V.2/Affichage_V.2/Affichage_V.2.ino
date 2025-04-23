@@ -5,7 +5,15 @@
           -lib string besoin?
           -Au lieu de la fonction refresh_data_affichage pour créer un affichage où les valeurs changent, d'écortiquer le JSON envoyé par le PCB de contrôle du client
 
-Brief : Ce code permet un d'afficher sur l'écran 
+    Fait par Marc-Antoine Sauvé et Lucas Lalumière Longpré
+
+    Brief : Ce code permet de gérer l’interface graphique et la collecte de données d'une trottinette connectée avec un écran tactile. Il utilise la bibliothèque LVGL
+    pour créer l’interface utilisateur, TFT_eSPI pour gérer l’écran, et des capteurs via I2C (accéléromètre). Il affiche la vitesse, la température, la tension de batterie
+    et la commande d’accélération, en rafraîchissant dynamiquement ces données. L’écran peut afficher différentes pages (ex. : principale ou configuration) en fonction 
+    de boutons tactiles. Le code lit aussi les données JSON via une liaison série pour mettre à jour l’affichage. Enfin, des modes débogage optionnels permettent de 
+    suivre les touchers ou le pitch de l’appareil via le moniteur série.
+
+    Date : 23 avril 2024
 */
 
 #include <lvgl.h>
@@ -19,6 +27,10 @@ Brief : Ce code permet un d'afficher sur l'écran
 #include "trottinetteData.h"
 
 #define BYTE_PER_PIXEL (LV_COLOR_FORMAT_GET_SIZE(LV_COLOR_FORMAT_RGB565))
+
+#define modeDebug_JSON 0 //Print dans le moniteur série le JSON ou l'ereur si le JSON n'a pas été bien reçu
+#define modeDebug_touch 0 // Print dans le moniteur série la valeur d'où on appuie sur l'écran
+#define modeDebug_pitch 1 //Print dans le moniteur série 
 
 //Température
 #define LOW_TEMPERATURE 60
@@ -188,8 +200,6 @@ void event_handler_btn_vitesse(lv_event_t * e) {
     //Serial.println( "Bouton 'btn_vitesse' appuyé !"); //Au besoin pour un debug
 }
 
-
-
 void gestion_btn_conf()
 {
   if(lv_obj_has_state(objects.btn_vitesse, LV_STATE_CHECKED))
@@ -200,7 +210,6 @@ void gestion_btn_conf()
     {
       strcpy(vitesse_texte, vitesse_kmh); 
     } 
-    //Serial.println(vitesse_texte);
 
   if (lv_obj_has_state(objects.btn_temperature, LV_STATE_CHECKED)) 
   {
@@ -212,18 +221,22 @@ void gestion_btn_conf()
   }
 }
 
-
-
-
 void setup()
 {
-  //Communication Serie
+  if(modeDebug_touch||modeDebug_pitch)
+  {
+    //Communication Serie
     Serial.begin(115200);
+    Serial.println( "Communication serie active" );
+  }
+  
+  jsonSerial.begin(115200, EspSoftwareSerial::SWSERIAL_8N1, RX_PIN, TX_PIN);  //Port pour recevoir objet JSON
 
+  if(modeDebug_JSON)
+  {
   //JSON
-    jsonSerial.begin(115200, EspSoftwareSerial::SWSERIAL_8N1, RX_PIN, TX_PIN);  //Port pour recevoir objet JSON
     while(!Serial) {} //Attend que le moniteur série soit initialisé
-
+  }
   //I2C
     Wire.begin(SDA_PIN, SCL_PIN); //Initialise l'interface I2C
     initAccel();  //Initialise l'accelerometre
@@ -258,7 +271,6 @@ void setup()
       lv_display_set_buffers(disp, draw_buf, NULL, sizeof(draw_buf), LV_DISPLAY_RENDER_MODE_PARTIAL);
     #endif
    
-
   lv_indev_t * indev = lv_indev_create();           //Create an input device
   lv_indev_set_type(indev, LV_INDEV_TYPE_POINTER);  //Touch pad is a pointer-like device
   lv_indev_set_read_cb(indev, my_touchpad_read);    //Set your driver function
@@ -281,30 +293,36 @@ void setup()
 
 void loop()
 {
-  /* //Test pour faire afficher la positionnement de touché de l'utilisateur 
-  uint16_t t_x = 0, t_y = 0; //Variables pour storer les coordonnées du "touch"
-  bool pressed = tft.getTouch(&t_x, &t_y);  //Vérifie si l'écran a été touché
-  if (pressed == true)  //Si l'utilisateur touche l'écran
-  { 
-    Serial.print("x : ");
-    Serial.print(t_x);
-    Serial.print(", y : ");
-    Serial.println(t_y);
+  if(modeDebug_touch)
+  {
+     //Test pour faire afficher la positionnement de touché de l'utilisateur 
+    uint16_t t_x = 0, t_y = 0; //Variables pour storer les coordonnées du "touch"
+    bool pressed = tft.getTouch(&t_x, &t_y);  //Vérifie si l'écran a été touché
+    if (pressed == true)  //Si l'utilisateur touche l'écran
+    { 
+      Serial.print("x : ");
+      Serial.print(t_x);
+      Serial.print(", y : ");
+      Serial.println(t_y);
+    }
   }
-  */
   
   //Calcule et retourne le pitch
   pitch = getPitch();
+  
+  if(modeDebug_pitch)
+  {
+    //Affiche le pitch au moniteur série
+      Serial.print("Pitch: ");
+      Serial.println(pitch);
+  }
 
-/*//Affiche le pitch au moniteur série
-  Serial.print("Pitch: ");
-  Serial.println(pitch);
-*/
-
-  if (pitch >= 30 || pitch <= -30) {  //Si la trottinette est penchée sur le côté
+  if (pitch >= 30 || pitch <= -30) 
+  {  //Si la trottinette est penchée sur le côté
     digitalWrite(LED_PIN, HIGH);      //Éteind l'écran
   }
-  else {
+  else 
+  {
     digitalWrite(LED_PIN, LOW);       //Sinon, allume l'écran
   }
 
@@ -315,16 +333,20 @@ void loop()
   if (!jsonError) //Si le JSON est décodé avec succès
   {         
     getData(doc);           //Enregistre les valeurs contenues dans l'objet json décodé
-    printData(trottinette); //Affiche les données de la trottinette
+    if(modeDebug_JSON)
+    { 
+      printData(trottinette); //Affiche les données de la trottinette
+    }
   }
   else {  //Si erreur de décodage
-    Serial.println("JSON ERROR:");
-    Serial.println(jsonErrorMessage);
+    if(modeDebug_JSON)
+    { 
+      Serial.println("JSON ERROR:");
+      Serial.println(jsonErrorMessage);
+    }
   }
-
   gestion_btn_conf();
 
-//À enlever lors de l'utilisation avec PCB et JSON décortiqué
   refresh_data_affichage();
 
 /////////////////////Mise à jour de l'écran///////////////////////////////
@@ -340,25 +362,18 @@ void loop()
   dtostrf(cmd, 4, 0, cmdChar); //**Attention, cmd redevient à 0 après cette ligne**
   lv_label_set_text_fmt(objects.lb_puissance,cmdChar);
 
-
 //Tension de la batterie
-
   lv_bar_set_value(objects.bar_tension, tensionInt, LV_ANIM_OFF);  //// Change immédiatement à 50 (sans animation)
   dtostrf(tensionInt, 4, 0, tensionChar);//**Attention, tensionInt redevient à 0 après cette ligne**
   lv_label_set_text_fmt(objects.lb_tension,tensionChar);
 
-
 //Vitesse   
-  Serial.println("vitesse:");
-  Serial.println(vitesse_texte);
-
   vitesseInt =vitesseString.toInt();
   lv_arc_set_value(objects.arc_speed,vitesseInt);
 
   dtostrf(vitesseInt, 4, 0, vitesseChar);
   lv_label_set_text_fmt(objects.lb_speed,vitesseChar);
   lv_label_set_text_fmt(objects.lb_unite_vitesse,vitesse_texte); /////////////////////////////////possibilité de ne pas le faire à chaque fois
-
 
 //Gestion par lvgl et du UI
   lv_timer_handler(); // let the GUI do its work 
