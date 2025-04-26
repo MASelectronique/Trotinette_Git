@@ -218,13 +218,13 @@
                   },
                   "icon": "svg:page"
                 }
-              ]
+              ],
+              "active": true
             },
             {
               "type": "tabset",
               "id": "#cad19194-1190-47ca-b87c-c6fe0142e2c0",
               "weight": 24.024824002980765,
-              "selected": 1,
               "children": [
                 {
                   "type": "tab",
@@ -242,8 +242,7 @@
                   "enableClose": false,
                   "icon": "svg:components"
                 }
-              ],
-              "active": true
+              ]
             }
           ]
         }
@@ -1049,10 +1048,7 @@
   "lvglPart": "INDICATOR",
   "lvglState": "DEFAULT",
   "lvglExpandedPropertiesGroup": [
-    "LINE",
-    "TEXT",
-    "BACKGROUND",
-    "ARC"
+    "TEXT"
   ],
   "showInactiveFlowsInDebugger": true,
   "globalFlowZoom": true,
