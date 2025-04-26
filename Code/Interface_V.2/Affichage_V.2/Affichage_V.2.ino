@@ -15,10 +15,10 @@
     Date : 23 avril 2024
 */
 
-#include <lvgl.h>             //
+#include <lvgl.h>             //libraries graphique
 #include <TFT_eSPI.h>         //Librairie pour l'écran tactile
 #include <ui.h>               // Fichier généré par EEZ studio
-#include <SoftwareSerial.h>
+#include <SoftwareSerial.h>   //Permet l'utilisation de patte UART non programmé à 
 #include <Wire.h>                //Lib I2C
 
 #include "trottinetteAccelerometer.h"
@@ -33,17 +33,19 @@
 #define modeDebug_temperature 0 //Print la température en degrés Celcius et Fahrenheit dans le moniteur série
 #define mondeDubug_vitesse 0 // Print les valeur en kmh et en mp sur le moniteur série
 
-#define avec_PCB_de_controle 0 // 0 : permet de générer des données aléatoires pour l'affichage sans être connecter au PCB contrôleur
+#define avec_PCB_controleur 0 // 0 : permet de générer des données aléatoires pour l'affichage sans être connecter au PCB contrôleur
                                // 1 : permet de décoder le JSON envoyé par le PCB contrôleur
                               
-//Température
-#define LOW_TEMPERATURE 60
-#define HIGH_TEMPERATURE 75
+//Température 
+#define LOW_TEMPERATURE 60 //Limite pour l'affichege de la température devienne jaune
+#define HIGH_TEMPERATURE 75//Limite pour l'affichege de la température devienne rouge
 
-//Widget arc
+//Widget arc (cadran de la vitesse)
 #define arc_min 0
-#define arc_max 50
+#define arc_max_kmh 50
+#define arc_max_mph 33
 
+//Batterie
 #define bar_tension_min 0
 #define bar_tension_max 100
 
@@ -89,11 +91,13 @@ uint16_t calData[5] = { 243, 3618, 357, 3612, 4 };  //Valeurs de calibration de 
 //Vitesse
 String vitesseString="";
 int vitesseInt=0;
+int vitesseInt_tamp=0;
 char vitesseChar[4]="";
-char vitesse_texte [5]="";
+char vitesse_unite [5]="";
 
 //Température
-int tempreratureInt = 0;
+int temperatureInt = 0;
+int temperatureInt_tamp =0;
 char temperatureChar[4]="";
 char symbole_temperature[4] = "°C";
 
@@ -131,14 +135,14 @@ static uint32_t my_tick(void)
 
 
 // Si le PCB contrôleur n'envoie pas le JSON me le #define avec_PCB_controleur à 0
-void generate_random_data(void)
+void generate_data(void)
 {
   //Température  
-  if (tempreratureInt>=100)
+  if (temperatureInt>=100)
   {
-  tempreratureInt = -20;
+  temperatureInt = -20;
   }
-  tempreratureInt = tempreratureInt +5;
+  temperatureInt = temperatureInt +5;
   
   //Vitesse 
   if (vitesseInt>=50)
@@ -161,10 +165,11 @@ void generate_random_data(void)
   }
   tensionInt= tensionInt-5;
 
-  //Print les datas
+/*
+  //Print les données générées
   Serial.println("------Random data generated--------");
   Serial.print("Temperature : ");
-  Serial.println(tempreratureInt);
+  Serial.println(temperatureInt);
 
   Serial.print("Vitesse : ");
   Serial.println(vitesseInt);
@@ -176,6 +181,7 @@ void generate_random_data(void)
   Serial.println(cmd);
 
   Serial.println("-------------------------------");
+  */
 }
 
 
@@ -183,7 +189,7 @@ void generate_random_data(void)
 void refresh_data_affichage(void)
 {
 //Température
-  tempreratureInt=trottinette.drive.temperature;
+  temperatureInt=trottinette.drive.temperature;
 
 //cmd (throttle)
   cmd=trottinette.ctrl.cmd/(2.55);
@@ -196,21 +202,21 @@ void refresh_data_affichage(void)
 }
 
 //Permet le rapfraichissement des valeurs et couleur de l'affichage de la température sans avoir à décoder le JSON du PCB de contrôle
-void temperature_refresh (float_t temperature)
+void temperature_refresh (int temperature)
 {
-  if (tempreratureInt < LOW_TEMPERATURE)
+  if (temperatureInt < LOW_TEMPERATURE)
   {
     lv_obj_set_style_text_color(objects.lb_temperature, lv_color_hex(color_low_temp), LV_PART_MAIN); // change la couleur
     lv_obj_set_style_border_color(objects.pnl_temperature, lv_color_hex(color_low_temp), LV_PART_MAIN);
     lv_obj_set_style_text_color(objects.lb_symbole_temperature, lv_color_hex(color_low_temp), LV_PART_MAIN);
   }
-  else if (tempreratureInt < HIGH_TEMPERATURE && tempreratureInt>LOW_TEMPERATURE)
+  else if (temperatureInt < HIGH_TEMPERATURE && temperatureInt>LOW_TEMPERATURE)
   {
     lv_obj_set_style_text_color(objects.lb_temperature, lv_color_hex(color_med_temp), LV_PART_MAIN); // change la couleur
     lv_obj_set_style_border_color(objects.pnl_temperature, lv_color_hex(color_med_temp), LV_PART_MAIN);
     lv_obj_set_style_text_color(objects.lb_symbole_temperature, lv_color_hex(color_med_temp), LV_PART_MAIN);
   }
-  else if (tempreratureInt > HIGH_TEMPERATURE)
+  else if (temperatureInt > HIGH_TEMPERATURE)
   {
     lv_obj_set_style_text_color(objects.lb_temperature, lv_color_hex(color_high_temp), LV_PART_MAIN); // change la couleur
     lv_obj_set_style_border_color(objects.pnl_temperature, lv_color_hex(color_high_temp), LV_PART_MAIN);
@@ -258,11 +264,11 @@ void gestion_btn_conf()
 {
   if(lv_obj_has_state(objects.btn_vitesse, LV_STATE_CHECKED))
     {
-       strcpy(vitesse_texte, vitesse_mph);
+       strcpy(vitesse_unite, vitesse_mph);
     }
   else
     {
-      strcpy(vitesse_texte, vitesse_kmh); 
+      strcpy(vitesse_unite, vitesse_kmh); 
     } 
 
   if (lv_obj_has_state(objects.btn_temperature, LV_STATE_CHECKED)) 
@@ -337,8 +343,8 @@ void setup()
     lv_obj_add_event_cb(objects.btn_vitesse, event_handler_btn_vitesse, LV_EVENT_PRESSED, NULL);   //Assign an event callback
 
   // Paramétrage des widgets à mettre à jour avec notre code
-    lv_arc_set_range(objects.arc_speed, arc_min, arc_max); // setup max et minimum de l'arc
-    lv_scale_set_range(objects.scale_speed, arc_min, arc_max); // setup du scale visuel
+    lv_arc_set_range(objects.arc_speed, arc_min, arc_max_kmh); // setup max et minimum de l'arc
+    lv_scale_set_range(objects.scale_speed, arc_min, arc_max_kmh); // setup du scale visuel
     lv_bar_set_range(objects.bar_tension, bar_tension_min, bar_tension_max); // setup min et max de la bare de tension
     lv_bar_set_range(objects.bar_puissance, bar_cmd_min, bar_cmd_max); // setup min et max de la bare de tension
 
@@ -361,10 +367,8 @@ void loop()
     }
   }
   
-  //Calcule et retourne le pitch
-  pitch = getPitch();
+  pitch = getPitch();//Calcule et retourne le pitch
 
-  
   if(modeDebug_pitch)
   {
     //Affiche le pitch au moniteur série
@@ -402,36 +406,39 @@ void loop()
   }
   gestion_btn_conf();
 
-  if (avec_PCB_de_controle)//Avec ou sans PCB contrôleur
+  if (avec_PCB_controleur)//Avec ou sans PCB contrôleur
   {
     refresh_data_affichage(); //
   }
-  else
+  else //Si on n'a pas le PCB controleur et qu'on veux générer des données 
   {
-    generate_random_data();
+    generate_data();
   }
   
-
 /////////////////////Mise à jour de l'écran///////////////////////////////
 
 //Température
-  if(modeDebug_temperature)
+  if(modeDebug_temperature) // Permet de voir si la conversion de température est bonne 
   {
     Serial.println("Temperature Celsius : ");
-    Serial.println(tempreratureInt);
-    tempreratureInt = (tempreratureInt*9/5)+32; // Formule pour passer de °C à °F
+    Serial.println(temperatureInt);
+    temperatureInt_tamp = (temperatureInt*9/5)+32; // Formule pour passer de °C à °F
     Serial.println("Temperature Fahrenheit : ");
-    Serial.println(tempreratureInt);
-
+    Serial.println(temperatureInt_tamp);
   }
-  if(symbole_temperature=="°F")
+  if (strcmp(symbole_temperature, "°F") == 0)// Si la température doir être en °F
   {
-    tempreratureInt = (tempreratureInt*9/5)+32; // Formule pour passer de °C à °F
+    temperatureInt_tamp = (temperatureInt*9/5)+32; // Formule pour passer de °C à °F
+    temperature_refresh(temperatureInt_tamp);
+    itoa(temperatureInt_tamp, temperatureChar, 10);
+  }
+  else
+  {
+    temperature_refresh(temperatureInt);
+    itoa(temperatureInt, temperatureChar, 10);
   }
 
-  temperature_refresh(tempreratureInt);
   lv_label_set_text_fmt(objects.lb_symbole_temperature,symbole_temperature);
-  itoa(tempreratureInt, temperatureChar, 10);
   lv_label_set_text_fmt(objects.lb_temperature,temperatureChar);
 
 //Cmd (throttle)
@@ -447,28 +454,33 @@ void loop()
 //Vitesse   
   if(mondeDubug_vitesse)
   {
-    /*
     Serial.print("Vitesse km/h : ");
     Serial.println(vitesseInt);
-    vitesseInt = vitesseInt / 1.609; // calcul permettant de passer de km/h à mph
+    vitesseInt_tamp = vitesseInt / 1.609; // calcul permettant de passer de km/h à mph
     Serial.print("Vitesse mph : ");
-    Serial.println(vitesseInt);
-    */
+    Serial.println(vitesseInt_tamp);
   }
-  /*if(symbole_temperature=="°F")
+  if(avec_PCB_controleur)
   {
-    tempreratureInt = (tempreratureInt*9/5)+32; // Formule pour passer de °C à °F
+    vitesseInt =vitesseString.toInt();
   }
-  */
-  if(avec_PCB_de_controle)
+  if(strcmp(vitesse_unite, "mph") == 0)
   {
-  vitesseInt =vitesseString.toInt();
+    vitesseInt_tamp = vitesseInt / 1.609; // calcul permettant de passer de km/h à mph
+    itoa(vitesseInt_tamp, vitesseChar, 10);
+    lv_arc_set_value(objects.arc_speed,vitesseInt_tamp);
+    lv_arc_set_range(objects.arc_speed, arc_min, arc_max_mph); // setup max et minimum de l'arc
+    lv_scale_set_range(objects.scale_speed, arc_min, arc_max_mph); // setup du scale visuel
   }
-  lv_arc_set_value(objects.arc_speed,vitesseInt);
-
-  itoa(vitesseInt, vitesseChar, 10);
+  else
+  {
+    itoa(vitesseInt, vitesseChar, 10);
+    lv_arc_set_value(objects.arc_speed,vitesseInt);
+    lv_arc_set_range(objects.arc_speed, arc_min, arc_max_kmh); // setup max et minimum de l'arc
+    lv_scale_set_range(objects.scale_speed, arc_min, arc_max_kmh); // setup du scale visuel
+  }
   lv_label_set_text_fmt(objects.lb_speed,vitesseChar);
-  lv_label_set_text_fmt(objects.lb_unite_vitesse,vitesse_texte); /////////////////////////////////possibilité de ne pas le faire à chaque fois
+  lv_label_set_text_fmt(objects.lb_unite_vitesse,vitesse_unite); /////////////////////////////////possibilité de ne pas le faire à chaque fois
 
 //Gestion par lvgl et du UI
   lv_timer_handler(); // let the GUI do its work 
