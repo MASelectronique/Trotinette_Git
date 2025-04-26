@@ -1,11 +1,10 @@
 /*
 À faire :   
           -Changer le fonctionnement des bouton dans configuration
-          -Supprimer le bouton de configuration de l'heure
-          -lib string besoin?
-          -Au lieu de la fonction refresh_data_affichage pour créer un affichage où les valeurs changent, d'écortiquer le JSON envoyé par le PCB de contrôle du client
+          -Activer la fnnction temperature 
+          -Faire changement de vitesse + changement du cadran
 
-    Fait par Marc-Antoine Sauvé et Lucas Lalumière Longpré
+    Fait par : Marc-Antoine Sauvé et Lucas Lalumière Longpré
 
     Brief : Ce code permet de gérer l’interface graphique et la collecte de données d'une trottinette connectée avec un écran tactile. Il utilise la bibliothèque LVGL
     pour créer l’interface utilisateur, TFT_eSPI pour gérer l’écran, et des capteurs via I2C (accéléromètre). Il affiche la vitesse, la température, la tension de batterie
@@ -16,10 +15,9 @@
     Date : 23 avril 2024
 */
 
-#include <lvgl.h>
-#include <string.h>              // pour l'affichage graphique de text
-#include <TFT_eSPI.h>            //Librairie pour l'écran tactile
-#include <ui.h>                  // Fichier généré par EEZ studio
+#include <lvgl.h>             //
+#include <TFT_eSPI.h>         //Librairie pour l'écran tactile
+#include <ui.h>               // Fichier généré par EEZ studio
 #include <SoftwareSerial.h>
 #include <Wire.h>                //Lib I2C
 
@@ -28,10 +26,16 @@
 
 #define BYTE_PER_PIXEL (LV_COLOR_FORMAT_GET_SIZE(LV_COLOR_FORMAT_RGB565))
 
+//---------------------------------Section DEBUG ---------------------------------//
 #define modeDebug_JSON 0 //Print dans le moniteur série le JSON ou l'ereur si le JSON n'a pas été bien reçu
 #define modeDebug_touch 0 // Print dans le moniteur série la valeur d'où on appuie sur l'écran
-#define modeDebug_pitch 1 //Print dans le moniteur série 
+#define modeDebug_pitch 0 //Print dans le moniteur série 
+#define modeDebug_temperature 0 //Print la température en degrés Celcius et Fahrenheit dans le moniteur série
+#define mondeDubug_vitesse 0 // Print les valeur en kmh et en mp sur le moniteur série
 
+#define avec_PCB_de_controle 0 // 0 : permet de générer des données aléatoires pour l'affichage sans être connecter au PCB contrôleur
+                               // 1 : permet de décoder le JSON envoyé par le PCB contrôleur
+                              
 //Température
 #define LOW_TEMPERATURE 60
 #define HIGH_TEMPERATURE 75
@@ -125,7 +129,57 @@ static uint32_t my_tick(void)
     return millis();
 }
 
-//Permet de générer des valeurs pour créer un affichage en mouvement 
+
+// Si le PCB contrôleur n'envoie pas le JSON me le #define avec_PCB_controleur à 0
+void generate_random_data(void)
+{
+  //Température  
+  if (tempreratureInt>=100)
+  {
+  tempreratureInt = -20;
+  }
+  tempreratureInt = tempreratureInt +5;
+  
+  //Vitesse 
+  if (vitesseInt>=50)
+  {
+  vitesseInt = 0;
+  }
+  vitesseInt= vitesseInt+4;
+
+  //CMD 
+  if (cmd>=100)
+  {
+    cmd = 0;
+  }
+  cmd = cmd +5;
+
+  //Batterie
+  if(tensionInt<=0)
+  {
+    tensionInt=100;
+  }
+  tensionInt= tensionInt-5;
+
+  //Print les datas
+  Serial.println("------Random data generated--------");
+  Serial.print("Temperature : ");
+  Serial.println(tempreratureInt);
+
+  Serial.print("Vitesse : ");
+  Serial.println(vitesseInt);
+
+  Serial.print("Tension : ");
+  Serial.println(tensionInt);
+
+  Serial.print("Cmd : ");
+  Serial.println(cmd);
+
+  Serial.println("-------------------------------");
+}
+
+
+//Prend les données décodées du JSON envoyé par le PCB contrôleur
 void refresh_data_affichage(void)
 {
 //Température
@@ -223,7 +277,7 @@ void gestion_btn_conf()
 
 void setup()
 {
-  if(modeDebug_touch||modeDebug_pitch)
+  if(modeDebug_touch||modeDebug_pitch || modeDebug_temperature|| mondeDubug_vitesse)
   {
     //Communication Serie
     Serial.begin(115200);
@@ -309,6 +363,7 @@ void loop()
   
   //Calcule et retourne le pitch
   pitch = getPitch();
+
   
   if(modeDebug_pitch)
   {
@@ -347,36 +402,76 @@ void loop()
   }
   gestion_btn_conf();
 
-  refresh_data_affichage();
+  if (avec_PCB_de_controle)//Avec ou sans PCB contrôleur
+  {
+    refresh_data_affichage(); //
+  }
+  else
+  {
+    generate_random_data();
+  }
+  
 
 /////////////////////Mise à jour de l'écran///////////////////////////////
 
 //Température
+  if(modeDebug_temperature)
+  {
+    Serial.println("Temperature Celsius : ");
+    Serial.println(tempreratureInt);
+    tempreratureInt = (tempreratureInt*9/5)+32; // Formule pour passer de °C à °F
+    Serial.println("Temperature Fahrenheit : ");
+    Serial.println(tempreratureInt);
+
+  }
+  if(symbole_temperature=="°F")
+  {
+    tempreratureInt = (tempreratureInt*9/5)+32; // Formule pour passer de °C à °F
+  }
+
   temperature_refresh(tempreratureInt);
   lv_label_set_text_fmt(objects.lb_symbole_temperature,symbole_temperature);
-  dtostrf(tempreratureInt, 4, 0, temperatureChar);//**Attention, tempreratureInt redevient à 0 après cette ligne**
+  itoa(tempreratureInt, temperatureChar, 10);
   lv_label_set_text_fmt(objects.lb_temperature,temperatureChar);
 
 //Cmd (throttle)
   lv_bar_set_value(objects.bar_puissance, cmd, LV_ANIM_OFF); // à laisser avant la ligne dtostrf
-  dtostrf(cmd, 4, 0, cmdChar); //**Attention, cmd redevient à 0 après cette ligne**
+  itoa(cmd, cmdChar, 10);
   lv_label_set_text_fmt(objects.lb_puissance,cmdChar);
 
 //Tension de la batterie
   lv_bar_set_value(objects.bar_tension, tensionInt, LV_ANIM_OFF);  //// Change immédiatement à 50 (sans animation)
-  dtostrf(tensionInt, 4, 0, tensionChar);//**Attention, tensionInt redevient à 0 après cette ligne**
+  itoa(tensionInt, tensionChar, 10);
   lv_label_set_text_fmt(objects.lb_tension,tensionChar);
 
 //Vitesse   
+  if(mondeDubug_vitesse)
+  {
+    /*
+    Serial.print("Vitesse km/h : ");
+    Serial.println(vitesseInt);
+    vitesseInt = vitesseInt / 1.609; // calcul permettant de passer de km/h à mph
+    Serial.print("Vitesse mph : ");
+    Serial.println(vitesseInt);
+    */
+  }
+  /*if(symbole_temperature=="°F")
+  {
+    tempreratureInt = (tempreratureInt*9/5)+32; // Formule pour passer de °C à °F
+  }
+  */
+  if(avec_PCB_de_controle)
+  {
   vitesseInt =vitesseString.toInt();
+  }
   lv_arc_set_value(objects.arc_speed,vitesseInt);
 
-  dtostrf(vitesseInt, 4, 0, vitesseChar);
+  itoa(vitesseInt, vitesseChar, 10);
   lv_label_set_text_fmt(objects.lb_speed,vitesseChar);
   lv_label_set_text_fmt(objects.lb_unite_vitesse,vitesse_texte); /////////////////////////////////possibilité de ne pas le faire à chaque fois
 
 //Gestion par lvgl et du UI
   lv_timer_handler(); // let the GUI do its work 
   ui_tick();
-  delay(15); // let this time pass 
+  delay(10); // let this time pass 
 }
