@@ -182,9 +182,9 @@
             {
               "objID": "30e33423-a9fd-4c4a-af62-744977d1e372",
               "type": "LVGLLabelWidget",
-              "left": 93,
+              "left": 97,
               "top": 94,
-              "width": 56,
+              "width": 42,
               "height": 44,
               "customInputs": [],
               "customOutputs": [],
@@ -218,15 +218,14 @@
                   "MAIN": {
                     "DEFAULT": {
                       "text_color": "#ffffff",
-                      "text_font": "MONTSERRAT_40",
-                      "text_align": "RIGHT"
+                      "text_font": "MONTSERRAT_40"
                     }
                   }
                 }
               },
               "group": "",
               "groupIndex": 0,
-              "text": "##",
+              "text": "10",
               "textType": "literal",
               "longMode": "WRAP",
               "recolor": false
@@ -948,7 +947,7 @@
               "objID": "57fbed8d-d7bc-49f9-f612-8c0be96fa26a",
               "type": "LVGLLabelWidget",
               "left": 129,
-              "top": 286,
+              "top": 285,
               "width": 16,
               "height": 16,
               "customInputs": [],
