@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[Affichage_v.2.eez-project]:/userPages/0",
+    "selectedUserPageObject": "[Affichage_v.2.eez-project]:/userPages/1",
     "selectedBitmapObject": "[Affichage_v.2.eez-project]:/bitmaps/0",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Actions"
@@ -210,10 +210,10 @@
                 {
                   "type": "tab",
                   "id": "#37554676-0826-423f-a552-d760e27a7f82",
-                  "name": "Main",
+                  "name": "configuration",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[Affichage_v.2.eez-project]:/userPages/0",
+                    "objectPath": "[Affichage_v.2.eez-project]:/userPages/1",
                     "permanent": false
                   },
                   "icon": "svg:page"
