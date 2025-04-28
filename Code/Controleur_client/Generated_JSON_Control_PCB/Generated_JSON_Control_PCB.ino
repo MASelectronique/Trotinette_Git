@@ -17,7 +17,7 @@
 // None blocking timing (msec)
 unsigned long millis_init;
 unsigned long millis_new;
-const unsigned long PERIOD = 1000;
+const unsigned long PERIOD = 200;
  
 void setup() {
   // On board serial comm: https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/
