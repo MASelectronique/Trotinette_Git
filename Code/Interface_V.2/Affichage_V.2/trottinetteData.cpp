@@ -34,6 +34,7 @@ void getData(JsonDocument doc) {
   
     trottinette.ctrl.etat = doc["ctrl"]["etat"];                      //État de la trottinette
     trottinette.ctrl.break_active = doc["ctrl"]["break_active"];      //État du frein
+    trottinette.ctrl.speed_mode = doc["ctrl"]["speed_mode"].as<String>();          //Mode de vitesse rapide (lapin) ou lente (tortue)
     trottinette.ctrl.fault_code = doc["ctrl"]["fault_code"];          //Code d'erreur
     trottinette.ctrl.cmd = doc["ctrl"]["cmd"];                        //Pourcentage du throttle
   
@@ -55,6 +56,7 @@ void getData(JsonDocument doc) {
     Serial.print("-- Ctrl --\n");
     Serial.print("Etat: "); Serial.println(t.ctrl.etat);
     Serial.print("Break Active: "); Serial.println(t.ctrl.break_active);
+    Serial.print("Speed mode: "); Serial.println(t.ctrl.speed_mode);
     Serial.print("Fault Code: "); Serial.println(t.ctrl.fault_code);
     Serial.print("Cmd: "); Serial.println(t.ctrl.cmd);
   

@@ -16,6 +16,7 @@
 struct Ctrl { //Struct qui contient les données du contrôleur
   int etat;
   int break_active;
+  String speed_mode;
   int fault_code;
   int cmd;  // À Afficher
 };

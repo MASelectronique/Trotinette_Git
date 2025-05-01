@@ -57,7 +57,7 @@ int getPitch() {
   
     //Calcul du pitch
     pitch = atan2(y, sqrt(x * x + z * z)) * 180.0 / PI;  //Convertie x,y,z en pitch, puis passe de radians à degrés
-    pitch -= pitch_offset;  //Soustraction de l'offset
+    //pitch -= pitch_offset;  //Soustraction de l'offset
   
     return pitch;
 }
