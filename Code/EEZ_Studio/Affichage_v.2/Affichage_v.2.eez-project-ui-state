@@ -1,7 +1,7 @@
 {
   "navigation": {
-    "selectedUserPageObject": "[Affichage_v.2.eez-project]:/userPages/1",
-    "selectedBitmapObject": "[Affichage_v.2.eez-project]:/bitmaps/0",
+    "selectedUserPageObject": "[Affichage_v.2.eez-project]:/userPages/0",
+    "selectedBitmapObject": "[Affichage_v.2.eez-project]:/bitmaps/2",
     "subnavigationSelectedItems": {
       "variables-tab/sub-navigation/selected-item": "Actions"
     }
@@ -24,6 +24,7 @@
           },
           {
             "type": "border",
+            "selected": 2,
             "size": 348.5,
             "location": "right",
             "children": [
@@ -210,16 +211,15 @@
                 {
                   "type": "tab",
                   "id": "#37554676-0826-423f-a552-d760e27a7f82",
-                  "name": "configuration",
+                  "name": "Main",
                   "component": "editor",
                   "config": {
-                    "objectPath": "[Affichage_v.2.eez-project]:/userPages/1",
+                    "objectPath": "[Affichage_v.2.eez-project]:/userPages/0",
                     "permanent": false
                   },
                   "icon": "svg:page"
                 }
-              ],
-              "active": true
+              ]
             },
             {
               "type": "tabset",
@@ -242,7 +242,8 @@
                   "enableClose": false,
                   "icon": "svg:components"
                 }
-              ]
+              ],
+              "active": true
             }
           ]
         }
@@ -987,17 +988,20 @@
       "selection": {
         "0": {
           "0": {},
-          "7": {},
-          "8": {},
-          "12": {},
-          "13": {},
-          "17": {}
+          "2": {
+            "$selected": true
+          },
+          "9": {},
+          "10": {},
+          "14": {},
+          "15": {},
+          "19": {}
         }
       },
       "transform": {
         "translate": {
-          "x": -194.59588845809242,
-          "y": -220.0194527770791
+          "x": -147.3375673317903,
+          "y": -209.38376290542732
         },
         "scale": 1.25
       },
