@@ -27,14 +27,14 @@
 #define BYTE_PER_PIXEL (LV_COLOR_FORMAT_GET_SIZE(LV_COLOR_FORMAT_RGB565))
 
 //---------------------------------Section DEBUG ---------------------------------//
-#define modeDebug_JSON 0 //Print dans le moniteur série le JSON ou l'ereur si le JSON n'a pas été bien reçu
-#define modeDebug_touch 0 // Print dans le moniteur série la valeur d'où on appuie sur l'écran
-#define modeDebug_pitch 0 //Print dans le moniteur série 
+#define modeDebug_JSON 1        //Print dans le moniteur série le JSON ou l'ereur si le JSON n'a pas été bien reçu
+#define modeDebug_touch 0       //Print dans le moniteur série la valeur d'où on appuie sur l'écran
+#define modeDebug_pitch 0       //Print dans le moniteur série 
 #define modeDebug_temperature 0 //Print la température en degrés Celcius et Fahrenheit dans le moniteur série
-#define mondeDubug_vitesse 0 // Print les valeur en kmh et en mp sur le moniteur série
+#define mondeDubug_vitesse 0    //Print les valeur en kmh et en mp sur le moniteur série
 
-#define avec_PCB_controleur 0 // 0 : permet de générer des données aléatoires pour l'affichage sans être connecter au PCB contrôleur
-                               // 1 : permet de décoder le JSON envoyé par le PCB contrôleur
+#define avec_PCB_controleur 1   // 0 : permet de générer des données aléatoires pour l'affichage sans être connecter au PCB contrôleur
+                                // 1 : permet de décoder le JSON envoyé par le PCB contrôleur
                               
 //Température 
 #define LOW_TEMPERATURE 60 //Limite pour l'affichege de la température devienne jaune
@@ -61,12 +61,16 @@
 #define TFT_VER_RES   320
 #define TFT_ROTATION  LV_DISPLAY_ROTATION_0
 
+///////////////////////////////////////////////////////////////////////////////////////////
 //Pattes pour ecran
 #define LED_PIN 2 //Patte qui controle la backlight de l'ecran
+#define PITCH_PIN 17 ////////////////////////////////////////////////////////////////////////à canger sur le nouveau PCB de télémétrie
 
 //Pattes pour communication UART
 #define RX_PIN 18
-#define TX_PIN 17
+#define TX_PIN 19 ///////////////////normalement 17 mais normalement pas besoin...
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 
 //Pattes pour l'accelerometre
 #define SDA_PIN 8
@@ -133,7 +137,6 @@ static uint32_t my_tick(void)
     return millis();
 }
 
-
 // Si le PCB contrôleur n'envoie pas le JSON me le #define avec_PCB_controleur à 0
 void generate_data(void)
 {
@@ -184,7 +187,6 @@ void generate_data(void)
   */
 }
 
-
 //Prend les données décodées du JSON envoyé par le PCB contrôleur
 void refresh_data_affichage(void)
 {
@@ -196,6 +198,18 @@ void refresh_data_affichage(void)
     
 //Tension de la batterie
   tensionInt=trottinette.drive.tension_total;
+
+  if(trottinette.ctrl.speed_mode == "Lapin")// si le mode 1 = affiche le lapin sinon affiche la tortue
+  {
+    lv_obj_add_flag(objects.img_tortue, LV_OBJ_FLAG_HIDDEN);      // Pour cacher
+    lv_obj_clear_flag(objects.img_lapin, LV_OBJ_FLAG_HIDDEN);    // Pour afficher
+
+  }
+  else if (trottinette.ctrl.speed_mode == "Tortue")
+  {
+      lv_obj_add_flag(objects.img_lapin, LV_OBJ_FLAG_HIDDEN);      // Pour cacher
+      lv_obj_clear_flag(objects.img_tortue, LV_OBJ_FLAG_HIDDEN);    // Pour afficher
+  }
 
 //Vitesse
   vitesseString=trottinette.drive.vitesse;
@@ -301,9 +315,13 @@ void setup()
     Wire.begin(SDA_PIN, SCL_PIN); //Initialise l'interface I2C
     initAccel();  //Initialise l'accelerometre
 
-  //Permet d'allumer l'écran en tout temps
+  //Permet d'allumer l'écran
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN,LOW);
+
+    //Initialise la patte d'envoie si la trotinette est tombé
+    pinMode(PITCH_PIN, OUTPUT);
+    
     
   //Touch
     tft.setTouch(calData);  //Calibre l'écran avec les valeurs de calibration
@@ -379,9 +397,11 @@ void loop()
   if (pitch >= 30 || pitch <= -30) 
   {  //Si la trottinette est penchée sur le côté
     digitalWrite(LED_PIN, HIGH);      //Éteind l'écran
+    digitalWrite(PITCH_PIN, HIGH);
   }
   else 
   {
+    digitalWrite(PITCH_PIN, LOW);
     digitalWrite(LED_PIN, LOW);       //Sinon, allume l'écran
   }
 
@@ -414,6 +434,7 @@ void loop()
   {
     generate_data();
   }
+
   
 /////////////////////Mise à jour de l'écran///////////////////////////////
 
@@ -485,5 +506,5 @@ void loop()
 //Gestion par lvgl et du UI
   lv_timer_handler(); // let the GUI do its work 
   ui_tick();
-  delay(10); // let this time pass 
+  //delay(10); // let this time pass 
 }
