@@ -17,7 +17,9 @@
 // None blocking timing (msec)
 unsigned long millis_init;
 unsigned long millis_new;
-const unsigned long PERIOD = 200;
+const unsigned long PERIOD = 1000;
+
+String speedMode = "Tortue";
  
 void setup() {
   // On board serial comm: https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/
@@ -35,10 +37,18 @@ void loop() {
     // broadcast values to student module (JSON - https://github.com/bblanchon/ArduinoJson) -------
     JsonDocument msg;  // needs to be static? (https://arduinojson.org/v6/api/jsondocument/createnestedobject/)
     msg["model_num"] = MODEL_NUMBER;
+
+    if (speedMode = "Tortue") {
+      speedMode = "Lapin";
+    }
+    else if (speedMode = "Lapin") {
+      speedMode = "Tortue";
+    }
  
     JsonObject ctrl = msg["ctrl"].to<JsonObject>();
     ctrl["etat"] = random(3);
     ctrl["break_active"] = random(1);
+    ctrl["speed_mode"] = speedMode;
     ctrl["fault_code"] = random(65535);
     ctrl["cmd"] = random(100);
  
