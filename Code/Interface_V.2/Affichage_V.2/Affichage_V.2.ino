@@ -61,15 +61,13 @@
 #define TFT_VER_RES   320
 #define TFT_ROTATION  LV_DISPLAY_ROTATION_0
 
-///////////////////////////////////////////////////////////////////////////////////////////
 //Pattes pour ecran
 #define LED_PIN 2 //Patte qui controle la backlight de l'ecran
-#define PITCH_PIN 17 ////////////////////////////////////////////////////////////////////////à canger sur le nouveau PCB de télémétrie
+#define FALL_DETECTION_PIN 17 
 
 //Pattes pour communication UART
 #define RX_PIN 18
-#define TX_PIN 19 ///////////////////normalement 17 mais normalement pas besoin...
-//////////////////////////////////////////////////////////////////////////////////////////////
+#define TX_PIN 15
 
 
 //Pattes pour l'accelerometre
@@ -201,14 +199,19 @@ void refresh_data_affichage(void)
 
   if(trottinette.ctrl.speed_mode == "Lapin")// si le mode 1 = affiche le lapin sinon affiche la tortue
   {
-    lv_obj_add_flag(objects.img_tortue, LV_OBJ_FLAG_HIDDEN);      // Pour cacher
-    lv_obj_clear_flag(objects.img_lapin, LV_OBJ_FLAG_HIDDEN);    // Pour afficher
+    lv_obj_add_flag(objects.img_tortue, LV_OBJ_FLAG_HIDDEN);      // Pour cacher l'image tortue
+    lv_obj_clear_flag(objects.img_lapin, LV_OBJ_FLAG_HIDDEN);    // Pour afficher l'image lapin
 
   }
   else if (trottinette.ctrl.speed_mode == "Tortue")
   {
-      lv_obj_add_flag(objects.img_lapin, LV_OBJ_FLAG_HIDDEN);      // Pour cacher
-      lv_obj_clear_flag(objects.img_tortue, LV_OBJ_FLAG_HIDDEN);    // Pour afficher
+      lv_obj_add_flag(objects.img_lapin, LV_OBJ_FLAG_HIDDEN);      // Pour cacher l'image lapin
+      lv_obj_clear_flag(objects.img_tortue, LV_OBJ_FLAG_HIDDEN);    // Pour afficher l'image tortue
+  }
+  else
+  {
+    lv_obj_add_flag(objects.img_lapin, LV_OBJ_FLAG_HIDDEN);      // Pour cacher l'image lapin
+    lv_obj_add_flag(objects.img_tortue, LV_OBJ_FLAG_HIDDEN);      // Pour cacher l'image tortue
   }
 
 //Vitesse
@@ -320,7 +323,7 @@ void setup()
     digitalWrite(LED_PIN,LOW);
 
     //Initialise la patte d'envoie si la trotinette est tombé
-    pinMode(PITCH_PIN, OUTPUT);
+    pinMode(FALL_DETECTION_PIN, OUTPUT);
     
     
   //Touch
@@ -397,11 +400,11 @@ void loop()
   if (pitch >= 30 || pitch <= -30) 
   {  //Si la trottinette est penchée sur le côté
     digitalWrite(LED_PIN, HIGH);      //Éteind l'écran
-    digitalWrite(PITCH_PIN, HIGH);
+    digitalWrite(FALL_DETECTION_PIN, HIGH);
   }
   else 
   {
-    digitalWrite(PITCH_PIN, LOW);
+    digitalWrite(FALL_DETECTION_PIN, LOW);
     digitalWrite(LED_PIN, LOW);       //Sinon, allume l'écran
   }
 
