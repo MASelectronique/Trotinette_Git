@@ -21,6 +21,7 @@
 unsigned long millis_init;
 unsigned long millis_new;
 const unsigned long PERIOD = 500;
+bool fallDetect = 0;
 
 String speedMode = "Lapin";
  
@@ -28,10 +29,9 @@ void setup() {
   // On board serial comm: https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/
   Serial1.begin(BAUD,SERIAL_8N1,RX_PIN,TX_PIN);
   
-  //pinMode(FALL_DETECTION_PIN, INPUT);
 
   // For serial debug
-  //Serial.begin(115200);
+  Serial.begin(115200);
  
   millis_init = millis();
 }
@@ -61,12 +61,10 @@ void loop() {
  
     serializeJson(msg, Serial1);
     Serial1.println();
+
+    //fallDetext = Serial1.readStringUntil();
  
     millis_init = millis();
 
-    /*if (digitalRead (FALL_DETECTION_PIN))
-    {
-      Serial.println ("Trottinette tombe");
-    }*/
   }
 }
