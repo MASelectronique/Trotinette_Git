@@ -1,9 +1,5 @@
 /*
 À faire :   
-          -Changer le fonctionnement des bouton dans configuration
-          -Activer la fnnction temperature 
-          -Faire changement de vitesse + changement du cadran
-
     Fait par : Marc-Antoine Sauvé et Lucas Lalumière Longpré
 
     Brief : Ce code permet de gérer l’interface graphique et la collecte de données d'une trottinette connectée avec un écran tactile. Il utilise la bibliothèque LVGL
@@ -23,11 +19,12 @@
 
 #include "trottinetteAccelerometer.h"
 #include "trottinetteData.h"
+#include "trottinetteAffichage.h"
 
 #define BYTE_PER_PIXEL (LV_COLOR_FORMAT_GET_SIZE(LV_COLOR_FORMAT_RGB565))
 
 //---------------------------------Section DEBUG ---------------------------------//
-#define modeDebug_JSON 1        //Print dans le moniteur série le JSON ou l'ereur si le JSON n'a pas été bien reçu
+#define modeDebug_JSON 0        //Print dans le moniteur série le JSON ou l'ereur si le JSON n'a pas été bien reçu
 #define modeDebug_touch 0       //Print dans le moniteur série la valeur d'où on appuie sur l'écran
 #define modeDebug_pitch 0       //Print dans le moniteur série 
 #define modeDebug_temperature 0 //Print la température en degrés Celcius et Fahrenheit dans le moniteur série
@@ -36,49 +33,9 @@
 #define avec_PCB_controleur 1   // 0 : permet de générer des données aléatoires pour l'affichage sans être connecter au PCB contrôleur
                                 // 1 : permet de décoder le JSON envoyé par le PCB contrôleur
                               
-//Température 
-#define LOW_TEMPERATURE 60 //Limite pour l'affichege de la température devienne jaune
-#define HIGH_TEMPERATURE 75//Limite pour l'affichege de la température devienne rouge
-
-//Widget arc (cadran de la vitesse)
-#define arc_min 0
-#define arc_max_kmh 50
-#define arc_max_mph 33
-
-//Batterie
-#define bar_tension_min 0
-#define bar_tension_max 100
-
-#define color_low_temp 0x0bff00 // Vert
-#define color_med_temp 0xfaff00 // Jaune
-#define color_high_temp 0xff0000 // Rouge
-
-#define bar_cmd_min 0
-#define bar_cmd_max 100
-
-//Set to your screen resolution and rotation
-#define TFT_HOR_RES   240
-#define TFT_VER_RES   320
-#define TFT_ROTATION  LV_DISPLAY_ROTATION_0
-
-//Pattes pour ecran
-#define LED_PIN 2 //Patte qui controle la backlight de l'ecran
-#define FALL_DETECTION_PIN 17 
-
-//Pattes pour communication UART
-#define RX_PIN 18
-#define TX_PIN 15
-
-
-//Pattes pour l'accelerometre
-#define SDA_PIN 8
-#define SCL_PIN 9
 
 //JSON
 EspSoftwareSerial::UART jsonSerial; //Interface UART pour recevoir JSON
-
-//LVGL draw into this buffer, 1/10 screen size usually works well. The size is in bytes
-#define DRAW_BUF_SIZE (TFT_HOR_RES * TFT_VER_RES / 10 * (LV_COLOR_DEPTH / 8))
 
 uint32_t draw_buf[DRAW_BUF_SIZE / 4];
 
@@ -122,12 +79,6 @@ void my_print( lv_log_level_t level, const char * buf )
     Serial.flush();
 }
 #endif
-
-// LVGL l'appelle lorsqu'une image rendue doit être copiée sur l'affichage //
-void my_disp_flush( lv_display_t *disp, const lv_area_t *area, uint8_t * px_map)
-{
-    lv_display_flush_ready(disp);
-}
 
 // Utilise millis() d'Arduino comme source de tic 
 static uint32_t my_tick(void)
@@ -309,10 +260,10 @@ void setup()
   
   jsonSerial.begin(115200, EspSoftwareSerial::SWSERIAL_8N1, RX_PIN, TX_PIN);  //Port pour recevoir objet JSON
 
-  if(modeDebug_JSON)
+  if(modeDebug_JSON==1)
   {
   //JSON
-    while(!Serial) {} //Attend que le moniteur série soit initialisé
+    while(!Serial) {}//Attend que le moniteur série soit initialisé
   }
   //I2C
     Wire.begin(SDA_PIN, SCL_PIN); //Initialise l'interface I2C
@@ -323,7 +274,7 @@ void setup()
     digitalWrite(LED_PIN,LOW);
 
     //Initialise la patte d'envoie si la trotinette est tombé
-    pinMode(FALL_DETECTION_PIN, OUTPUT);
+    //pinMode(FALL_DETECTION_PIN, OUTPUT);
     
     
   //Touch
@@ -400,11 +351,11 @@ void loop()
   if (pitch >= 30 || pitch <= -30) 
   {  //Si la trottinette est penchée sur le côté
     digitalWrite(LED_PIN, HIGH);      //Éteind l'écran
-    digitalWrite(FALL_DETECTION_PIN, HIGH);
+    //digitalWrite(FALL_DETECTION_PIN, HIGH);
   }
   else 
   {
-    digitalWrite(FALL_DETECTION_PIN, LOW);
+    //digitalWrite(FALL_DETECTION_PIN, LOW);
     digitalWrite(LED_PIN, LOW);       //Sinon, allume l'écran
   }
 
