@@ -8,10 +8,10 @@
 #include <Arduino.h>
 #include <ArduinoJson.h>
  
-#define RX_PIN 50
+#define RX_PIN 18
 #define TX_PIN 21
 
-#define FALL_DETECTION_PIN 18
+//#define FALL_DETECTION_PIN 18
 
 #define BAUD 115200
  
@@ -20,7 +20,7 @@
 // None blocking timing (msec)
 unsigned long millis_init;
 unsigned long millis_new;
-const unsigned long PERIOD = 1000;
+const unsigned long PERIOD = 500;
 
 String speedMode = "Lapin";
  
@@ -28,7 +28,7 @@ void setup() {
   // On board serial comm: https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/
   Serial1.begin(BAUD,SERIAL_8N1,RX_PIN,TX_PIN);
   
-  pinMode(FALL_DETECTION_PIN, INPUT);
+  //pinMode(FALL_DETECTION_PIN, INPUT);
 
   // For serial debug
   //Serial.begin(115200);
@@ -64,9 +64,9 @@ void loop() {
  
     millis_init = millis();
 
-    if (digitalRead (FALL_DETECTION_PIN))s
+    /*if (digitalRead (FALL_DETECTION_PIN))
     {
       Serial.println ("Trottinette tombe");
-    }
+    }*/
   }
 }
