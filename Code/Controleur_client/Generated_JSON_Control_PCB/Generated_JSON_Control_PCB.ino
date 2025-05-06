@@ -11,7 +11,7 @@
 #define RX_PIN 18
 #define TX_PIN 21
 
-//#define FALL_DETECTION_PIN 18
+#define FALL_DETECTION_PIN 18
 
 #define BAUD 115200
  
@@ -20,10 +20,10 @@
 // None blocking timing (msec)
 unsigned long millis_init;
 unsigned long millis_new;
-const unsigned long PERIOD = 500;
-bool fallDetect = 0;
+const unsigned long PERIOD = 1000;
+String fallDetect = "0";
 
-String speedMode = "Lapin";
+String speedMode = "Tortue";
  
 void setup() {
   // On board serial comm: https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/
@@ -32,6 +32,8 @@ void setup() {
 
   // For serial debug
   Serial.begin(115200);
+  while(!Serial) {}//Attend que le moniteur série soit initialisé
+  
  
   millis_init = millis();
 }
@@ -50,7 +52,7 @@ void loop() {
     ctrl["break_active"] = random(1);
     ctrl["speed_mode"] = speedMode;
     ctrl["fault_code"] = random(65535);
-    ctrl["cmd"] = random(100);
+    ctrl["cmd"] = random(20);
  
     JsonObject drive = msg["drive"].to<JsonObject>();
     drive["temperature"] = ((float)random(-9000, 9000)) / 100.0;
@@ -58,12 +60,22 @@ void loop() {
     drive["courant_total"] = ((float)random(-9000, 9000)) / 100.0;
     drive["energie"] = ((float)random(0, 9000)) / 100.0;
     drive["vitesse"] = ((float)random(0, 5000)) / 100.0;    
- 
+    
     serializeJson(msg, Serial1);
     Serial1.println();
-
-    //fallDetext = Serial1.readStringUntil();
- 
+    Serial.println("JSON envoye");
+    delay(150);
+    
+    if (Serial1.available()>0)
+    {
+      Serial.println("fallDetect read : ");
+      fallDetect = Serial1.read();
+      if (fallDetect == "0" ||fallDetect == "1" )
+      {
+        Serial.println(fallDetect);
+      }
+    }
+    
     millis_init = millis();
 
   }
