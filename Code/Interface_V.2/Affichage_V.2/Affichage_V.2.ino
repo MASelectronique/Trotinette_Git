@@ -15,7 +15,7 @@
 #include <TFT_eSPI.h>         //Librairie pour l'écran tactile
 #include <ui.h>               // Fichier généré par EEZ studio
 #include <SoftwareSerial.h>   //Permet l'utilisation de patte UART non programmé à 
-#include <Wire.h>                //Lib I2C
+#include <Wire.h>             //Lib I2C
 
 #include "trottinetteAccelerometer.h"
 #include "trottinetteData.h"
@@ -26,9 +26,10 @@
 //---------------------------------Section DEBUG ---------------------------------//
 #define modeDebug_JSON 0        //Print dans le moniteur série le JSON ou l'ereur si le JSON n'a pas été bien reçu
 #define modeDebug_touch 0       //Print dans le moniteur série la valeur d'où on appuie sur l'écran
-#define modeDebug_pitch 0       //Print dans le moniteur série 
+#define modeDebug_pitch 1       //Print dans le moniteur série 
 #define modeDebug_temperature 0 //Print la température en degrés Celcius et Fahrenheit dans le moniteur série
 #define mondeDubug_vitesse 0    //Print les valeur en kmh et en mp sur le moniteur série
+
 
 #define avec_PCB_controleur 1   // 0 : permet de générer des données aléatoires pour l'affichage sans être connecter au PCB contrôleur
                                 // 1 : permet de décoder le JSON envoyé par le PCB contrôleur
@@ -143,7 +144,7 @@ void refresh_data_affichage(void)
   temperatureInt=trottinette.drive.temperature;
 
 //cmd (throttle)
-  cmd=trottinette.ctrl.cmd/(2.55);
+  cmd=trottinette.ctrl.cmd;
     
 //Tension de la batterie
   tensionInt=trottinette.drive.tension_total;
@@ -156,13 +157,9 @@ void refresh_data_affichage(void)
   }
   else if (trottinette.ctrl.speed_mode == "Tortue")
   {
+      cmd = cmd*5;
       lv_obj_add_flag(objects.img_lapin, LV_OBJ_FLAG_HIDDEN);      // Pour cacher l'image lapin
       lv_obj_clear_flag(objects.img_tortue, LV_OBJ_FLAG_HIDDEN);    // Pour afficher l'image tortue
-  }
-  else
-  {
-    lv_obj_add_flag(objects.img_lapin, LV_OBJ_FLAG_HIDDEN);      // Pour cacher l'image lapin
-    lv_obj_add_flag(objects.img_tortue, LV_OBJ_FLAG_HIDDEN);      // Pour cacher l'image tortue
   }
 
 //Vitesse
@@ -260,11 +257,7 @@ void setup()
   
   jsonSerial.begin(115200, EspSoftwareSerial::SWSERIAL_8N1, RX_PIN, TX_PIN);  //Port pour recevoir objet JSON
 
-  if(modeDebug_JSON==1)
-  {
-  //JSON
-    while(!Serial) {}//Attend que le moniteur série soit initialisé
-  }
+  
   //I2C
     Wire.begin(SDA_PIN, SCL_PIN); //Initialise l'interface I2C
     initAccel();  //Initialise l'accelerometre
@@ -273,8 +266,6 @@ void setup()
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN,LOW);
 
-    //Initialise la patte d'envoie si la trotinette est tombé
-    //pinMode(FALL_DETECTION_PIN, OUTPUT);
     
     
   //Touch
@@ -351,12 +342,14 @@ void loop()
   if (pitch >= 30 || pitch <= -30) 
   {  //Si la trottinette est penchée sur le côté
     digitalWrite(LED_PIN, HIGH);      //Éteind l'écran
-    //digitalWrite(FALL_DETECTION_PIN, HIGH);
+    jsonSerial.print("1");
+    Serial.println("Trottinette tombee (1)");
   }
   else 
   {
-    //digitalWrite(FALL_DETECTION_PIN, LOW);
     digitalWrite(LED_PIN, LOW);       //Sinon, allume l'écran
+    jsonSerial.print("0");
+    Serial.println("Trottinette droite (0)");
   }
 
   jsonString = jsonSerial.readStringUntil('\n');  //Lit le message recu jusqu'a \n
@@ -388,6 +381,7 @@ void loop()
   {
     generate_data();
   }
+
 
   
 /////////////////////Mise à jour de l'écran///////////////////////////////
