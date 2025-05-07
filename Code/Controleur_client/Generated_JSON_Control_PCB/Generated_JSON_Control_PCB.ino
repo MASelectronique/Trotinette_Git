@@ -11,8 +11,6 @@
 #define RX_PIN 18
 #define TX_PIN 21
 
-#define FALL_DETECTION_PIN 18
-
 #define BAUD 115200
  
 #define MODEL_NUMBER 0006
@@ -21,7 +19,7 @@
 unsigned long millis_init;
 unsigned long millis_new;
 const unsigned long PERIOD = 1000;
-String fallDetect = "0";
+String fallDetect = "";
 
 String speedMode = "Tortue";
  
@@ -32,9 +30,8 @@ void setup() {
 
   // For serial debug
   Serial.begin(115200);
-  while(!Serial) {}//Attend que le moniteur série soit initialisé
+  Serial.println("Setup done!");
   
- 
   millis_init = millis();
 }
  
@@ -63,15 +60,14 @@ void loop() {
     
     serializeJson(msg, Serial1);
     Serial1.println();
-    Serial.println("JSON envoye");
-    delay(150);
+    //Serial.println("JSON envoye");
     
     if (Serial1.available()>0)
     {
-      Serial.println("fallDetect read : ");
       fallDetect = Serial1.read();
       if (fallDetect == "0" ||fallDetect == "1" )
       {
+        Serial.println("fallDetect read : ");
         Serial.println(fallDetect);
       }
     }
