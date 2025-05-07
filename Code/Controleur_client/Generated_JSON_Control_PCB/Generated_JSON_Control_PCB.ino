@@ -18,7 +18,7 @@
 // None blocking timing (msec)
 unsigned long millis_init;
 unsigned long millis_new;
-const unsigned long PERIOD = 1000;
+const unsigned long PERIOD = 200;
 String fallDetect = "";
 
 String speedMode = "Tortue";
