@@ -61,6 +61,9 @@ void gestion_btn_conf(void);
 #define RX_PIN 18
 #define TX_PIN 17
 
+//Patte pour detection de chute
+#define FALL_DETECT_PIN 15
+
 //Pattes pour l'accelerometre
 #define SDA_PIN 8
 #define SCL_PIN 9

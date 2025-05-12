@@ -266,6 +266,8 @@ void setup()
     pinMode(LED_PIN, OUTPUT);
     digitalWrite(LED_PIN,LOW);
 
+    pinMode(FALL_DETECT_PIN, OUTPUT);
+    digitalWrite(FALL_DETECT_PIN, LOW);
     
     
   //Touch
@@ -342,14 +344,14 @@ void loop()
   if (pitch >= 30 || pitch <= -30) 
   {  //Si la trottinette est penchée sur le côté
     digitalWrite(LED_PIN, HIGH);      //Éteind l'écran
-    jsonSerial.print("1");
-    Serial.println("Trottinette tombee (1)");
+    digitalWrite(FALL_DETECT_PIN, HIGH);
+    Serial.print("Trottinette tombee (1)");
   }
   else 
   {
     digitalWrite(LED_PIN, LOW);       //Sinon, allume l'écran
-    jsonSerial.print("0");
-    Serial.println("Trottinette droite (0)");
+    digitalWrite(FALL_DETECT_PIN, LOW);
+    Serial.print("Trottinette droite (0)");
   }
 
   jsonString = jsonSerial.readStringUntil('\n');  //Lit le message recu jusqu'a \n
