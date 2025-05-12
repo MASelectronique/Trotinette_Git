@@ -10,6 +10,7 @@
  
 #define RX_PIN 18
 #define TX_PIN 21
+#define FALL_DETECT_PIN 40
 
 #define BAUD 115200
  
@@ -19,11 +20,12 @@
 unsigned long millis_init;
 unsigned long millis_new;
 const unsigned long PERIOD = 200;
-String fallDetect = "";
 
 String speedMode = "Tortue";
  
 void setup() {
+  pinMode(FALL_DETECT_PIN, INPUT);
+  digitalWrite(FALL_DETECT_PIN, LOW);
   // On board serial comm: https://wiki.seeedstudio.com/xiao_esp32s3_pin_multiplexing/
   Serial1.begin(BAUD,SERIAL_8N1,RX_PIN,TX_PIN);
   
@@ -61,15 +63,9 @@ void loop() {
     serializeJson(msg, Serial1);
     Serial1.println();
     //Serial.println("JSON envoye");
-    
-    if (Serial1.available()>0)
-    {
-      fallDetect = Serial1.read();
-      if (fallDetect == "0" ||fallDetect == "1" )
-      {
-        Serial.println("fallDetect read : ");
-        Serial.println(fallDetect);
-      }
+
+    if (digitalRead(FALL_DETECT_PIN) == HIGH) {
+      Serial.println("Fall detected");
     }
     
     millis_init = millis();
