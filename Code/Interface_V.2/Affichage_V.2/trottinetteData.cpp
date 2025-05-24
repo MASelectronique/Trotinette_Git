@@ -30,6 +30,9 @@ DeserializationError jsonError;  //Variable qui retourne le résultat du décoda
 //Return: aucun
 //Brief:  Assigne les valeurs json au struct de type Data
 void getData(JsonDocument doc) {
+  if (doc["drive"]["tension_total"].as<float>() != 0 &&
+   doc["drive"]["temperature"].as<float>() != 0)
+  {
     trottinette.model_num = doc["model_num"];                         //Numéro de la trottinette
   
     trottinette.ctrl.etat = doc["ctrl"]["etat"];                      //État de la trottinette
@@ -43,6 +46,7 @@ void getData(JsonDocument doc) {
     trottinette.drive.courant_total = doc["drive"]["courant_total"];  //Courant total au moteur
     trottinette.drive.energie = doc["drive"]["energie"];              //Puissance consommée par le moteur
     trottinette.drive.vitesse = doc["drive"]["vitesse"].as<String>(); //Vitesse de la trottinette
+  }
   }
   
   //Nom:    printData

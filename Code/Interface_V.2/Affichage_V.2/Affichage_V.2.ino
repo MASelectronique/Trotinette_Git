@@ -148,6 +148,8 @@ void refresh_data_affichage(void)
     
 //Tension de la batterie
   tensionInt=trottinette.drive.tension_total;
+  tensionInt = tensionInt *100/36;
+
 
   if(trottinette.ctrl.speed_mode == "Lapin")// si le mode 1 = affiche le lapin sinon affiche la tortue
   {
